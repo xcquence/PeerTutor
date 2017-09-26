@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+nav .navbar {
+		margin-bottom: 0;
+}
+
+.box {
+		background-position: center;
+		height: 500px;
+		position: relative;
+		background-size: cover;
+		padding: 170px;
+		color: white;
+}
+
+#button-box button {
+		width: 200px;
+		height: 250px;
+}
+
+#button-box {
+		margin-top: 70px;
+}
