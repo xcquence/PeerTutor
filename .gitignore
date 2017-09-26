@@ -21,3 +21,10 @@
 /yarn-error.log
 
 .byebug_history
+
+.DS_Store
+
+# Ignore application configuration
+
+# I don’t want to show my secrets
+/config/secrets.yml
