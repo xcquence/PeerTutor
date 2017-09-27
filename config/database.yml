@@ -7,10 +7,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: #name of database
+  database: postgres
   pool: 5
-  username:
-  password:
+  username: postgres
+  password: 123
 
 #test:
 #  adapter: sqlite3
@@ -21,7 +21,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: #name of database
+  database: postgres
   pool: 5 #default
-  username:
-  password:
+  username: postgres
+  password: 123
