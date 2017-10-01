@@ -14,7 +14,10 @@
  *= require_self
  */
 
-
+* {
+	box-sizing: border-box;
+}
+/*====================NAVIGATION BAR=======================*/
 nav .navbar {
 		margin-bottom: 0;
 }
@@ -36,3 +39,114 @@ nav .navbar {
 #button-box {
 		margin-top: 70px;
 }
+
+#navigation {
+	background-color: transparent;
+	border-style: none;
+}
+
+.style_nav_txt {
+	font-weight: bold;
+	font-family: 'Pangolin', sans-serif;
+	font-size: 2.5rem !important;
+	color: #9075BD !important;
+}
+
+/*====================LOGIN PAGE=======================*/
+.form_container {
+	width: 50%;
+	height: 600px;
+	margin: 0 auto;
+	background-color: white;
+	border: 5px solid #190455;
+	border-radius: 10px;
+	box-shadow: 30px 30px 0px #190455; /*#80E3FD*/
+	margin-top: 50px;
+}
+
+.form_header {
+	position: relative;
+	width: 100%;
+	border-bottom: 4px solid #190455;
+}
+
+.form_header div {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	padding: 40px;
+	font-family: 'Nunito', sans-serif;
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 1px;
+	color: #190455;
+}
+
+.other_form_button:hover {
+	background-color: #F4EDFE;
+	transition: 0.25s;
+}
+
+#seperator {
+	width: 5px;
+	background-color: pink;
+}
+
+.right_border {
+	border-right: 4px solid #190455;
+}
+
+.selected {
+	background-color: #F4EDFE;
+}
+
+.fill_in_container {
+	padding: 40px;
+}
+
+.form_label {
+	color: #190455;
+	padding: 1rem;
+  	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	-webkit-transition: all 0.25s;
+  	transition: all 0.25s;
+  	pointer-events: none;
+}
+
+.field input:focus ~ label {
+	font-size: 0.75em;
+  	color: lightgray;
+  	top: -2rem; /*move to the top -2*/
+  	-webkit-transition: all 0.125s;
+  	transition: all 0.125s;
+}
+
+.field {
+	float: left;
+  	width: 100%;
+  	margin: 10px 10px 30px 10px;
+  	position: relative;
+  	font-size: 2rem;
+}
+
+.field input {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	border-bottom: 4px solid black;
+	padding: 10px 30px 5px 30px;
+	font-size: 2rem;
+}
+
+.field input:focus {
+	transition: 0.25s;
+	border-bottom: 4px solid #80E3FD;
+}
+
+.form_input {
+	background-color: blue;
+}
+/*====================SIGNUP PAGE=======================*/

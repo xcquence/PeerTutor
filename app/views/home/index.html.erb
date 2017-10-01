@@ -1,8 +1,30 @@
+<div id="main_page_body" class="text-center">
+	<div class="style_text" id="main-header">
+		<p><%= @header_text%></p>
+	</div>
+	<%=image_tag("stepdoodle.png", alt: "doodle of how the website works", :id => "doodle_img")%>
+	<div class="container-fluid" id="steps">
+  		<div class="row style_text">
+    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_one %></div>
+    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_two %></div>
+    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_three %></div>
+  		</div>
+	</div>
 
-<div id="header" class="text-center box" style="background-image: url(https://source.unsplash.com/omeaHbEFlN4)">
-		<h1>Main Page</h1>
+	<!--Start Button-->
+	<div class="center">
+		<%= link_to home_authentication_path do %>
+    			<div id="start_button"></div>
+		<% end %>
+	</div>
+</div>
+
+
+
+<!--<div id="header" class="text-center box">
+		<h1 id="po">Main Page</h1>
 		<div>
 		<button type="button" class="btn btn-info btn-lg"><%= link_to "Start", home_authentication_path%></button>
 			
-</div>
+</div>-->
 
