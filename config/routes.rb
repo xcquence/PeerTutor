@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'tutor/incoming_requests'
+
+  get 'tutor/currently_tutoring'
+
+  get 'tutor/tutor_profile'
+
+  get 'tutor/piggy_bank'
+
+  get 'tutor/messenger'
+
+  get 'tutee/find_tutor'
+
+  get 'tutee/tips_management'
+
+  get 'tutee/schedule'
+
   root 'home#index'
 
   get 'home/authentication'
