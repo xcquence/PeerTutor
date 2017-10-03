@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'tutor/index'
+
   get 'tutor/incoming_requests'
 
   get 'tutor/currently_tutoring'
@@ -8,6 +11,8 @@ Rails.application.routes.draw do
   get 'tutor/piggy_bank'
 
   get 'tutor/messenger'
+
+  get 'tutee/index'
 
   get 'tutee/find_tutor'
 
