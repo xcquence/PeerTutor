@@ -54,14 +54,14 @@ nav .navbar {
 
 /*====================LOGIN PAGE=======================*/
 .form_container {
-	width: 50%;
-	height: 600px;
+	width: 56%;
+	min-width: 765px;
+	height: 570px;
 	margin: 0 auto;
 	background-color: white;
 	border: 5px solid #190455;
 	border-radius: 10px;
 	box-shadow: 30px 30px 0px #190455; /*#80E3FD*/
-	margin-top: 50px;
 }
 
 .form_header {
@@ -76,7 +76,7 @@ nav .navbar {
 	text-align: center;
 	padding: 40px;
 	font-family: 'Nunito', sans-serif;
-	font-size: 2.5rem;
+	font-size: 2.3rem;
 	font-weight: bold;
 	text-decoration: none;
 	letter-spacing: 1px;
@@ -126,7 +126,7 @@ nav .navbar {
 
 .field {
 	float: left;
-  	width: 100%;
+  	width: 47%;
   	margin: 10px 10px 30px 10px;
   	position: relative;
   	font-size: 2rem;
@@ -138,7 +138,8 @@ nav .navbar {
 	background: transparent;
 	border-bottom: 4px solid black;
 	padding: 10px 30px 5px 30px;
-	font-size: 2rem;
+	font-size: 1.5rem;
+	width: 100%;
 }
 
 .field input:focus {

@@ -10,8 +10,4 @@ class HomeController < ApplicationController
 
   def authentication
   end
-
-  def tester
-  	render layout: 'form'
-  end
 end
