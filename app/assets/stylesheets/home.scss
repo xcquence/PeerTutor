@@ -1,3 +1,96 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(asset-path('bg.png'));
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.style_text {
+	color: #190455;
+}
+
+.center {
+	bottom: 0;
+	margin: auto;
+	width: 100%;
+}
+
+#main-header {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 4rem;
+	letter-spacing: 0.7px;
+	padding: 50px 0;
+}
+
+#doodle_img {
+	width: 100%;
+}
+
+#steps {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+#start_button {
+	margin: 0 auto;
+    position: relative;
+	bottom: 0;
+	height: 170px;
+	width: 170px;
+	background-image: url(asset-path('startButtonDefault.png'));
+	background-size: contain;	
+	background-repeat: no-repeat;
+}
+
+#start_button:hover {
+	background-image: url(asset-path('startButtonHover.png'));
+}
+
+/*======= MEDIA QUERIES ========*/
+
+@media only screen and (max-width: 1339px){
+	body {
+		background-image: url(asset-path('bg-md.png'));
+	}
+	#start_button {
+		height: 200px;
+		width: 200px;
+	}
+	#steps {
+		margin-bottom: 4rem;
+	}
+}
+
+@media only screen and (max-width: 1000px){
+	#steps {
+		font-size: 2rem;
+	}
+	#start_button {
+		height: 250px;
+		width: 250px;
+	}
+}
+
+@media only screen and (max-width: 730px){
+	body {
+		background-image: url(asset-path('bg-sm.png'));
+	}
+}
+
+@media only screen and (max-width: 565px){
+	body {
+		background-image: url(asset-path('bg-xs.png'));
+	}
+	#steps {
+		font-size: 1.5rem;
+	}
+}
