@@ -11,6 +11,11 @@
   </div>
   <div class="fill_in_container">
     <div class="field">
+    <%= f.text_field :name, autofocus: true, required:true %>
+    <%= f.label :name, class: 'form_label' %><br />
+    </div>
+
+    <div class="field">
     <%= f.email_field :email, autofocus: true, required:true %>
     <%= f.label :email, class: 'form_label' %><br />
     </div>
