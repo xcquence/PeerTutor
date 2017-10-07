@@ -6,11 +6,10 @@
 	box-sizing: border-box;
 }
 
-body {
+body.home-index {
 	background-image: url(asset-path('bg.png'));
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 }
 .style_text {
 	color: #190455;
@@ -24,9 +23,9 @@ body {
 
 #main-header {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 4rem;
+	font-size: 3.2rem;
 	letter-spacing: 0.7px;
-	padding: 50px 0;
+	padding: 30px 0;
 }
 
 #doodle_img {
@@ -36,34 +35,29 @@ body {
 #steps {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	margin-bottom: 2rem;
 }
 
-#start_button {
+#start_img {
 	margin: 0 auto;
     position: relative;
 	bottom: 0;
-	height: 170px;
-	width: 170px;
-	background-image: url(asset-path('startButtonDefault.png'));
+	width: 10%; 
+    height: auto;
 	background-size: contain;	
 	background-repeat: no-repeat;
 }
 
-#start_button:hover {
+#start_img:hover {
 	background-image: url(asset-path('startButtonHover.png'));
 }
 
 /*======= MEDIA QUERIES ========*/
 
 @media only screen and (max-width: 1339px){
-	body {
+	body.home-index {
 		background-image: url(asset-path('bg-md.png'));
-	}
-	#start_button {
-		height: 200px;
-		width: 200px;
 	}
 	#steps {
 		margin-bottom: 4rem;
@@ -74,23 +68,25 @@ body {
 	#steps {
 		font-size: 2rem;
 	}
-	#start_button {
-		height: 250px;
-		width: 250px;
+	#start_img {
+		width: 20%;
 	}
 }
 
 @media only screen and (max-width: 730px){
-	body {
+	body.home-index {
 		background-image: url(asset-path('bg-sm.png'));
 	}
 }
 
 @media only screen and (max-width: 565px){
-	body {
+	body.home-index {
 		background-image: url(asset-path('bg-xs.png'));
 	}
 	#steps {
 		font-size: 1.5rem;
+	}
+	#start_img {
+		width: 30%;
 	}
 }
