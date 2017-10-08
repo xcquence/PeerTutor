@@ -12,4 +12,6 @@ Rails.application.routes.draw do
 
   resources :messages   #generates all CRUD links for every action in MessagesController
 
+  mount ActionCable.server, at: '/cable'
+
 end
