@@ -11,3 +11,12 @@ App.room = App.cable.subscriptions.create "RoomChannel",
         '<div class="message-user">' + data.username + ":" + '</div>' +
         '<div class="message-content">' + data.content + '</div>' + '</div>'
     # Called when there's incoming data on the websocket for this channel
+
+
+$(document).on 'turbolinks:load', ->      #wait for page to load fully
+  submit_message()
+
+submit_message = () ->                    #executes if any key is pressed in element with id="message_content"
+  $('#message_content').on 'keydown', (event) ->
+    if event.keyCode is 13                #13 corresponds to "Enter" key
+      console.log(event)
