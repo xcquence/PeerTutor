@@ -1,7 +1,9 @@
+<%= render 'layouts/navigation_bar' %>
+
 <!--============= Tutor Dashbaord ============-->
 
 <div class="dashboard">
-	<div id="nav_container">
+	<div id="nav_container" class="col-lg-4 col-sm-12">
 		<nav>
 			<ul>
 				<a href="incoming_requests" target="tutor_view_frame"><li> Incoming Request</li></a>
@@ -9,10 +11,13 @@
 				<a href="messenger" target="tutor_view_frame"><li>Messenger</li></a>
 				<a href="piggy_bank" target="tutor_view_frame"><li>Piggy Bank</li></a>
 				<a href="tutor_profile" target="tutor_view_frame"><li>Tutor Profile</li></a>
+				<%= link_to home_authentication_path do %>
+					<li>>Switch Role<</li>
+				<% end %>
 			</ul>
 		</nav>
 	</div>
-	<div id="frame_container">
+	<div id="frame_container" class="col-lg-8 col-sm-12">
 		<iframe src="incoming_requests" name="tutor_view_frame" class="board"></iframe>
 	</div>
 </div>

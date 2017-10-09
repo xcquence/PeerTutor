@@ -45,6 +45,10 @@ nav .navbar {
 	border-style: none;
 }
 
+#navigation tutor-index {
+	display: none;
+}
+
 .style_nav_txt {
 	font-weight: bold;
 	font-family: 'Pangolin', sans-serif;
