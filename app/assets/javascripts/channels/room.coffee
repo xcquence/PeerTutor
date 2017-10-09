@@ -19,4 +19,6 @@ $(document).on 'turbolinks:load', ->      #wait for page to load fully
 submit_message = () ->                    #executes if any key is pressed in element with id="message_content"
   $('#message_content').on 'keydown', (event) ->
     if event.keyCode is 13                #13 corresponds to "Enter" key
-      console.log(event)
+      $('input').click()                  #Click to submit the form.
+      event.target.value = ""             #clear text from the input box
+      event.preventDefault()              #prevent adding a newline by default
