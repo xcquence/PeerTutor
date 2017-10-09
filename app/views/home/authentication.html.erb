@@ -8,7 +8,7 @@
 		<p class="style_text font_style">Choose a role.</p>
 	</div>
 
-	<%= link_to tutor_index_path do %>
+	<%= link_to tutee_index_path do %>
     	<div id="tutee_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
 			<%=image_tag("tuteerole.png", alt: "tutee image", :id => "tutee_img")%>
 			<p class="style_text font_style">Tutee</p>
@@ -20,7 +20,7 @@
 			<p class="style_text font_style">Choose a role.</p>
 		</div>
 
-	<%= link_to tutee_index_path do %>
+	<%= link_to tutor_index_path do %>
     	<div id="tutor_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
 			<%=image_tag("tutorrole.png", alt: "tutor image", :id => "tutor_img")%>
 			<p class="style_text font_style">Tutor</p>
