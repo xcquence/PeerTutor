@@ -2,6 +2,7 @@ class TuteeController < ApplicationController
 
   def find_tutor
     @subjects = Subject.all
+    @courses = Course.all
   end
 
   def tips_management

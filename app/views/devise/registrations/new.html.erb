@@ -1,4 +1,6 @@
-<!-- SIGN UP FORM -->
+<%= render 'layouts/navigation_bar' %>
+
+<!--=============SIGN UP PAGE=================-->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div>
@@ -9,14 +11,14 @@
     <%= link_to new_session_path(resource_name) do %><!----><div class="other_form_button right_border">Login</div><% end %><!--
     --><div class="selected">Sign up</div>
   </div>
-  <div class="fill_in_container">
+  <div class="fill_in_container animated fadeInUp">
     <div class="field">
-    <%= f.text_field :name, autofocus: true, required:true %>
+    <%= f.text_field :name, autofocus: true, required:true, value:""%>
     <%= f.label :name, class: 'form_label' %><br />
     </div>
 
     <div class="field">
-    <%= f.email_field :email, autofocus: true, required:true %>
+    <%= f.email_field :email, autofocus: true, required:true, value:"" %>
     <%= f.label :email, class: 'form_label' %><br />
     </div>
 
@@ -25,7 +27,7 @@
     <%= f.label :password, class: 'form_label' %><br />
     </div>
 
-    <div class="field" style="float:right;">
+    <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
     <%= f.label :password_confirmation, class: 'form_label' %>
     </div>

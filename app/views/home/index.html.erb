@@ -1,3 +1,6 @@
+<!--=============HOME PAGE=================-->
+<%= render 'layouts/navigation_bar' %>
+
 <div id="main_page_body" class="text-center">
 	<div class="style_text" id="main-header">
 		<p><%= @header_text%></p>
@@ -14,7 +17,7 @@
 	<!--Start Button-->
 	<div class="center">
 		<%= link_to home_authentication_path do %>
-    			<div id="start_button"></div>
+			<%=image_tag("startButtonDefault.png", alt: "start button", :id => "start_img")%>
 		<% end %>
 	</div>
 </div>

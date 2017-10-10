@@ -1,9 +1,32 @@
-<div class="container text-center" id="button-box">
-		<div class="col-md-2 col-md-offset-2">
-			<button type="button" class="btn btn-primary btn-lg">Tutuor</button>
+<%= render 'layouts/navigation_bar' %>
+
+<!--=============CHOOSE ROLE PAGE=================-->
+
+<div class="container text-center animated bounceInUp" id="role_container">
+	<!--Need to vertify if already sign up as a tutor-->
+
+	<div class="visible-xs visible-sm">
+		<h1 class="style_text font_style ">Which role are you today?</h1>
+		<p class="style_text font_style">Choose a role.</p>
+	</div>
+
+	<%= link_to tutee_index_path do %>
+    	<div id="tutee_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
+			<%=image_tag("tuteerole.png", alt: "tutee image", :id => "tutee_img")%>
+			<p class="style_text font_style">Tutee</p>
 		</div>
-		<div class="col-md-2 col-md-offset-3">
-			<button type="button" class="btn btn-secondary btn-lg">Tutee</button>
+	<% end %>
+
+		<div id="role_text" class="col-lg-4 col-md-4 col-sm-4 hidden-xs hidden-sm">
+			<h1 class="style_text font_style ">Which role are you today?</h1>
+			<p class="style_text font_style">Choose a role.</p>
 		</div>
 
+	<%= link_to tutor_index_path do %>
+    	<div id="tutor_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
+			<%=image_tag("tutorrole.png", alt: "tutor image", :id => "tutor_img")%>
+			<p class="style_text font_style">Tutor</p>
+		</div>
+	<% end %>
+	
 </div>
