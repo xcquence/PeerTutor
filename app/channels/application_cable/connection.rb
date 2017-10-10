@@ -1,23 +1,20 @@
 module ApplicationCable
-  class Connection < ActionCable::Connection::Base       #gets defined when a new connection is made
-
-    identified_by :current_user             #devise method
+  class Connection < ActionCable::Connection::Base
+    identified_by :current_user
 
     def connect
       self.current_user = find_verified_user
     end
 
+    protected
 
-
-    private
-
-    def find_verified_user                  # this checks whether a user is authenticated with devise
-      if verified_user = env['warden'].user
-        verified_user
+    #Devise uses warden – it assigns to env[‘warden’] variable all information about the session and authentication.
+    def find_verified_user
+      if (current_user = env['warden'].user)
+        current_user
       else
-        reject_unauthorized_connection      #method is supplied by Action Cable
+        reject_unauthorized_connection
       end
     end
-
   end
 end
