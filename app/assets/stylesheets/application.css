@@ -36,3 +36,8 @@ nav .navbar {
 #button-box {
 		margin-top: 70px;
 }
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'messages/index'
+  get 'chat/index'
 
-  get 'messages/create'
 
   root 'home#index'
 
@@ -10,8 +9,8 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :messages   #generates all CRUD links for every action in MessagesController
+  resources :conversations, only: [:create]
 
-  mount ActionCable.server, at: '/cable'
+  #mount ActionCable.server, at: '/cable'
 
 end
