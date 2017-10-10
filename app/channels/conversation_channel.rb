@@ -17,10 +17,9 @@ class ConversationChannel < ApplicationCable::Channel
       hash[el.values.first] = el.values.last
     end
 
-    ActionCable.server.broadcast(
-      "conversations-#{current_user.id}",
-      message: message_params
-    )
+    Message.create(message_params)
+    #creates a message based on passed params, and after a message is created,
+    #we can use our background job to return an HTML code and pass it to the front-end via web-sockets.
   end
 
 
