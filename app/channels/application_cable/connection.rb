@@ -18,3 +18,7 @@ module ApplicationCable
     end
   end
 end
+
+
+
+#Each user should have their own separate client-server connection and it should be recognized by his own id.
