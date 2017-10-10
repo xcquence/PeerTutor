@@ -16,6 +16,18 @@
 //= require_tree .
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 (function() {
   $(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();
