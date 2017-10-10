@@ -1,5 +1,8 @@
 class TuteeController < ApplicationController
+
   def find_tutor
+    @subjects = Subject.all
+    @courses = Course.all
   end
 
   def tips_management
@@ -8,6 +11,9 @@ class TuteeController < ApplicationController
   def schedule
   end
 
-  def messenger
+  private
+
+  def tutoring_session_params
+    params.require(:tutoring_session).permit(:course, :question)
   end
 end
