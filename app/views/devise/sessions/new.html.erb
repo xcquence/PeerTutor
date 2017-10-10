@@ -1,9 +1,13 @@
+<%= render 'layouts/navigation_bar' %>
+
+<!--==============LOGIN FORM=============-->
+
 <div class="form_container">  
   <div class="form_header">
     <div class="selected right_border">Login</div><!--
     --><%= link_to new_registration_path(resource_name) do %><!----><div class="other_form_button">Sign up</div><% end %>
   </div>
-  <div class="fill_in_container">
+  <div class="fill_in_container animated fadeInUp">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.email_field :email, autofocus: true, required: true%>

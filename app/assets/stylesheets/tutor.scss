@@ -1,3 +1,72 @@
 // Place all the styles related to the Tutor controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.tutor-index {
+	background-color: white;
+}
+.dashboard {
+	width: 100%;
+	height: 650px;
+	text-align: center;
+	margin: 20px;
+}
+
+#nav_container {
+	position: relative;
+	width: 20%;
+	height: auto;
+	float:left;
+	margin: 20px;
+	margin-right: 35px;
+}
+
+#nav_container ul {
+	margin: 0 auto;
+	padding: 0;
+    display:table;
+    width:100%;
+    border: 5px solid #190455;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#nav_container ul li {
+	list-style: none;
+	padding: 25px 10px;
+	border-bottom: 3px solid #190455;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 1.5rem; 
+	color: #190455;
+}
+
+#nav_container ul li:hover{
+	background-color: #F4EDFE;
+}
+
+.dashboard nav ul a {
+	text-decoration: none;
+}
+
+#frame_container {
+	width: 70%;
+	height: auto;
+	overflow: hidden;
+	border: 5px solid #190455;
+	border-radius: 5px;
+	margin: 10px;
+	background-color: white;
+	box-shadow: 10px 10px 0px #190455; /*#80E3FD*/
+	/*Loading image*/
+	background-image: url(asset-path('Loading.gif'));
+	background-size: 50%;
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.board {
+	border-style: none;
+	width: 100%;
+	height: 620px;
+}

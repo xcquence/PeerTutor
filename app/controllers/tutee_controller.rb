@@ -7,4 +7,7 @@ class TuteeController < ApplicationController
 
   def schedule
   end
+
+  def messenger
+  end
 end

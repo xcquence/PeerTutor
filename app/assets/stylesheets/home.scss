@@ -6,14 +6,14 @@
 	box-sizing: border-box;
 }
 
-body {
+body.home-index {
 	background-image: url(asset-path('bg.png'));
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 }
 .style_text {
 	color: #190455;
+	text-decoration: none;
 }
 
 .center {
@@ -24,9 +24,9 @@ body {
 
 #main-header {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 4rem;
+	font-size: 3.5rem;
 	letter-spacing: 0.7px;
-	padding: 50px 0;
+	padding: 30px 0;
 }
 
 #doodle_img {
@@ -36,34 +36,70 @@ body {
 #steps {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
+	font-size: 2rem;
+	padding-bottom: 5px;
 }
 
-#start_button {
+#start_img {
 	margin: 0 auto;
     position: relative;
-	bottom: 0;
-	height: 170px;
-	width: 170px;
-	background-image: url(asset-path('startButtonDefault.png'));
+	width: 10%; 
+    height: auto;
 	background-size: contain;	
 	background-repeat: no-repeat;
 }
 
-#start_button:hover {
+#start_img:hover {
 	background-image: url(asset-path('startButtonHover.png'));
+}
+
+/*========= ROLE PAGE ==========*/
+body.home-authentication {
+	background-image: url(asset-path('rolebg.png'));
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#role_text h1 {
+	padding-top: 50%;
+	font-size: 5rem;
+}
+#role_text p {
+	font-size: 2rem;
+}
+.font_style {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+.role_img p {
+	font-size: 3.5rem;
+}
+#tutee_img {
+	position: relative;
+	width: 100%;
+}
+#tutor_img {
+	position: relative;
+	width: 100%;
+}
+#tutee_img:hover {
+	background-image: url(asset-path('tuteerole-hover.png'));
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#tutor_img:hover {
+	background-image: url(asset-path('tutorrole-hover.png'));
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 /*======= MEDIA QUERIES ========*/
 
-@media only screen and (max-width: 1339px){
-	body {
+@media only screen and (max-width: 1200px){
+	body.home-index {
 		background-image: url(asset-path('bg-md.png'));
 	}
-	#start_button {
-		height: 200px;
-		width: 200px;
+	body.home-authentication {
+		background-image: url(asset-path('rolebg-md.png'));
 	}
 	#steps {
 		margin-bottom: 4rem;
@@ -74,23 +110,40 @@ body {
 	#steps {
 		font-size: 2rem;
 	}
-	#start_button {
-		height: 250px;
-		width: 250px;
+	#start_img {
+		width: 20%;
+	}
+	#role_text h1 {
+		font-size: 4rem;
 	}
 }
 
 @media only screen and (max-width: 730px){
-	body {
+	body.home-index {
 		background-image: url(asset-path('bg-sm.png'));
+	}
+	body.home-authentication {
+		background-image: url(asset-path('rolebg-sm'));
 	}
 }
 
 @media only screen and (max-width: 565px){
-	body {
+	body.home-index {
 		background-image: url(asset-path('bg-xs.png'));
 	}
 	#steps {
 		font-size: 1.5rem;
+	}
+	#start_img {
+		width: 30%;
+	}
+	#role_text h1 {
+		font-size: 2rem;
+	}
+	#role_text p {
+		font-size: 1rem;
+	}
+	.role_img p {
+		font-size: 2.2rem;
 	}
 }

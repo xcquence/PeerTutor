@@ -1,0 +1,22 @@
+<%= render 'layouts/navigation_bar' %>
+
+<!--============= Tutee Dashbaord ============-->
+
+<div class="dashboard">
+	<div id="nav_container" class="col-lg-4 col-sm-12">
+		<nav>
+			<ul>
+				<a href="find_tutor" target="tutee_view_frame"><li> Find Tutor</li></a>
+				<a href="schedule" target="tutee_view_frame"><li>Schedule</li></a>
+				<a href="messenger" target="tutee_view_frame"><li>Messenger</li></a>
+				<a href="tips_management" target="tutee_view_frame"><li>Tip Management</li></a>
+				<%= link_to home_authentication_path do %>
+					<li>>Switch role<</li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+	<div id="frame_container" class="col-lg-4 col-sm-12">
+		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
+	</div>
+</div>
