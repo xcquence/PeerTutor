@@ -1,2 +1,10 @@
-<h1>Tutee#find_tutor</h1>
-<p>Find me in app/views/tutee/find_tutor.html.erb</p>
+<div class="container">
+  <div class="form-group">
+    <label for="sel1">Subject: </label>
+    <select class="form-control" id="sel1">
+      <% @subjects.each do |subject| %>
+      <option><%= subject.abbrev %> - <%= subject.name %></option>
+      <% end %>
+    </select>
+  </div>
+<div>
