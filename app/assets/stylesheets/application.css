@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+	box-sizing: border-box;
+}
+/*====================NAVIGATION BAR=======================*/
+nav .navbar {
+		margin-bottom: 0;
+}
+
+.box {
+		background-position: center;
+		height: 500px;
+		position: relative;
+		background-size: cover;
+		padding: 170px;
+		color: white;
+}
+
+#button-box button {
+		width: 200px;
+		height: 250px;
+}
+
+#button-box {
+		margin-top: 70px;
+}
+
+#navigation {
+	background-color: transparent;
+	border-style: none;
+}
+
+#navigation tutor-index {
+	display: none;
+}
+
+.style_nav_txt {
+	font-weight: bold;
+	font-family: 'Pangolin', sans-serif;
+	font-size: 2.5rem !important;
+	color: #9075BD !important;
+}
