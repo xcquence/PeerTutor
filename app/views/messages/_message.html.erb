@@ -1,0 +1,17 @@
+<!-- REFACTOR -->
+<style>
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+</style>
+<!-- REFACTOR end-->
+
+
+<li>
+  <div class="row">
+    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
+      <%= message.body %>
+    </div>
+  </div>
+</li>
