@@ -1,20 +1,22 @@
 App.conversation = App.cable.subscriptions.create("ConversationChannel", {
-  //perform the same actions as on back-end but this time on the front-end
-  connected: function() {
-    // Called when the subscription is ready for use on the server
-  },
-
-  //perform the same actions as on back-end but this time on the front-end
-  disconnected: function() {
-    // Called when the subscription has been terminated by the server
-  },
-
-  //when we want to render a partial from the back-end
+  connected: function() {},
+  disconnected: function() {},
   received: function(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log(data['message']);
   },
-
-  speak: function() {
-    return this.perform('speak');
+  //Speak runs the speak method on the back-end
+  //sending the message object
+  speak: function(message) {
+    return this.perform('speak', {
+      message: message
+    });
   }
+});
+
+
+$(document).on('submit', '.new_message', function(e) {
+  e.preventDefault();
+  var values = $(this).serializeArray();
+  App.conversation.speak(values);
+  $(this).trigger('reset');
 });
