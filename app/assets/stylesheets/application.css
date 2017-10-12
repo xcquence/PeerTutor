@@ -55,3 +55,10 @@ nav .navbar {
 	font-size: 2.5rem !important;
 	color: #9075BD !important;
 }
+
+/*==================== CHAT APP: =======================*/
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+/*==================== CHAT APP: =======================*/
