@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'chat/index'
+
   get 'tutor/index'
 
   get 'tutor/incoming_requests'
