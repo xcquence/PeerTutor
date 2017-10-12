@@ -1,0 +1,2 @@
+// finds requested div and removes it from the body tag
+$('#conversations-list').find("[data-conversation-id='" + "<%= @conversation.id %>" + "']").parent().remove();

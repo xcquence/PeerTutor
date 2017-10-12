@@ -12,6 +12,8 @@ class ConversationsController < ApplicationController
     end
   end
 
+
+  #removes the requested converastion_id from the session and closes a window on the front-end
   def close
     @conversation = Conversation.find(params[:id])
 
