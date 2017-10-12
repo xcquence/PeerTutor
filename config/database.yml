@@ -7,10 +7,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: #name of database
+  database: peer_tutor_development
   pool: 5
-  username:
-  password:
+  username: ##Username belongs here
+  password: ##Password belongs here
 
 #test:
 #  adapter: sqlite3
@@ -21,7 +21,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: #name of database
+  database: peer_tutor_development
   pool: 5 #default
-  username:
-  password:
+  username: ##Same username in line 12
+  password: ##Same password in line 13
