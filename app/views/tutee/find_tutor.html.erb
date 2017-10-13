@@ -1,12 +1,11 @@
 <div class="container">
-  <div class="form-group">
-    <label for="sel1">Subject: </label>
-    <select class="form-control" id="sel1">
-      <% @subjects.each do |subject| %>
-      <option><%= subject.abbrev %> - <%= subject.name %></option>
-      <% end %>
-    </select>
 
-    
-  </div>
+
+    <div class="subject-area">
+      <%= label_tag(:subject_id, "Subject:") %>
+      <%= collection_select :tutoring_session, :subject_id, Subject.all, :id, :abbrev_and_name, :include_blank => true %>
+    </div>
+
+<%= submit_tag("Submit") %>
+
 <div>

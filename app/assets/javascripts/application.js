@@ -9,7 +9,30 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+//**************************** CHAT APP ****************************
+//responsible for minimizing a window:
+(function() {
+  $(document).on('click', '.toggle-window', function(e) {
+    e.preventDefault();
+    var panel = $(this).parent().parent();
+    var messages_list = panel.find('.messages-list');
+
+    //It runs a jQuery toggle() method and scrolls to the bottom of the window if it’s visible
+    panel.find('.panel-body').toggle();
+    panel.attr('class', 'panel panel-default');
+
+    if (panel.find('.panel-body').is(':visible')) {
+      var height = messages_list[0].scrollHeight;
+      messages_list.scrollTop(height);
+    }
+  });
+})();
+
+//**************************** CHAT APP end ****************************
