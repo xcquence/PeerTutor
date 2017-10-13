@@ -13,9 +13,10 @@ class MessageBroadcastJob < ApplicationJob
 
   private
 
-  def broadcast_to_sender(user, message)
+  def broadcast_to_recipient(user, message)
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
+      window: render_window(message.conversation, user),    #return entire conversation partial
       message: render_message(message, user),
       conversation_id: message.conversation_id
     )
@@ -29,7 +30,6 @@ class MessageBroadcastJob < ApplicationJob
     )
   end
 
-
   #in Rails 5 we can render a HTML code from any partial or a view
   #by calling the ApplicationController.render method outside a controller
   def render_message(message, user)
@@ -38,6 +38,16 @@ class MessageBroadcastJob < ApplicationJob
       locals: { message: message, user: user }
     )
   end
+
+  #return conversation partial
+  def render_window(conversation, user)
+    ApplicationController.render(
+      partial: 'conversations/conversation',
+      locals: { conversation: conversation, user: user }
+    )
+  end
+
+
 end
 
 
