@@ -6,10 +6,18 @@
 	<div id="nav_container" class="col-lg-4 col-sm-12">
 		<nav>
 			<ul>
-				<a href="find_tutor" target="tutee_view_frame"><li> Find Tutor</li></a>
-				<a href="schedule" target="tutee_view_frame"><li>Schedule</li></a>
-				<a href="messenger" target="tutee_view_frame"><li>Messenger</li></a>
-				<a href="tips_management" target="tutee_view_frame"><li>Tip Management</li></a>
+				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
+					<li id="tutee_option_1"> Find Tutor</li>
+				</a>
+				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
+					<li id="tutee_option_2">Schedule</li>
+				</a>
+				<a href="messenger" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
+					<li id="tutee_option_3">Messenger</li>
+				</a>
+				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
+					<li id="tutee_option_4">Tip Management</li>
+				</a>
 				<%= link_to home_authentication_path do %>
 					<li>>Switch role<</li>
 				<% end %>
@@ -20,3 +28,7 @@
 		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
 	</div>
 </div>
+
+<script type="text/javascript">
+	
+</script>

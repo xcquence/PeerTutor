@@ -13,3 +13,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+function enable_selected(selected_tab, option_amt) {
+	for(var i = 1; i <= option_amt; i++){
+		var temp = selected_tab.substring(0,selected_tab.length-1) + i;
+		document.getElementById(temp).style.backgroundColor = "#FFFFFF";
+	}
+	document.getElementById(selected_tab).style.backgroundColor = "#F4EDFE";
+}
