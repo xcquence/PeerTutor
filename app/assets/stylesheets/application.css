@@ -55,3 +55,9 @@ nav .navbar {
 	font-size: 2.5rem !important;
 	color: #9075BD !important;
 }
+
+@media only screen and (max-width: 730px){
+	.style_nav_txt {
+		font-size: 1.7rem !important;
+	}
+}
