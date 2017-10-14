@@ -1,11 +1,24 @@
-<div class="container">
+<div class="container" style="padding: 100px;">
 
+<%= form_for :tutoring_session, remote: true do |f| %>
 
-    <div class="subject-area">
-      <%= label_tag(:subject_id, "Subject:") %>
-      <%= collection_select :tutoring_session, :subject_id, Subject.all, :id, :abbrev_and_name, :include_blank => true %>
+    <div class="form-group ts-field">
+      <div class="subject-area">
+        <%= label :tutoring_session, :subject %>
+        <%= collection_select :tutoring_session, :subject, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+      </div>
     </div>
 
-<%= submit_tag("Submit") %>
+    <div class="form-group ts-field">
+      <div class="course-area">
+        <%= render partial: 'select_course', locals: {subject_id: Subject.first.id} %>
+      </div>
+    </div>
+
+    
+    <%= f.submit "Submit" %>
+
+
+<% end %>
 
 <div>

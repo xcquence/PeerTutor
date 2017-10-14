@@ -1,9 +1,16 @@
 class TuteeController < ApplicationController
 
+  #new
   def find_tutor
     @subject = Subject.new
     #@courses = Course.all
   end
+
+  #create
+  def get_courses
+    render partial: 'select_course', locals: {subject_id: params[:subject_id]}
+  end
+
 
   def tips_management
   end
