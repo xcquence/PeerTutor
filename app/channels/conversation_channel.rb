@@ -2,14 +2,20 @@ class ConversationChannel < ApplicationCable::Channel
 
   #only a group of people will get the results of the method
   def subscribed      #adds user to a channel
-    # stream_from "some_channel"
+    stream_from "conversations-#{current_user.id}"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
+    stop_all_streams
   end
 
-  def speak
+  def speak(data)
+    message_params = data['message'].each_with_object({}) do |el, hash|
+      hash[el.values.first] = el.values.last
+    end
+
+    Message.create(message_params) #insert message object sent from front end into db
   end
 end
 
