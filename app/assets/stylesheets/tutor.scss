@@ -6,6 +6,7 @@ body.tutor-index {
 	background-color: white;
 }
 .dashboard {
+	position: relative;
 	width: 100%;
 	height: 650px;
 	text-align: center;
@@ -42,7 +43,7 @@ body.tutor-index {
 }
 
 #nav_container ul li:hover{
-	background-color: #F4EDFE;
+	background-color: #F4EDFE !important;
 }
 
 .dashboard nav ul a {
@@ -50,6 +51,7 @@ body.tutor-index {
 }
 
 #frame_container {
+	position: relative;
 	width: 70%;
 	height: auto;
 	overflow: hidden;
@@ -70,3 +72,20 @@ body.tutor-index {
 	width: 100%;
 	height: 620px;
 }
+
+.option_selected {
+	background-color: #F4EDFE;
+}
+
+@media only screen and (max-width: 730px){
+	.dashboard {
+		margin: 0px;
+	}
+	#frame_container {
+		width: 95%;
+		box-shadow: -5px 5px 0px #190455;
+		margin: 0 auto;
+	}
+}
+
+
