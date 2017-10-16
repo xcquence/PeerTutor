@@ -12,6 +12,8 @@ gem 'rails', '~> 5.1.2'
 #gem 'sqlite3'
 #Use PostGreSQL as the database for Active Record
 gem 'pg'
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
