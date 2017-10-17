@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   get 'tutor/first_time_tutor'
 
+  post 'tutor/update'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -41,11 +42,4 @@ Rails.application.routes.draw do
 
     resources :messages, only: [:create]
   end
-
-  resources :tutee, only: [:find_tutor] do
-    collection do
-      get 'get_courses'  # /tutee/get_courses
-    end
-  end
-
 end

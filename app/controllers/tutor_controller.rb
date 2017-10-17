@@ -25,4 +25,11 @@ class TutorController < ApplicationController
   def first_time_tutor
     @temp = "I will be avalable in first_time_tutor.html.erb"
   end
+
+  def update
+    @tutor = current_user
+    @tutor.update_attributes(is_tutor: true)
+    redirect_to tutor_index_path
+  end
+
 end

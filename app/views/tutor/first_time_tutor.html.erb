@@ -1,3 +1,17 @@
+<%= render 'layouts/navigation_bar' %>
+
 <h1>Become a Tutor Form goes here!</h1>
 <h3><%= @temp %></h3>
 
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<!--Submit button here-->
+		<%= button_to 'Register tutor', { :controller => "tutor", :action => "update"} %>
+	</div>
+</div>
