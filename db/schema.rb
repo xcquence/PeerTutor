@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171015223506) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +73,7 @@ ActiveRecord::Schema.define(version: 20171015223506) do
     t.string "first_name"
     t.string "last_name"
     t.string "email", default: "", null: false
-    t.boolean "is_tutor"
+    t.boolean "is_tutor", default: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
