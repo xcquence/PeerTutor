@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'tutee/index'
 
   get 'tutee/find_tutor'
+  post 'tutee/find_tutor' => 'tutee#create'
+
+  get 'tutee/tutoring_sessions'
 
   get 'tutee/tips_management'
 
