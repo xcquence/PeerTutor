@@ -1,2 +1,14 @@
 <h1>Tutor#tutor_profile</h1>
 <p>Find me in app/views/tutor/tutor_profile.html.erb</p>
+
+<!--<h1><%= USER PROFILE%></h1>-->
+
+<p><%= @user.username%></p>
+<p><%= @user.first_name%></p>
+<p><%= @user.last_name%></p>
+<p><%= @user.dob%></p>
+<p><%= @user.city%></p>
+<%= image_tag( root_url + "images/rss.jpg", size: "50x50", :alt => "rss feed") -%>
+Today is <%= Time.now.strftime('%A') %> #day in the week
+ <%= Time.now.strftime('%B') %>   #month
+<%= Time.now.strftime('%I') %>     #12h time format
