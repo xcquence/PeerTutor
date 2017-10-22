@@ -39,15 +39,6 @@ class TuteeController < ApplicationController
   end
 
   private
-
-=begin
-Parameters: {"utf8"=>"✓", "authenticity_token"=>"nqIptsvDjNzlg/mtXXMwYGRUV4zX310V5QMjkgZkcdUtS9UgK87v6QL8bvcUpiPeDfueohu0Vay4kV1pSJxbkg==",
-"subject"=>{"id"=>"1"},
-"course"=>{"id"=>"1"},
-"tutoring_session"=>{"question"=>"What?", "user_id"=>"2"},
-"commit"=>"Submit"}
-=end
-
   #Strong Parameter
   def tutoring_session_params
     params.require(:tutoring_session).permit(:question).merge(
