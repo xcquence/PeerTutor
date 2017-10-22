@@ -19,6 +19,10 @@ class TuteeController < ApplicationController
     # @tutoring_session.user_id = params[:tutoring_session][:user_id]
     # @tutoring_session.save()
 
+
+    #  tutors = User.where(is_tutor: true).id
+    #  tutors.each do
+
     redirect_to '/tutee/tutoring_sessions'
   end
 
@@ -42,13 +46,14 @@ Parameters: {"utf8"=>"✓", "authenticity_token"=>"nqIptsvDjNzlg/mtXXMwYGRUV4zX3
 "tutoring_session"=>{"question"=>"What?", "user_id"=>"2"},
 "commit"=>"Submit"}
 
+
+ params.require(:person).permit(:name, :age, pets_attributes: [ :id, :name, :category ])
 =end
 
   def tutoring_session_params
     params.require(:tutoring_session).permit(
-      user_id: User.find(current_user.id),
-      course_id: Course.find(params[:course][:id]),
-      question: "CONSTANT"
+      :question, :user_id,
+      course: [:id]
     )
   end
 end
