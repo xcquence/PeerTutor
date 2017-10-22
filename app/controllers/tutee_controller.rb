@@ -13,10 +13,11 @@ class TuteeController < ApplicationController
   #create
   def create
     TutoringSession.create(tutoring_session_params)
+
     # @tutoring_session = TutoringSession.new
-    # @tutoring_session.course_id = params[:course][:id]
+    # @tutoring_session.course = Course.find(params[:course][:id])
     # @tutoring_session.question = params[:tutoring_session][:question]
-    # @tutoring_session.user_id = params[:tutoring_session][:user_id]
+    # @tutoring_session.user = User.find(current_user.id)
     # @tutoring_session.save()
 
 
@@ -45,15 +46,14 @@ Parameters: {"utf8"=>"✓", "authenticity_token"=>"nqIptsvDjNzlg/mtXXMwYGRUV4zX3
 "course"=>{"id"=>"1"},
 "tutoring_session"=>{"question"=>"What?", "user_id"=>"2"},
 "commit"=>"Submit"}
-
-
- params.require(:person).permit(:name, :age, pets_attributes: [ :id, :name, :category ])
 =end
 
+  #Strong Parameter
   def tutoring_session_params
-    params.require(:tutoring_session).permit(
-      :question, :user_id,
-      course: [:id]
+    params.require(:tutoring_session).permit(:question).merge(
+      user: User.find(current_user.id),
+      course: Course.find(params[:course][:id])
     )
   end
+
 end
