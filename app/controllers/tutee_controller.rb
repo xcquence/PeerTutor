@@ -1,5 +1,7 @@
 class TuteeController < ApplicationController
 
+  before_action :authenticate_user!   ## User has to be logged in 
+
   #new
   def find_tutor
     @subject = Subject.new
