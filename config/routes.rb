@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'tutee/find_tutor'
 
+  post 'tutee/list_of_tutors'
+
   get 'tutee/tips_management'
 
   get 'tutee/schedule'

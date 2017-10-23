@@ -18,9 +18,16 @@ class TuteeController < ApplicationController
   def schedule
   end
 
+
   def create
     TutoringSession.create(tutoring_session_params)
     #redirect to tutoring sessions method
+  end
+
+  def list_of_tutors
+    respond_to do |format|
+        format.js
+    end
   end
 
   def tutoring_sessions
