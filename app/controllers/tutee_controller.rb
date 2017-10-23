@@ -25,9 +25,11 @@ class TuteeController < ApplicationController
   end
 
   def list_of_tutors
-    respond_to do |format|
-        format.js
-    end
+    @tutors = User.all
+
+    #respond_to do |format|
+        #format.js
+    #end
   end
 
   def tutoring_sessions
