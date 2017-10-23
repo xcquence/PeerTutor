@@ -23,7 +23,6 @@ class TutorController < ApplicationController
   end
 
   def first_time_tutor
-    @temp = "I will be avalable in first_time_tutor.html.erb"
   end
 
   def update
