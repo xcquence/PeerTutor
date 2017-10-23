@@ -21,16 +21,30 @@ password = 'pass123'
   )
 end
 
-csv_file1 = 'courses_data.csv'
-CSV.read(csv_file1, :encoding => 'windows-1251:utf-8')
-csv_file2 = 'subjects_data.csv'
-CSV.read(csv_file2, :encoding => 'windows-1251:utf-8')
+Subject.create(
+  abbrev: "CSCI",
+  name: "Computer Science"
+)
 
-CSV.foreach(csv_file1, headers: true, encoding: 'ISO-8859-1:UTF-8') do |row|
-    Course.create!(row.to_hash)
+Subject.create(
+  abbrev: "MATH",
+  name: "Math"
+)
 
-end
-CSV.foreach(csv_file2, headers: true, encoding: 'ISO-8859-1:UTF-8') do |row|
-    Subject.create!(row.to_hash)
+Course.create(
+  subject: Subject.find_by_abbrev("CSCI"),
+  number: "340",
+  name: "Operating System"
+)
 
-end
+Course.create(
+  subject: Subject.find_by_abbrev("CSCI"),
+  number: "435",
+  name: "Database"
+)
+
+Course.create(
+  subject: Subject.find_by_abbrev("MATH"),
+  number: "160",
+  name: "Matrix Algebra"
+)
