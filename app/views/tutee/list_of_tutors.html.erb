@@ -1,4 +1,17 @@
-<h1>List of Tutors</h1>
-<% @tutors.each do |tutor| %>
-<h2><%= tutor.first_name %></h2>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+  </thead>
+
+  <% @tutors.each do |tutor| %>
+  <tbody>
+    <tr>
+      <td><%= tutor.first_name %></td>
+      <td><%= tutor.last_name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
