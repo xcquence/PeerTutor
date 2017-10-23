@@ -1,3 +1,16 @@
-<h1>Become a Tutor Form goes here!</h1>
-<h3><%= @temp %></h3>
+<%= render 'layouts/navigation_bar' %>
 
+<h1>Become a Tutor!</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<!--Register button here-->
+		<%= button_to 'Register', { :controller => "tutor", :action => "update"} %>
+	</div>
+</div>

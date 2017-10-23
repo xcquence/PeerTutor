@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*Sign up page background image*/
+body.registrations-new {
+	background-image: url(asset-path('loginbg.png'));
+	background-size: 100%;
+}
+/*Login page background image*/
+body.sessions-new {
+	background-image: url(asset-path('loginbg.png'));
+	background-size: 100%;
+}
+
 .form_container {
 	width: 56%;
 	min-width: 765px;
