@@ -29,3 +29,6 @@
 # I don’t want to show my secrets
 /config/secrets.yml
 /config/database.yml
+*.csv
+lib/tasks/subjects.rb
+*.rake

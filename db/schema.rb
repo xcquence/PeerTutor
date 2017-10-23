@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20171017000733) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tutors", force: :cascade do |t|
+    t.string "subject", default: "", null: false
+    t.boolean "is_live", default: false
+    t.decimal "total_tip", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"

@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'utf8-cleaner'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

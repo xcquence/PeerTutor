@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
 
 @users_first_names = ["", "Michael", "John", "Bob"]
 @users_last_names = ["", "Jackson", "Travolta", "Dilan"]
@@ -19,3 +20,31 @@ password = 'pass123'
     password_confirmation: password
   )
 end
+
+Subject.create(
+  abbrev: "CSCI",
+  name: "Computer Science"
+)
+
+Subject.create(
+  abbrev: "MATH",
+  name: "Math"
+)
+
+Course.create(
+  subject: Subject.find_by_abbrev("CSCI"),
+  number: "340",
+  name: "Operating System"
+)
+
+Course.create(
+  subject: Subject.find_by_abbrev("CSCI"),
+  number: "435",
+  name: "Database"
+)
+
+Course.create(
+  subject: Subject.find_by_abbrev("MATH"),
+  number: "160",
+  name: "Matrix Algebra"
+)
