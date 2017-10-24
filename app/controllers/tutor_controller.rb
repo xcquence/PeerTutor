@@ -14,6 +14,9 @@ class TutorController < ApplicationController
   end
 
   def tutor_profile
+    @firstname = current_user.first_name
+    @lastname = current_user.last_name
+    
   end
 
   def piggy_bank
