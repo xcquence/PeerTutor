@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutor-index {
-	background-color: white;
+	background-image: url(asset-path('dashboard-bg.png'));
+	background-size: 100%;
 }
 .dashboard {
 	position: relative;
