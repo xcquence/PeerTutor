@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'tutor/messenger'
 
+  get 'tutor/is_live'
+
   get 'tutee/index'
 
   get 'tutee/find_tutor'
@@ -29,6 +31,8 @@ Rails.application.routes.draw do
   get 'home/authentication'
 
   get 'tutor/first_time_tutor'
+
+  get 'tutee/get_courses'
 
   post 'tutor/update'
 

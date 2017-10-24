@@ -22,6 +22,9 @@ class TutorController < ApplicationController
   def messenger
   end
 
+  def is_live
+  end
+
   def first_time_tutor
     if current_user.is_tutor
       redirect_to tutor_index_path
