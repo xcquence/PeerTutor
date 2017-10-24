@@ -1,11 +1,11 @@
 <div class="container" style="padding: 100px;">
 
-<%= form_for :tutoring_session, url: tutee_list_of_tutors_path do |f| %>
+<%= form_for TutoringSession.new, url: {action: "create"} do |f| %>
 
     <div class="form-group ts-field">
       <div class="subject-area">
         <%= label :tutoring_session, :subject %>
-        <%= collection_select :subject_id, :subject, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
       </div>
     </div>
 
@@ -18,14 +18,15 @@
     <div class="form-group ts-field">
       <div class="question-area">
         <%= label :tutoring_session, "Question" %>
-        <%= text_area :question, value=""%>
+        <%= f.text_area :question, value: ""%>
       </div>
     </div>
 
-
+    <%= f.hidden_field :user_id, value: current_user.id%>
     <%= f.submit "Submit" %>
-
-
 <% end %>
+
+  <!-- temporary just to check if the data stored in TutoringSession -->
+  <a href="/tutee/tutoring_sessions">Check Tutoring Sessions</a>
 
 <div>
