@@ -23,6 +23,7 @@ function enable_selected(selected_tab, option_amt) {
 	}
 	document.getElementById(selected_tab).style.backgroundColor = "#F4EDFE";
 }
+
 //************************* DASHBOARD end **************************
 
 
