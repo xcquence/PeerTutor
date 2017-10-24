@@ -26,7 +26,7 @@ class TuteeController < ApplicationController
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
 
-    redirect_to '/tutee/tutoring_sessions'
+    redirect_to tutee_list_of_tutors_path
   end
 
 

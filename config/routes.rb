@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'tutee/tutoring_sessions'
 
-  post 'tutee/list_of_tutors'
+  get 'tutee/list_of_tutors'
 
   get 'tutee/tips_management'
 
