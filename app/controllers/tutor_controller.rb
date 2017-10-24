@@ -23,6 +23,9 @@ class TutorController < ApplicationController
   end
 
   def first_time_tutor
+    if current_user.is_tutor
+      redirect_to tutor_index_path
+    end
   end
 
   def update
