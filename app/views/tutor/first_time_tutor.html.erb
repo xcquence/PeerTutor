@@ -13,10 +13,8 @@
 		<%= simple_form_for(@tutor) do |f| %>
 
 		<%= f.association :subject, label_method: :abbrev_and_name, hint: "What subject do you prefer to tutor?", include_blank: false %>
-		<%= f.input :schedule, label_method: :startdate, label: "Start Date" %>
-		<%= f.input :schedule, label_method: :starttime, label: "End Date" %>
-		<%= f.input :schedule, label_method: :starttime, label: "Start Time" %>
-		<%= f.input :schedule, label_method: :starttime, label: "End Time" %>
+		<%= render 'form_for_education' %>
+		<%= render 'form_for_experience' %>
 		<% end %>
 		<!--Register button here-->
 		<%= button_to 'Register', { :controller => "tutor", :action => "update"} %>

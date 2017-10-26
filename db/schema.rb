@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171023175714) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
-  create_table "courses", id: false, force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "subject_id"
     t.string "name"
     t.integer "number"
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20171023175714) do
     t.string "subject", default: "", null: false
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
+    t.string "experience"
+    t.string "education"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

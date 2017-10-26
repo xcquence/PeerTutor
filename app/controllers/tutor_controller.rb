@@ -31,15 +31,27 @@ class TutorController < ApplicationController
   def update
     @tutor = current_user
     @tutor.update_attributes(is_tutor: true)
-    redirect_to tutor_index_path
-  end
-  def create
-    @tutor = Tutor.new(params[:tutor])
-    if @tutor.save
+    @tutors = Tutor.create(params[:tutor])
+
       redirect_to tutor_index_path, notice: "Successfully created Tutor."
+
+  
+  end
+
+  def create
+    @tutor = Tutor.create(params[:tutor])
+    if @tutor.save
+      redirect_to first_time_tutor_path, notice: "Successfully created Tutor."
     else
       render :new
     end
+
+  end
+  def new
+    @tutor = Tutor.new
+    @education = Tutor.new(education)
+    @experience = Tutor.new(experience)
+
   end
 
 end

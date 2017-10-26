@@ -7,6 +7,11 @@ class CreateTutors < ActiveRecord::Migration[5.1]
      t.boolean :is_live, default: false
      ##amount earned in tips
      t.decimal :total_tip, scale: 2, precision: 10
+     t.string :experience
+     t.string :education
+
+
+
      t.timestamps
     end
   end
