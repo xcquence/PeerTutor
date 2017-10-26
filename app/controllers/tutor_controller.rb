@@ -14,6 +14,7 @@ class TutorController < ApplicationController
   end
 
   def tutor_profile
+    @tutor = Tutor.new
   end
 
   def piggy_bank
@@ -23,12 +24,22 @@ class TutorController < ApplicationController
   end
 
   def first_time_tutor
+    @tutor = Tutor.new
   end
+
 
   def update
     @tutor = current_user
     @tutor.update_attributes(is_tutor: true)
     redirect_to tutor_index_path
+  end
+  def create
+    @tutor = Tutor.new(params[:tutor])
+    if @tutor.save
+      redirect_to tutor_index_path, notice: "Successfully created Tutor."
+    else
+      render :new
+    end
   end
 
 end

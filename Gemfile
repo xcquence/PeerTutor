@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-
+gem 'simple_form'
 gem 'utf8-cleaner'
 
 # Use Capistrano for deployment

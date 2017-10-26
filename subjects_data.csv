@@ -1,106 +1,106 @@
-id,abbrev,name
-1,AFPRL,Africana and Puerto Rican/Latino Studies
-2,ANTHC,Anthropology
-3,ANTHP,Anthropology
-4,ARB,Arabic
-5,CLA,Archaeology / Classics / Classical Literature
-6,ARTH,Art Theory and History
-7,ARTLA,Studio Art
-8,ARTCR,Studio Art
-9,ASIAN,Asian American Studies
-10,ASTRO,Astronomy
-11,BIOL,Biological Sciences
-12,CHEM,Chemistry
-13,CHIN,Chinese Language and Literature
-14,COMHE,Community Health
-15,COMPL,Comparative Literature
-16,CSCI,Computer Science
-17,DAN,Dance
-18,ECC,Economics
-19,ECO,Economics
-20,ECF,Education
-21,SPED,Special Education
-22,SEDCP,Education
-23,SEDC,Education
-24,SEDF,Education
-25,QSTAP,Education
-26,QSTB,Education
-27,QSTA,Education
-28,QSTP,Education
-29,QSTAB,Education
-30,QSTB,Education
-31,DANEP,Education
-32,DANED,Education
-33,HEDP,Education
-34,HED,Education
-35,EDUC,Education
-36,ENGL,English
-37,XXX XXXXX,English Composition Workshops
-38,FILPL,Film
-39,FILM,Film
-40,FILMP,Film
-41,MEDPL,Media
-42,MEDP,Media
-43,MEDIA,Media
-44,GEOG,Geography
-45,GTECH,Geographic Techniques and Methods
-46,PGEOG,Physical Geography
-47,GEOL,Geology
-48,GERMN,German
-49,GRMN,German Literature and Civilization (in English)
-50,GERMN,German Literature and Civilization (in English)
-51,GRK,Greek
-52,HEBR,Hebrew
-53,HIST,History
-54,HR,Human Rights
-55,HUM,Humanities and The Arts
-56,JPN,Japanese
-57,JS,Jewish Studies
-58,JSS,Jewish Studies
-59,LAT,Latin
-60,LACS,Latin American and Caribbean Studies
-61,MHC,Macaulay Honors
-62,MATH,Mathematics and Statistics
-63,STAT,Mathematics and Statistics
-64,MLSP,Medical Laboratory Science
-65,MLS,Medical Laboratory Science
-66,MUSHL,Music
-67,MUSPF,Music Performance
-68,MUSTH,Music Theory
-69,MUSIN,Music Individual Study
-70,NURS,Nursing
-71,NFS,Nutrition and Food Sciences
-72,PORT,Portuguese Language
-73,PHILO,Philosophy
-74,PHYS,Physics
-75,POLSC,Political Science
-76,PSYCH,Psychology
-77,PUPOL,Public Policy
-78,REL,Religion
-79,FREN,Romance Languages French
-80,ITAL,"Romance Languages, Division II"
-81,SPAN,"Romance Languages, Division III, Spanish"
-82,POL,Russian and Slavic Studies
-83,RUSS,Russian and Slavic Studies
-84,UKR,Russian and Slavic Studies
-85,SCI,Sciences and Mathematics
-86,SOSCI,Social Sciences
-87,SOSC,Social Sciences
-88,SOC,Sociology
-89,SWA,Swahili
-90,THEA,Theatre
-91,HONS,Thomas Hunter Honors Program
-92,URBS,Urban Policy and Planning
-93,WGSA,Women and Gender Studies
-94,WGSP,Women and Gender Studies
-95,WGSI,Women and Gender Studies
-96,WGSC,Women and Gender Studies
-97,WGSL,Women and Gender Studies
-98,WGSS,Women and Gender Studies
-99,WGST,Women and Gender Studies
-100,WGS,Women and Gender Studies
-101,YOR,Yoruba
-102,ACSK,SEEK
-103,ACC,Accounting
-104,ACCP,Accounting
-105,SW,Social Work
+abbrev,name
+AFPRL,Africana and Puerto Rican/Latino Studies
+ANTHC,Anthropology
+ANTHP,Anthropology
+ARB,Arabic
+CLA,Archaeology / Classics / Classical Literature
+ARTH,Art Theory and History
+ARTLA,Studio Art
+ARTCR,Studio Art
+ASIAN,Asian American Studies
+ASTRO,Astronomy
+BIOL,Biological Sciences
+CHEM,Chemistry
+CHIN,Chinese Language and Literature
+COMHE,Community Health
+COMPL,Comparative Literature
+CSCI,Computer Science
+DAN,Dance
+ECC,Economics
+ECO,Economics
+ECF,Education
+SPED,Special Education
+SEDCP,Education
+SEDC,Education
+SEDF,Education
+QSTAP,Education
+QSTB,Education
+QSTA,Education
+QSTP,Education
+QSTAB,Education
+QSTB,Education
+DANEP,Education
+DANED,Education
+HEDP,Education
+HED,Education
+EDUC,Education
+ENGL,English
+XXX XXXXX,English Composition Workshops
+FILPL,Film
+FILM,Film
+FILMP,Film
+MEDPL,Media
+MEDP,Media
+MEDIA,Media
+GEOG,Geography
+GTECH,Geographic Techniques and Methods
+PGEOG,Physical Geography
+GEOL,Geology
+GERMN,German
+GRMN,German Literature and Civilization (in English)
+GERMN,German Literature and Civilization (in English)
+GRK,Greek
+HEBR,Hebrew
+HIST,History
+HR,Human Rights
+HUM,Humanities and The Arts
+JPN,Japanese
+JS,Jewish Studies
+JSS,Jewish Studies
+LAT,Latin
+LACS,Latin American and Caribbean Studies
+MHC,Macaulay Honors
+MATH,Mathematics and Statistics
+STAT,Mathematics and Statistics
+MLSP,Medical Laboratory Science
+MLS,Medical Laboratory Science
+MUSHL,Music
+MUSPF,Music Performance
+MUSTH,Music Theory
+MUSIN,Music Individual Study
+NURS,Nursing
+NFS,Nutrition and Food Sciences
+PORT,Portuguese Language
+PHILO,Philosophy
+PHYS,Physics
+POLSC,Political Science
+PSYCH,Psychology
+PUPOL,Public Policy
+REL,Religion
+FREN,Romance Languages French
+ITAL,"Romance Languages, Division II"
+SPAN,"Romance Languages, Division III, Spanish"
+POL,Russian and Slavic Studies
+RUSS,Russian and Slavic Studies
+UKR,Russian and Slavic Studies
+SCI,Sciences and Mathematics
+SOSCI,Social Sciences
+SOSC,Social Sciences
+SOC,Sociology
+SWA,Swahili
+THEA,Theatre
+HONS,Thomas Hunter Honors Program
+URBS,Urban Policy and Planning
+WGSA,Women and Gender Studies
+WGSP,Women and Gender Studies
+WGSI,Women and Gender Studies
+WGSC,Women and Gender Studies
+WGSL,Women and Gender Studies
+WGSS,Women and Gender Studies
+WGST,Women and Gender Studies
+WGS,Women and Gender Studies
+YOR,Yoruba
+ACSK,SEEK
+ACC,Accounting
+ACCP,Accounting
+SW,Social Work

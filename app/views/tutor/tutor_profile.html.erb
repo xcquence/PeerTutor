@@ -1,2 +1,15 @@
 <h1>Tutor#tutor_profile</h1>
 <p>Find me in app/views/tutor/tutor_profile.html.erb</p>
+
+
+<%= simple_form_for(@tutor) do |f| %>
+
+<%= f.association :subject, label_method: :abbrev_and_name, hint: "What subject do you prefer to tutor?", include_blank: false %>
+<%= f.input :schedule, label_method: :startdate, label: "Start Date" %>
+<%= f.input :schedule, label_method: :starttime, label: "End Date" %>
+<%= f.input :schedule, label_method: :starttime, label: "Start Time" %>
+<%= f.input :schedule, label_method: :starttime, label: "End Time" %>
+
+<%= f.button :submit, "Click me or Die" %>
+
+<% end %>
