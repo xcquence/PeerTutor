@@ -1,5 +1,7 @@
 class TutorController < ApplicationController
 
+  before_action :authenticate_user!   ## User has to be logged in
+
   def index
     #check if user is a tutor
     unless current_user.is_tutor
