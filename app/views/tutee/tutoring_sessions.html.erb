@@ -1,1 +1,24 @@
 <h1>List of Tutors based on the tutee's form.</h1>
+<br />
+
+
+
+<div class="container">
+  <h4> Tutoring Sessions</h4>
+  <table class="table table-striped">
+    <tr>
+      <th>user</th>
+      <th>subject</th>
+      <th>course</th>
+      <th>question</th>
+    </tr>
+    <% @tutoring_sessions.each do |f| %>
+      <tr>
+        <td><%= f.user.first_name %> <%= f.user.last_name %></td>
+        <td><%= f.course.subject.abbrev %></td>
+        <td><%= f.course.number %></td>
+        <td><%= f.question %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
