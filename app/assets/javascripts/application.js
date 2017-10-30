@@ -22,11 +22,6 @@ function enable_selected(selected_tab, option_amt) {
 	}
 	document.getElementById(selected_tab).style.backgroundColor = "#F4EDFE";
 }
-
-
-function change_to_incoming_req() {
-  document.getElementById("boohoo").src = "incoming_requests";
-}
 //************************* DASHBOARD end **************************
 
 

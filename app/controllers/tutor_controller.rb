@@ -22,7 +22,15 @@ class TutorController < ApplicationController
   def messenger
   end
 
-  def is_live
+  def toggle_is_live
+    @tutor = Tutor.where(user_id: current_user.id).take
+    if @tutor.is_live
+      @tutor.update_attribute(:is_live, false)
+      redirect_to tutor_is_live_path
+    else
+      @tutor.update_attribute(:is_live, true)
+      redirect_to tutor_incoming_requests_path
+    end
   end
 
   def first_time_tutor
@@ -32,8 +40,12 @@ class TutorController < ApplicationController
   end
 
   def update
-    @tutor = current_user
-    @tutor.update_attributes(is_tutor: true)
+    ##creates a new tutor record
+    @new_tutor = Tutor.new(:user_id => current_user.id)
+    @new_tutor.save
+    ##udates the user's is_tutor
+    @user = current_user
+    @user.update_attribute(:is_tutor, true)
     redirect_to tutor_index_path
   end
 

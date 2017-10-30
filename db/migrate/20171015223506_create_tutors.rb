@@ -3,6 +3,8 @@ class CreateTutors < ActiveRecord::Migration[5.1]
     create_table :tutors do |t|
       ##Major of the specified tutor
      t.string :subject, null: false , default: ''
+     ##to know which user is the tutor
+     t.integer :user_id
      ##tracks tutor if available
      t.boolean :is_live, default: false
      ##amount earned in tips
