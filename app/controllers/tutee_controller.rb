@@ -38,11 +38,14 @@ class TuteeController < ApplicationController
 
   def list_of_tutors
     @tutors = User.all
-
   end
 
   def tutoring_sessions
     @tutoring_sessions = TutoringSession.all
+  end
+
+  def tutor_chosen
+    
   end
 
   private
