@@ -1,6 +1,6 @@
 class TuteeController < ApplicationController
 
-  before_action :authenticate_user!   ## User has to be logged in 
+  before_action :authenticate_user!   ## User has to be logged in
 
   #new
   def find_tutor
@@ -26,7 +26,11 @@ class TuteeController < ApplicationController
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
 
-    redirect_to '/tutee/tutoring_sessions'
+    redirect_to '/tutee/list_of_tutors'
+  end
+
+  def list_of_tutors
+    @tutors = User.all
   end
 
 

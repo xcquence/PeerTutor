@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'tutee/messenger'
 
+  get 'tutee/list_of_tutors'
+
   root 'home#index'
 
   get 'home/authentication'
