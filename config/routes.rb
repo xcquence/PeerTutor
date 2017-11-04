@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'tutee/tutoring_sessions'
 
+  get 'tutor/create'
+
   get 'tutee/list_of_tutors'
 
   get 'tutee/tips_management'
@@ -29,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'tutee/messenger'
 
+  get 'tutee/tutor_chosen'
+
   root 'home#index'
 
   get 'home/authentication'
@@ -36,6 +40,9 @@ Rails.application.routes.draw do
   get 'tutor/first_time_tutor'
 
   post 'tutor/update'
+
+  get 'tutor/request_accepted'
+
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

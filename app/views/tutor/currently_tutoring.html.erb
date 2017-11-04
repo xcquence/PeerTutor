@@ -1,2 +1,22 @@
-<h1>Tutor#currently_tutoring</h1>
-<p>Find me in app/views/tutor/currently_tutoring.html.erb</p>
+<h1 class="text-center">You are currently tutoring: </h1>
+
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      <th>Tutee</th>
+      <th>Subject</th>
+      <th>Course</th>
+      <th>Question</th>
+      <th></th>
+    </tr>
+    <% @sessions.each do |f| %>
+      <tr>
+        <td><%= f.user.first_name %> <%= f.user.last_name %></td>
+        <td><%= f.course.subject.abbrev %></td>
+        <td><%= f.course.number %></td>
+        <td><%= f.question %></td>
+        <td><%= link_to "Finished", "", class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

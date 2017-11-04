@@ -10,9 +10,17 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
+    @sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+  end
+
+  def request_accepted
+    @session = TutoringSession.find(params[:id])
+    @session.update(accepted: true)
+    redirect_to tutor_currently_tutoring_path
   end
 
   def currently_tutoring
+    @sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
   end
 
   def tutor_profile
@@ -27,6 +35,9 @@ class TutorController < ApplicationController
   def first_time_tutor
   end
 
+  def create
+
+  end
   def update
     @tutor = current_user
     @tutor.update_attributes(is_tutor: true)

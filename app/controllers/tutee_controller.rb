@@ -45,7 +45,9 @@ class TuteeController < ApplicationController
   end
 
   def tutor_chosen
-    
+    @tutor = User.find(params[:id])
+    ts = TutoringSession.where(user_id: current_user.id)
+    ts.update(tutor_id: @tutor.id)
   end
 
   private
