@@ -4,8 +4,16 @@ class TuteeController < ApplicationController
 
   #new
   def find_tutor
-    @subject = Subject.new
-    #@courses = Course.all
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+
+    if @tutoring_session.nil?
+      @subject = Subject.new
+      #@courses = Course.all
+    else
+      @tutor = User.find(@tutoring_session.tutor_id)
+      render 'pick_tutor', locals: { tutor: @tutor}
+    end
+
   end
 
   def get_courses
