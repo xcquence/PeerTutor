@@ -33,6 +33,10 @@ class TuteeController < ApplicationController
     @tutors = User.all
   end
 
+  def pick_tutor
+    @tutor = User.find(params[:tutor_id])
+  end
+
 
   def tips_management
   end

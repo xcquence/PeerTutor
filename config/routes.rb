@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'tutee/list_of_tutors'
 
+  get 'tutee/pick_tutor'
+
   root 'home#index'
 
   get 'home/authentication'
