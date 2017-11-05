@@ -37,6 +37,11 @@ class TuteeController < ApplicationController
     redirect_to '/tutee/list_of_tutors'
   end
 
+  def cancel_tutoring_session
+    TutoringSession.where(user_id: current_user.id).last.destroy!
+    render 'find_tutor'
+  end
+
   def list_of_tutors
     @tutors = User.all
   end

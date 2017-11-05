@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'tutee/pick_tutor'
 
+  get 'tutee/cancel_tutoring_session'
+
   root 'home#index'
 
   get 'home/authentication'
