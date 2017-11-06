@@ -1,3 +1,6 @@
+<% if @users.nil? %>
+<h1>You have no messages.</h1>
+<% else %>
 <div class="row">
   <div class="col-md-9">
     <ul id="conversations-list">
@@ -24,3 +27,4 @@
     </div>
   </div>
 </div>
+<% end %>
