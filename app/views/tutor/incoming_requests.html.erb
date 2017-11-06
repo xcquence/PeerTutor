@@ -10,13 +10,13 @@
       <th>Question</th>
       <th></th>
     </tr>
-    <% @tutoring_sessions.each do |f| %>
+    <% @tutoring_sessions.each do |session| %>
       <tr>
-        <td><%= f.user.first_name %> <%= f.user.last_name %></td>
-        <td><%= f.course.subject.abbrev %></td>
-        <td><%= f.course.number %></td>
-        <td><%= f.question %></td>
-        <td><%= link_to "Accept", "", class: "btn btn-primary" %></td>
+        <td><%= session.user.first_name %> <%= session.user.last_name %></td>
+        <td><%= session.course.subject.abbrev %></td>
+        <td><%= session.course.number %></td>
+        <td><%= session.question %></td>
+        <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </table>
