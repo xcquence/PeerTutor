@@ -10,6 +10,7 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id)
   end
 
   def currently_tutoring
