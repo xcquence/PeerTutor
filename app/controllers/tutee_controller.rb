@@ -9,6 +9,9 @@ class TuteeController < ApplicationController
     if @tutoring_session.nil?
       @subject = Subject.new
       #@courses = Course.all
+    elsif @tutoring_session.accepted
+      @tutor = User.find(@tutoring_session.tutor_id)
+      render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
     else
       @tutor = User.find(@tutoring_session.tutor_id)
       render 'pick_tutor', locals: { tutor: @tutor}
