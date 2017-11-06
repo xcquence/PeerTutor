@@ -19,6 +19,7 @@ class TutorController < ApplicationController
   end
 
   def currently_tutoring
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
   end
 
   def tutor_profile
