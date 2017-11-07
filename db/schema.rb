@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "accepted", default: false
   end
 
   create_table "tutors", force: :cascade do |t|

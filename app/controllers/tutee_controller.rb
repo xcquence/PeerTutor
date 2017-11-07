@@ -1,11 +1,22 @@
 class TuteeController < ApplicationController
 
-  before_action :authenticate_user!   ## User has to be logged in 
+  before_action :authenticate_user!   ## User has to be logged in
 
   #new
   def find_tutor
-    @subject = Subject.new
-    #@courses = Course.all
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+
+    if @tutoring_session.nil?
+      @subject = Subject.new
+      #@courses = Course.all
+    elsif @tutoring_session.accepted
+      @tutor = User.find(@tutoring_session.tutor_id)
+      render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
+    else
+      @tutor = User.find(@tutoring_session.tutor_id)
+      render 'pick_tutor', locals: { tutor: @tutor}
+    end
+
   end
 
   def get_courses
@@ -26,7 +37,21 @@ class TuteeController < ApplicationController
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
 
-    redirect_to '/tutee/tutoring_sessions'
+    redirect_to '/tutee/list_of_tutors'
+  end
+
+  def cancel_tutoring_session
+    TutoringSession.where(user_id: current_user.id).last.destroy!
+    render 'find_tutor'
+  end
+
+  def list_of_tutors
+    @tutors = User.all
+  end
+
+  def pick_tutor
+    @tutor = User.find(params[:tutor_id])
+    TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
   end
 
 

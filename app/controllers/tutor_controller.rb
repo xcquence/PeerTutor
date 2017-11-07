@@ -10,9 +10,17 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+  end
+
+  def accept_request
+    TutoringSession.find(params[:session_id]).update(accepted: true)
+    redirect_to tutor_incoming_requests_path
+    #create one to one conversation in Messenger
   end
 
   def currently_tutoring
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
   end
 
   def tutor_profile
