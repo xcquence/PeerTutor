@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'home/authentication'
 
   get 'tutor/first_time_tutor'
+  post 'tutor/first_time_tutor' => 'tutor#create'
 
   post 'tutor/update'
 
@@ -52,4 +53,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tutor, only: [:first_time_tutor] do
+    collection do
+      get 'get_courses'
+    end
+  end
+
+  resources :tutor, only: [:first_time_tutor] do
+    collection do
+      get 'get_tags' # /tutor/get_tags
+    end
+  end
 end

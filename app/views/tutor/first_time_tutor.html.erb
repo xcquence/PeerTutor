@@ -5,12 +5,41 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6">
-			
+
+			<%= form_for TutorCourse.new, url: {action: "create"} do |f| %>
+
+			    <div class="form-group ts-field">
+			      <div class="subject-area-tutor">
+			        <%= label :tutor_courses, :subject %>
+			        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor'} %>
+			      </div>
+			    </div>
+
+			    <div class="form-group ts-field">
+			      <div class="course-area-tutor">
+			        <%= render partial: 'select_course_tutor', locals: {subject_id: Subject.first.id} %>
+			      </div>
+			    </div>
+
+					<!-- <div class="tutor-classes-field" style="border-radius: 7px; border: 0.5px solid #707070; width: 350px; height: 70px; padding: 10px; margin: 15px; ">
+					</div> -->
+
+			    <!-- <div class="form-group ts-field">
+			      <div class="question-area">
+			        <%= label :tutoring_session, "Question" %>
+			        <%= f.text_area :question, value: ""%>
+			      </div>
+			    </div> -->
+
+			    <!-- <%= f.hidden_field :user_id, value: current_user.id%> -->
+			    <%= f.submit "Register" %>
+
+					<!--Register button
+					<%= f.submit 'Register', { :controller => "tutor", :action => "update"} %>
+					-->
+			<% end %>
+
 		</div>
 	</div>
 
-	<div class="row">
-		<!--Register button here-->
-		<%= button_to 'Register', { :controller => "tutor", :action => "update"} %>
-	</div>
 </div>
