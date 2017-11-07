@@ -1,2 +1,34 @@
-<h1>Tutee#tips_management</h1>
+<h1>Buy Tip Points to Tip your favorite Tutor!</h1>
+
+<h2> Tip Points Bundle </h2>
+  <table>
+
+      <tr>
+        <th> Name </th>
+        <th> Price </th>
+        <th> Tip Points </th>
+        <th> Description </th>
+
+      </tr>
+
+
+
+  <% @product.each do |f| %>
+    <tr>
+<form>
+      <input type="radio">
+      <td><%= f.name %> </td>
+      <td><%= f.price %></td>
+      <td><%= f.v_currency %></td>
+      <td><%= f.description %></td>
+      <br>
+    </tr>
+
+  <% end %>
+</form>
+</table>
+
+
+
+
 <p>Find me in app/views/tutee/tips_management.html.erb</p>
