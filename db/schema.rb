@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tutor_courses", force: :cascade do |t|
+    t.bigint "tutor_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_tutor_courses_on_course_id"
+    t.index ["tutor_id"], name: "index_tutor_courses_on_tutor_id"
+  end
+
   create_table "tutoring_sessions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tutor_id"
@@ -61,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   end
 
   create_table "tutors", force: :cascade do |t|
-    t.string "subject", default: "", null: false
+    t.integer "user_id"
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
     t.datetime "created_at", null: false

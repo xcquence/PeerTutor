@@ -48,3 +48,25 @@ Course.create(
   number: "160",
   name: "Matrix Algebra"
 )
+
+## MEMO to myself RISA (can be removed) ##
+TutorCourse.create(
+  tutor_id: 1,
+  course_id: 1
+)
+
+TutorCourse.create(
+  tutor_id: 1,
+  course_id: 2
+)
+
+TutorCourse.create(
+  tutor_id: 1,
+  course_id: 3
+)
+
+# tutor = Tutor.find(1)
+# tutor.courses
+#  > (return array of courses)
+# tutor.courses[1].name
+#  > "Operating System"

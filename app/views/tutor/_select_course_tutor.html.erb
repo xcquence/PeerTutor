@@ -1,0 +1,3 @@
+<%= label :tutor_courses, :course%>
+<!-- <%= collection_select :course, :id, Course.where(subject_id: subject_id), :id, :name, {:include_blank => true}, {:id => 'course_select_tutor'} %> -->
+<%= collection_check_boxes(:course, :id, Course.where(subject_id: subject_id), :id, :name) %>
