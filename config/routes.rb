@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get 'tutee/tips_management'
 
-  get 'tutee/schedule'
+  get 'tutee/currency'
 
   get 'tutee/messenger'
 
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get 'tutor/first_time_tutor'
 
   post 'tutor/update'
+
+
 
 
 
@@ -50,8 +52,8 @@ Rails.application.routes.draw do
       get 'get_courses'  # /tutee/get_courses
     end
   end
-  resources :tutors 
-
+  resources :tutors
+  resource :currency
 
 
 end
