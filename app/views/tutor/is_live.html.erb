@@ -1,1 +1,3 @@
-<%= button_to 'Go Live!', { :controller => "tutor", :action => "toggle_is_live"}, :class => "is_live_btn" %>
+<%= link_to tutor_toggle_is_live_path method: :post do %>
+  <%=image_tag("lightbulb-on.png", alt: "live button", :id => "live_btn")%>
+<% end %>

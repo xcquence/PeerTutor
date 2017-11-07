@@ -1,3 +1,5 @@
-<h1>Tutor#incoming_requests</h1>
-<p>Find me in app/views/tutor/incoming_requests.html.erb</p>
-<%= button_to 'Stop going Live', { :controller => "tutor", :action => "toggle_is_live"}, :class => "is_live_btn" %>
+<%= link_to tutor_toggle_is_live_path method: :post do %>
+  <%=image_tag("lightbulb-on.png", alt: "live button", :id => "live_btn")%>
+<% end %>
+<p>Incoming request:</p>
+<!--List all the requests and link to the messenger(?)-->

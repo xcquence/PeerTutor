@@ -8,6 +8,12 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
+    # all the tutor's requests
+    @my_tutoring_requests = TutoringSession.where(:tutor_id => current_user.id)
+    # the tutor request's requested course information
+    # @course_number = Course.where(:id => @my_tutoring_requests.course_id)
+
+    # @boo = Subject.all
   end
 
   def currently_tutoring
