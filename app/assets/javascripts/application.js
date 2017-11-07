@@ -13,6 +13,10 @@
 //= require rails-ujs
 //= require_tree .
 
+jQuery ->
+  $(window).on('beforeunload', ->
+    $.post('/tutor/toggle_is_live', null)
+    return "Bye!")
 //**************************** DASHBOARD ***************************
 //responsible for highlighting the selected choice on the dashboard navigation sidebar
 function enable_selected(selected_tab, option_amt) {
@@ -23,7 +27,6 @@ function enable_selected(selected_tab, option_amt) {
 	document.getElementById(selected_tab).style.backgroundColor = "#F4EDFE";
 }
 //************************* DASHBOARD end **************************
-
 
 //**************************** CHAT APP ****************************
 //responsible for minimizing a window:
