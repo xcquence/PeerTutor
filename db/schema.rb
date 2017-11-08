@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   end
 
   create_table "tutors", force: :cascade do |t|
-    t.integer "user_id"
+    t.string "subject", default: "", null: false
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
     t.datetime "created_at", null: false
