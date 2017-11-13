@@ -53,7 +53,11 @@ class TuteeController < ApplicationController
     @tutor = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
     #Inform tutor
-    ActionCable.server.broadcast("conversations-#{@tutor.id}", tutoring_session: "999")
+    ActionCable.server.broadcast(
+      "conversations-#{@tutor.id}",
+      command: "tutor_picked",
+      tutoring_session: ApplicationController.render(partial: 'tutor/tutoring_sessions', locals: {tutor: @tutor})
+    )
   end
 
 

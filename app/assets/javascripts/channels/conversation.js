@@ -4,6 +4,12 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   //search for a specified conversation, based on passed conversation_id,
   //and appended a HTML code within a message to a conversation window
   received: function(data) {
+    if (data['command'] == 'tutor_picked')
+    {
+      //append tutoring session to incoming requests
+      
+    }
+
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
     // check if under the data[‘window’] we pass a partial.
