@@ -1,5 +1,5 @@
-<% @tutoring_sessions.each do |session| %>
-  <tr>
+<% tutoring_sessions.each do |session| %>
+  <tr >
     <td><%= session.user.first_name %> <%= session.user.last_name %></td>
     <td><%= session.course.subject.abbrev %></td>
     <td><%= session.course.number %></td>
