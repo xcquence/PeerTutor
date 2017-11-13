@@ -6,8 +6,10 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
+      //FIXMEE
       //append tutoring session to incoming requests
-      
+      //var tb = document.getElementById('tutor_frame').contentWindow.document.getElementsByTagName('tbody')[0];
+      //tb.innerHTML = data['tutoring_session'];
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
