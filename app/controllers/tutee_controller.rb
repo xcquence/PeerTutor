@@ -6,7 +6,7 @@ class TuteeController < ApplicationController
   def find_tutor
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
-    if @tutoring_session.nil?
+    if @tutoring_session.nil? || @tutoring_session.tutor_id.nil?
       @subject = Subject.new
       #@courses = Course.all
     elsif @tutoring_session.accepted
