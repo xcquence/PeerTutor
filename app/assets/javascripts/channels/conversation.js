@@ -15,6 +15,13 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var body = document.querySelector('.tutee-pick_tutor');
       body.innerHTML = data['being_tutored'];
     }
+    else if (data['command'] == 'session_canceled') {
+      alert("Session is canceled.");
+      var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
+      var table = document.querySelector('#table');
+      if (table.contains(row)) { row.parentNode.removeChild(row); }
+
+    }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
