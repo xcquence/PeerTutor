@@ -11,6 +11,10 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var tb = document.querySelector('table').children[0];
       tb.insertAdjacentHTML('afterend', data['tutoring_session']);
     }
+    else if (data['command'] == 'tutor_accepted') {
+      var body = document.querySelector('.tutee-pick_tutor');
+      body.innerHTML = data['being_tutored'];
+    }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
