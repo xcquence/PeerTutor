@@ -61,11 +61,17 @@ body.tutor-index {
 	margin: 10px;
 	background-color: white;
 	box-shadow: 10px 10px 0px #190455; /*#80E3FD*/
+	height: 600px;
 	/*Loading image*/
 	background-image: url(asset-path('Loading.gif'));
 	background-size: 50%;
 	background-repeat: no-repeat;
     background-position: center;
+}
+
+#tutor_view_frame {
+	background-color: white;
+	height: 100%;
 }
 
 .board {

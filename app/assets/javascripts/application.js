@@ -13,11 +13,26 @@
 //= require rails-ujs
 //= require_tree .
 
-jQuery ->
-  $(window).on('beforeunload', ->
-    $.post('/tutor/toggle_is_live', null)
-    return "Bye!")
 //**************************** DASHBOARD ***************************
+//responsible for switching views in the dashboard on click
+$(function(){
+  $("a.load").click(function (e) { 
+    e.preventDefault();
+    $("#tutor_view_frame").load($(this).attr("href"));
+  });
+
+  $("a.tu_load").click(function (e) {
+    e.preventDefault();
+    $("#tutee_view_frame").load($(this).attr("href"));
+  });
+});
+
+//default view page for the dashboards
+$(document).ready(function(){
+  $("#tutor_view_frame").load("/tutor/incoming_requests");
+  $("#tutee_view_frame").load("/tutee/find_tutor");
+});
+
 //responsible for highlighting the selected choice on the dashboard navigation sidebar
 function enable_selected(selected_tab, option_amt) {
 	for(var i = 1; i <= option_amt; i++){
@@ -27,6 +42,7 @@ function enable_selected(selected_tab, option_amt) {
 	document.getElementById(selected_tab).style.backgroundColor = "#F4EDFE";
 }
 //************************* DASHBOARD end **************************
+
 
 //**************************** CHAT APP ****************************
 //responsible for minimizing a window:

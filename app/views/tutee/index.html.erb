@@ -18,16 +18,16 @@
 	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
 		<nav>
 			<ul>
-				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
+				<a href="find_tutor" class="tu_load" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
 					<li id="tutee_option_1" class="option_selected"> Find Tutor</li>
 				</a>
-				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
+				<a href="schedule" class="tu_load" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
 					<li id="tutee_option_2">Schedule</li>
 				</a>
-				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
+				<a href="/chat/index" class="tu_load" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
 					<li id="tutee_option_3">Messenger</li>
 				</a>
-				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
+				<a href="tips_management" class="tu_load" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
 					<li id="tutee_option_4">Tip Management</li>
 				</a>
 				<%= link_to home_authentication_path do %>
@@ -37,6 +37,6 @@
 		</nav>
 	</div>
 	<div id="frame_container" class="col-lg-4 col-sm-12">
-		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
+		<div id="tutee_view_frame"></div>
 	</div>
 </div>

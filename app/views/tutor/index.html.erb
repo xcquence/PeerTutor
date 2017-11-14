@@ -17,19 +17,19 @@
 	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
 		<nav>
 			<ul>
-				<a href="is_live" target="tutor_view_frame" onclick="enable_selected('tutor_option_1', 5)">
+				<a href="is_live" class="load" target="tutor_view_frame" onclick="enable_selected('tutor_option_1', 5)">
 					<li id="tutor_option_1" class="option_selected"> Incoming Request</li>
 				</a>
-				<a href="currently_tutoring" target="tutor_view_frame" onclick="enable_selected('tutor_option_2', 5)">
+				<a href="currently_tutoring" class="load" target="tutor_view_frame" onclick="enable_selected('tutor_option_2', 5)">
 					<li id="tutor_option_2">Currently Tutoring</li>
 				</a>
-				<a href="/chat/index" target="tutor_view_frame" onclick="enable_selected('tutor_option_3', 5)">
+				<a href="/chat/index" class="load" target="tutor_view_frame" onclick="enable_selected('tutor_option_3', 5)">
 					<li id="tutor_option_3">Messenger</li>
 				</a>
-				<a href="piggy_bank" target="tutor_view_frame" onclick="enable_selected('tutor_option_4', 5)">
+				<a href="piggy_bank" class="load" target="tutor_view_frame" onclick="enable_selected('tutor_option_4', 5)">
 					<li id="tutor_option_4">Piggy Bank</li>
 				</a>
-				<a href="tutor_profile" target="tutor_view_frame" onclick="enable_selected('tutor_option_5', 5)">
+				<a href="tutor_profile" class="load" target="tutor_view_frame" onclick="enable_selected('tutor_option_5', 5)">
 					<li id="tutor_option_5">Tutor Profile</li>
 				</a>
 				<%= link_to home_authentication_path do %>
@@ -41,6 +41,6 @@
 
 	<!--board-->
 	<div id="frame_container" class="col-lg-8 col-sm-12">
-		<iframe src="is_live" name="tutor_view_frame" class="board" id="boohoo"></iframe>
+		<div id="tutor_view_frame"></div>
 	</div>
 </div>
