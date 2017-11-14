@@ -40,6 +40,9 @@ form.addEventListener('submit', function(event) {
       errorElement.textContent = result.error.message;
     } else {
       // Send the token to your server
+       var token = response.id;
+       form.append($('<input type="hidden" name="stripeToken">').val(token));
+
       stripeTokenHandler(result.token);
     }
   });
