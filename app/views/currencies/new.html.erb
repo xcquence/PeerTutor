@@ -21,6 +21,8 @@
 </form>
 <% end %>
 
+<%= hidden_field_tag :sku, params[:sku] %>
+
 <script>
 var stripe = Stripe('pk_test_mYxJNe1el9f5SukHxK8EadLF');
 var elements = stripe.elements();

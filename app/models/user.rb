@@ -9,4 +9,13 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+  def stripe_customer
+    if stripe_id?
+      Stripe::Customer.retrieve(stripe_id)
+    else
+      stripe_customer = Stripe::Customer.create(email: email)
+      update(stripe_id: stripe_customer.id)
+      stripe_customer
+  end
+end
 end

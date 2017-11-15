@@ -1,15 +1,16 @@
 <h1>Buy Tip Points to Tip your favorite Tutor!</h1>
 
 <h2> Tip Points Bundle </h2>
-  <table>
 
+<strong>
       <tr>
-        <th> Name </th>
-        <th> Price </th>
-        <th> Tip Points </th>
-        <th> Description </th>
+        <p> 5 Bundle </p>
+        <p> $5.00 </p>
+        <p> 450 tip points </p>
+        <p> Buy $5.00 for 450 Tip Points! </p>
 
       </tr>
+<<<<<<< HEAD
 
 
 
@@ -29,3 +30,27 @@
 </table>
 
 <%= link_to "Buy now", new_currency_path, class: "btn btn-primary" %>
+=======
+</strong>
+<%= link_to "Buy now", new_currency_path(sku: "sku_BlQPQ7QvCibtwN"), class: "btn btn-primary" %>
+
+
+<%= form_tag currency_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $5</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="450 tip points"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
+>>>>>>> 69c8f3295239c390c7f7815fd51bf21b13918c2b

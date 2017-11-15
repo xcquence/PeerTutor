@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20171106183456) do
   end
 
   create_table "courses", id: false, force: :cascade do |t|
-    t.integer "subject_id"
+    t.string "subject_id"
     t.string "name"
-    t.string "number"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -60,6 +62,8 @@ ActiveRecord::Schema.define(version: 20171106183456) do
   create_table "subjects", force: :cascade do |t|
     t.string "abbrev"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tutoring_sessions", force: :cascade do |t|
@@ -97,6 +101,7 @@ ActiveRecord::Schema.define(version: 20171106183456) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "stripe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
