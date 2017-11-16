@@ -1,81 +1,83 @@
-subject_id,name
-AFPRL,Africana and Puerto Rican/Latino Studies
-ANTHC,Anthropology
-ANTHP,Anthropology
-ARB,Arabic
-CLA,Archaeology
-ARTH,Art Theory and History
-ARTCR,Studio Art
-ASIAN,Asian American Studies
-ASTRO,Astronomy
-BIOL,Biological Sciences
-CHEM,Chemistry
-CHIN,Chinese Language and Literature
-CLA,Classical Literature (in English)
-CLA,Classics
-COMHE,Community Health
-COMPL,Comparative Literature
-CSCI,Computer Science
-DAN,Dance
-ECO,Economics
-SEDC,Education
-SEDF,Education
-QSTA,Education
-QSTAB,Education
-QSTB,Education
-DANED,Education
-HED,Education
-EDUC,Education
-ENGL,English
-XXX XXXXX,English Composition Workshops
-FILM,Film and Media
-FILMP,Film and Media
-MEDP,Film and Media
-MEDIA,Film and Media
-GEOG,Geography
-GTECH,Geographic Techniques and Methods
-PGEOG,Physical Geography
-GEOL,Geology
-GERMN,German
-GERMN,German Literature and Civilization (in English)
-GRK,Greek
-HEBR,Hebrew
-HIST,History
-HR,Human Rights
-HUM,Humanities and The Arts
-JPN,Japanese
-JSS,Jewish Studies
-LAT,Latin
-LACS,Latin American and Caribbean Studies
-MHC,Macaulay Honors
-MATH,Mathematics and Statistics
-STAT,Mathematics and Statistics
-MLS,Medical Laboratory Science
-MUSHL,Music
-MUSPF,Music Performance
-MUSTH,Music Theory
-MUSIN,Music Individual Study
-NURS,Nursing
-NFS,Nutrition and Food Sciences
-PHILO,Philosophy
-PHYS,Physics
-POLSC,Political Science
-PSYCH,Psychology
-PUPOL,Public Policy
-REL,Religion
-FREN,Romance Languages French
-ITAL,"Romance Languages, Division II"
-SPAN,"Romance Languages, Division III, Spanish"
-POL,Russian and Slavic Studies
-RUSS,Russian and Slavic Studies
-UKR,Russian and Slavic Studies
-SCI,Sciences and Mathematics
-SOSC,Social Sciences
-SOC,Sociology
-SWA,Swahili
-THEA,Theatre
-HONS,Thomas Hunter Honors Program
-URBS,Urban Policy and Planning
-WGS,Women and Gender Studies
-YOR,Yoruba
-ACSK,SEEK
+id,abbrev,name
+1,AFPRL,Africana and Puerto Rican/Latino Studies
+2,ANTHC,Anthropology
+3,ANTHP,Anthropology
+4,ARB,Arabic
+5,CLA,Archaeology
+6,ARTH,Art Theory and History
+7,ARTCR,Studio Art
+8,ASIAN,Asian American Studies
+9,ASTRO,Astronomy
+10,BIOL,Biological Sciences
+11,CHEM,Chemistry
+12,CHIN,Chinese Language and Literature
+13,CLA,Classical Literature (in English)
+14,CLA,Classics
+15,COMHE,Community Health
+16,COMPL,Comparative Literature
+17,CSCI,Computer Science
+18,DAN,Dance
+19,ECO,Economics
+20,SEDC,Education
+21,SEDF,Education
+22,QSTA,Education
+23,QSTAB,Education
+24,QSTB,Education
+25,DANED,Education
+26,HED,Education
+27,EDUC,Education
+28,ENGL,English
+29,XXX XXXXX,English Composition Workshops
+30,FILM,Film and Media
+31,FILMP,Film and Media
+32,MEDP,Film and Media
+33,MEDIA,Film and Media
+34,GEOG,Geography
+35,GTECH,Geographic Techniques and Methods
+36,PGEOG,Physical Geography
+37,GEOL,Geology
+38,GERMN,German
+39,GERMN,German Literature and Civilization (in English)
+40,GRK,Greek
+41,HEBR,Hebrew
+42,HIST,History
+43,HR,Human Rights
+44,HUM,Humanities and The Arts
+45,JPN,Japanese
+46,JSS,Jewish Studies
+47,LAT,Latin
+48,LACS,Latin American and Caribbean Studies
+49,MHC,Macaulay Honors
+50,MATH,Mathematics and Statistics
+51,STAT,Mathematics and Statistics
+52,MLS,Medical Laboratory Science
+53,MUSHL,Music
+54,MUSPF,Music Performance
+55,MUSTH,Music Theory
+56,MUSIN,Music Individual Study
+57,NURS,Nursing
+58,NFS,Nutrition and Food Sciences
+59,PHILO,Philosophy
+60,PHYS,Physics
+61,POLSC,Political Science
+62,PSYCH,Psychology
+63,PUPOL,Public Policy
+64,REL,Religion
+65,FREN,Romance Languages French
+66,ITAL,"Romance Languages, Division II"
+67,SPAN,"Romance Languages, Division III, Spanish"
+68,POL,Russian and Slavic Studies
+69,RUSS,Russian and Slavic Studies
+70,UKR,Russian and Slavic Studies
+71,SCI,Sciences and Mathematics
+72,SOSC,Social Sciences
+73,SOC,Sociology
+74,SWA,Swahili
+75,THEA,Theatre
+76,HONS,Thomas Hunter Honors Program
+77,URBS,Urban Policy and Planning
+78,WGS,Women and Gender Studies
+79,YOR,Yoruba
+80,ACSK,SEEK
+81,ACC,Accounting
+82,ACCP,Accounting
