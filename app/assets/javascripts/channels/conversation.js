@@ -4,6 +4,25 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   //search for a specified conversation, based on passed conversation_id,
   //and appended a HTML code within a message to a conversation window
   received: function(data) {
+    if (data['command'] == 'tutor_picked')
+    {
+      //FIXMEE
+      //append tutoring session to incoming requests
+      var tb = document.querySelector('table').children[0];
+      tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+    }
+    else if (data['command'] == 'tutor_accepted') {
+      var body = document.querySelector('.tutee-pick_tutor');
+      body.innerHTML = data['being_tutored'];
+    }
+    else if (data['command'] == 'session_canceled') {
+      alert("Session is canceled.");
+      var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
+      var table = document.querySelector('#table');
+      if (table.contains(row)) { row.parentNode.removeChild(row); }
+
+    }
+
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
     // check if under the data[‘window’] we pass a partial.

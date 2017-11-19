@@ -15,8 +15,19 @@ class TutorController < ApplicationController
 
   def accept_request
     TutoringSession.find(params[:session_id]).update(accepted: true)
+
+    tutoring_session = TutoringSession.find(params[:session_id])
+    tutor = User.find(tutoring_session.tutor_id)
+    tutee = User.find(tutoring_session.user_id)
+    #Broadcast to tutee
+    ActionCable.server.broadcast(
+      "conversations-#{tutee.id}",
+      command: "tutor_accepted",
+      being_tutored: ApplicationController.render(partial: 'tutee/being_tutored', locals: {tutoring_session: tutoring_session, tutor: tutor })
+    )
+
+
     redirect_to tutor_incoming_requests_path
-    #create one to one conversation in Messenger
   end
 
   def currently_tutoring

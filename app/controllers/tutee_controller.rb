@@ -11,7 +11,7 @@ class TuteeController < ApplicationController
       #@courses = Course.all
     elsif @tutoring_session.accepted
       @tutor = User.find(@tutoring_session.tutor_id)
-      render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
+      render '_being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
     else
       @tutor = User.find(@tutoring_session.tutor_id)
       render 'pick_tutor', locals: { tutor: @tutor}
@@ -41,7 +41,13 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutoring_session
+    @tutor = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.destroy!
+    ActionCable.server.broadcast(
+      "conversations-#{@tutor.id}",
+      command: "session_canceled",
+      tutee_id: current_user.id
+    )
     render 'find_tutor'
   end
 
@@ -52,6 +58,13 @@ class TuteeController < ApplicationController
   def pick_tutor
     @tutor = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
+    tutoring_sessions = TutoringSession.where(user_id: current_user.id)
+    #Inform tutor
+    ActionCable.server.broadcast(
+      "conversations-#{@tutor.id}",
+      command: "tutor_picked",
+      tutoring_session: ApplicationController.render(partial: 'tutor/tutoring_sessions', locals: {tutoring_sessions: tutoring_sessions, })
+    )
   end
 
 
