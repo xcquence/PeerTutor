@@ -1,6 +1,6 @@
 <%= render 'layouts/navigation_bar' %>
 
-<h1>Become a Tutor!</h1>
+<h1 class="text-center">Become a Tutor!</h1>
 
 <div class="container">
 	<div class="row">
@@ -17,7 +17,7 @@
 
 			    <div class="form-group ts-field">
 			      <div class="course-area-tutor">
-			        <%= render partial: 'select_course_tutor', locals: {subject_id: Subject.first.id} %>
+			        <%= render partial: 'select_course_tutor', locals: {subject_id: nil} %>
 			      </div>
 			    </div>
 
@@ -32,7 +32,7 @@
 			    </div> -->
 
 			    <!-- <%= f.hidden_field :user_id, value: current_user.id%> -->
-			    <%= f.submit "Register" %>
+			    <%= f.submit "Register", class: "btn btn-primary" %>
 
 					<!--Register button
 					<%= f.submit 'Register', { :controller => "tutor", :action => "update"} %>
