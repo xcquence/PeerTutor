@@ -2,13 +2,14 @@
 
 <!--============= Tutee Dashbaord ============-->
 
-<div class="dashboard">
-	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
+
+<div class="row dashboard">
+	<div id="nav_container" class="col-lg-2 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
-					<li id="tutee_option_1" class="option_selected"> Find Tutor</li>
-				</a>
+				<%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
+
+
 				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
 					<li id="tutee_option_2">Schedule</li>
 				</a>
@@ -24,7 +25,11 @@
 			</ul>
 		</nav>
 	</div>
-	<div id="frame_container" class="col-lg-4 col-sm-12">
-		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
+
+	<div class="">
+		<!-- This frame is being replaced with another page from the dashboard -->
+		<div id="frame">
+			
+		</div>
 	</div>
 </div>

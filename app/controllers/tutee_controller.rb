@@ -8,6 +8,9 @@ class TuteeController < ApplicationController
 
     if @tutoring_session.nil? || @tutoring_session.tutor_id.nil?
       @subject = Subject.new
+      respond_to do |format|
+        format.js {render "find_tutor"}
+      end
       #@courses = Course.all
     elsif @tutoring_session.accepted
       @tutor = User.find(@tutoring_session.tutor_id)
