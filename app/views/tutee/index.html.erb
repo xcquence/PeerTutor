@@ -7,7 +7,9 @@
 	<div id="nav_container" class="col-lg-2 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
+				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
+				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
+
 
 
 				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
@@ -29,7 +31,7 @@
 	<div class="">
 		<!-- This frame is being replaced with another page from the dashboard -->
 		<div id="frame">
-			
+
 		</div>
 	</div>
 </div>

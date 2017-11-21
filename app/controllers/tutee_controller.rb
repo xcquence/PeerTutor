@@ -62,6 +62,9 @@ class TuteeController < ApplicationController
   end
 
   def schedule
+    respond_to do |format|
+      format.js
+    end
   end
 
   def tutoring_sessions
