@@ -10,13 +10,7 @@
 				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
 				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
 				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
-
-				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
-					<li id="tutee_option_3">Messenger</li>
-				</a>
-				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
-					<li id="tutee_option_4">Tip Management</li>
-				</a>
+				<li><%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></li>
 				<%= link_to home_authentication_path do %>
 					<li>>Switch role<</li>
 				<% end %>
