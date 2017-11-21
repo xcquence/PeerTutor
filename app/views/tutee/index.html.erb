@@ -9,12 +9,8 @@
 			<ul>
 				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
 				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
 
-
-
-				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
-					<li id="tutee_option_2">Schedule</li>
-				</a>
 				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
 					<li id="tutee_option_3">Messenger</li>
 				</a>
