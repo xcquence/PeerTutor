@@ -12,5 +12,12 @@ class ChatController < ApplicationController
       @conversations << Conversation.includes(:recipient, :messages)
                                    .find_by(id: session[:conversations])
     end
+
   end
+
+
+
+
+
+
 end
