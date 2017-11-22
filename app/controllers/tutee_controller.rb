@@ -57,7 +57,9 @@ class TuteeController < ApplicationController
       command: "session_canceled",
       tutee_id: current_user.id
     )
-    render 'find_tutor'
+    respond_to do |format|
+      format.js {render 'find_tutor'}
+    end
   end
 
   def list_of_tutors
