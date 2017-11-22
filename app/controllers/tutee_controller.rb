@@ -41,8 +41,10 @@ class TuteeController < ApplicationController
 
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
-
-    redirect_to '/tutee/list_of_tutors'
+    @tutors = User.all
+    respond_to do |format|
+      format.js {render 'list_of_tutors'}
+    end
   end
 
   def cancel_tutoring_session
@@ -57,7 +59,7 @@ class TuteeController < ApplicationController
   end
 
   def list_of_tutors
-    @tutors = User.all
+
   end
 
   def pick_tutor
