@@ -20,7 +20,9 @@ class TuteeController < ApplicationController
       end
     else
       @tutor = User.find(@tutoring_session.tutor_id)
-      render 'pick_tutor', locals: { tutor: @tutor}
+      respond_to do |format|
+        format.js {render "pick_tutor"}
+      end
     end
   end
 
