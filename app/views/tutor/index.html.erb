@@ -17,30 +17,21 @@
 	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
 		<nav>
 			<ul>
-				<a href="incoming_requests" target="tutor_view_frame" onclick="enable_selected('tutor_option_1', 5)">
-					<li id="tutor_option_1" class="option_selected"> Incoming Request</li>
-				</a>
-				<a href="currently_tutoring" target="tutor_view_frame" onclick="enable_selected('tutor_option_2', 5)">
-					<li id="tutor_option_2">Currently Tutoring</li>
-				</a>
-				<a href="/chat/index" target="tutor_view_frame" onclick="enable_selected('tutor_option_3', 5)">
-					<li id="tutor_option_3">Messenger</li>
-				</a>
-				<a href="piggy_bank" target="tutor_view_frame" onclick="enable_selected('tutor_option_4', 5)">
-					<li id="tutor_option_4">Piggy Bank</li>
-				</a>
-				<a href="tutor_profile" target="tutor_view_frame" onclick="enable_selected('tutor_option_5', 5)">
-					<li id="tutor_option_5">Tutor Profile</li>
-				</a>
-				<%= link_to home_authentication_path do %>
-					<li>>Switch Role<</li>
-				<% end %>
+				<li><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn"  %></li>
+				<li><%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></li>
+				<li><%= link_to "Tutor Profile", tutor_tutor_profile, remote: true, class: "btn" %></li>
 			</ul>
 		</nav>
 	</div>
 
 	<!--board-->
-	<div id="frame_container" class="col-lg-8 col-sm-12">
-		<iframe src="incoming_requests" name="tutor_view_frame" class="board" id="tutor_frame"></iframe>
+
+
+	<div class="">
+		<div id="frame">
+
+		</div>
 	</div>
 </div>
