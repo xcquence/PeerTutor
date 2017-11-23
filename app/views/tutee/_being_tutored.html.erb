@@ -1,5 +1,5 @@
 <div id="frame">
-  <h1 class="text-center">You're being tutored by <%= @tutor.first_name %> .</h1>
+  <h1 class="text-center">You're being tutored by <%= tutor.first_name %> .</h1>
 
   <div class="container">
     <table class="table table-striped">
@@ -12,10 +12,10 @@
       </tr>
 
         <tr>
-          <td><%= @tutoring_session.user.first_name %> <%= @tutoring_session.user.last_name %></td>
-          <td><%= @tutoring_session.course.subject.abbrev %></td>
-          <td><%= @tutoring_session.course.number %></td>
-          <td><%= @tutoring_session.question %></td>
+          <td><%= tutoring_session.user.first_name %> <%= tutoring_session.user.last_name %></td>
+          <td><%= tutoring_session.course.subject.abbrev %></td>
+          <td><%= tutoring_session.course.number %></td>
+          <td><%= tutoring_session.question %></td>
           <td><%= link_to "Cancel", tutee_cancel_tutoring_session_path, class: "btn btn-primary" %></td>
         </tr>
     </table>
