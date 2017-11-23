@@ -11,6 +11,9 @@ class TutorController < ApplicationController
 
   def incoming_requests
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def accept_request
@@ -32,15 +35,27 @@ class TutorController < ApplicationController
 
   def currently_tutoring
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def tutor_profile
+    respond_to do |format|
+      format.js
+    end
   end
 
   def piggy_bank
+    respond_to do |format|
+      format.js
+    end
   end
 
   def messenger
+    respond_to do |format|
+      format.js {render 'chat/index'}
+    end
   end
 
   def first_time_tutor
