@@ -12,8 +12,11 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       tb.insertAdjacentHTML('afterend', data['tutoring_session']);
     }
     else if (data['command'] == 'tutor_accepted') {
-      var body = document.querySelector('.tutee-pick_tutor');
-      body.innerHTML = data['being_tutored'];
+      var outer_frame = document.querySelector('#outer_frame');
+      var frame = document.querySelector('#frame');
+      //body.innerHTML = data['being_tutored'];
+      frame.remove();
+      outer_frame.innerHTML = data['being_tutored'];
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
