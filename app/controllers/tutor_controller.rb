@@ -7,6 +7,8 @@ class TutorController < ApplicationController
     unless current_user.is_tutor
       redirect_to tutor_first_time_tutor_path
     end
+
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
   end
 
   def incoming_requests
