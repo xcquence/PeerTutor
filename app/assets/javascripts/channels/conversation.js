@@ -6,8 +6,10 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
-      //FIXMEE
-      //append tutoring session to incoming requests
+      var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
+      a.firstChild.className = "btn btn-success";
+
+
       if (document.querySelector('#incoming_requests table'))
       {
         var tb = document.querySelector('#incoming_requests table').children[0]
