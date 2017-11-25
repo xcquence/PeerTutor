@@ -8,8 +8,11 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     {
       //FIXMEE
       //append tutoring session to incoming requests
-      var tb = document.querySelector('table').children[0];
-      tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      if (document.querySelector('#incoming_requests table'))
+      {
+        var tb = document.querySelector('#incoming_requests table').children[0]
+        tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      }
     }
     else if (data['command'] == 'tutor_accepted') {
       var outer_frame = document.querySelector('#outer_frame');
