@@ -22,7 +22,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       alert("Session is canceled.");
       var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
       var table = document.querySelector('#table');
-      if (table.contains(row)) { row.parentNode.removeChild(row); }
+      if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
     }
 
