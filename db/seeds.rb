@@ -21,33 +21,6 @@ password = 'pass123'
   )
 end
 
-Product.create(
-  name: "$5 Bundle",
-  v_currency: 450,
-  price: 5.00,
-  description: "Buy $5.00 for 450 Tip Points!"
-)
-
-Product.create(
-  name: "$10 Bundle",
-  v_currency: 980,
-  price: 10.00,
-  description: "Buy $10.00 for 980 Tip Points!"
-)
-
-Product.create(
-  name: "$20 Bundle",
-  v_currency: 1990,
-  price: 20.00,
-  description: "Buy $20.00 for 1990 Tip Points!"
-)
-
-Product.create(
-    name: "$100 MEGA bundle",
-    v_currency: 10300,
-    price: 100.00,
-    description: "Buy $100.00 for 10300 Tip Points! (GET 300 FREE POINTS!)"
-)
 
 csv_file1 = 'courses_data.csv'
 CSV.read(csv_file1, :encoding => 'windows-1251:utf-8')
