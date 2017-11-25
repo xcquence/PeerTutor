@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get 'tutee/index'
 
   get 'tutee/find_tutor'
+  post 'tutee/find_tutor' => 'tutee#create'
+
+  get 'tutee/tutoring_sessions'
 
   get 'tutee/tips_management'
 
@@ -24,12 +27,22 @@ Rails.application.routes.draw do
 
   get 'tutee/messenger'
 
+  get 'tutee/list_of_tutors'
+
+  get 'tutee/pick_tutor'
+
+  get 'tutee/cancel_tutoring_session'
+
   root 'home#index'
 
   get 'home/authentication'
 
   get 'tutor/first_time_tutor'
+  post 'tutor/first_time_tutor' => 'tutor#create'
 
+  post 'tutor/update'
+
+  get 'tutor/accept_request'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -48,4 +61,15 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :tutor, only: [:first_time_tutor] do
+    collection do
+      get 'get_courses'
+    end
+  end
+
+  resources :tutor, only: [:first_time_tutor] do
+    collection do
+      get 'get_tags' # /tutor/get_tags
+    end
+  end
 end

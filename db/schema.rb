@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20171015223506) do
-
+ActiveRecord::Schema.define(version: 20171106000631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +26,9 @@ ActiveRecord::Schema.define(version: 20171015223506) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "subject_id"
+    t.integer "subject_id"
+    t.string "number"
     t.string "name"
-    t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,10 +44,19 @@ ActiveRecord::Schema.define(version: 20171015223506) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string "subject_id"
+    t.string "abbrev"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tutor_courses", force: :cascade do |t|
+    t.bigint "tutor_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_tutor_courses_on_course_id"
+    t.index ["tutor_id"], name: "index_tutor_courses_on_tutor_id"
   end
 
   create_table "tutoring_sessions", force: :cascade do |t|
@@ -59,6 +66,7 @@ ActiveRecord::Schema.define(version: 20171015223506) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "accepted", default: false
   end
 
   create_table "tutors", force: :cascade do |t|
