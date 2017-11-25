@@ -6,20 +6,28 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
-      //FIXMEE
-      //append tutoring session to incoming requests
-      var tb = document.querySelector('table').children[0];
-      tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
+      a.firstChild.className = "btn btn-success";
+
+
+      if (document.querySelector('#incoming_requests table'))
+      {
+        var tb = document.querySelector('#incoming_requests table').children[0]
+        tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      }
     }
     else if (data['command'] == 'tutor_accepted') {
-      var body = document.querySelector('.tutee-pick_tutor');
-      body.innerHTML = data['being_tutored'];
+      var outer_frame = document.querySelector('#outer_frame');
+      var frame = document.querySelector('#frame');
+      //body.innerHTML = data['being_tutored'];
+      frame.remove();
+      outer_frame.innerHTML = data['being_tutored'];
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
       var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
       var table = document.querySelector('#table');
-      if (table.contains(row)) { row.parentNode.removeChild(row); }
+      if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
     }
 

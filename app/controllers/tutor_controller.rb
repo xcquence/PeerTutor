@@ -7,10 +7,15 @@ class TutorController < ApplicationController
     unless current_user.is_tutor
       redirect_to tutor_first_time_tutor_path
     end
+
+    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
   end
 
   def incoming_requests
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def accept_request
@@ -18,29 +23,43 @@ class TutorController < ApplicationController
 
     tutoring_session = TutoringSession.find(params[:session_id])
     tutor = User.find(tutoring_session.tutor_id)
-    tutee = User.find(tutoring_session.user_id)
+    @tutee = User.find(tutoring_session.user_id)
     #Broadcast to tutee
     ActionCable.server.broadcast(
-      "conversations-#{tutee.id}",
+      "conversations-#{@tutee.id}",
       command: "tutor_accepted",
       being_tutored: ApplicationController.render(partial: 'tutee/being_tutored', locals: {tutoring_session: tutoring_session, tutor: tutor })
     )
 
 
-    redirect_to tutor_incoming_requests_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   def currently_tutoring
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def tutor_profile
+    respond_to do |format|
+      format.js
+    end
   end
 
   def piggy_bank
+    respond_to do |format|
+      format.js
+    end
   end
 
   def messenger
+    respond_to do |format|
+      format.js {render 'chat/index'}
+    end
   end
 
   def first_time_tutor

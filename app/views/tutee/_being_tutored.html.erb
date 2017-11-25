@@ -1,21 +1,25 @@
-<h1 class="text-center">You're being tutored by <%= tutor.first_name %> .</h1>
+<div id="frame">
+  <% tutor ||= @tutor %>
+  <% tutoring_session ||= @tutoring_session %>
+  <h1 class="text-center">You're being tutored by <%= tutor.first_name %> .</h1>
 
-<div class="container">
-  <table class="table table-striped">
-    <tr>
-      <th>Tutee</th>
-      <th>Subject</th>
-      <th>Course</th>
-      <th>Question</th>
-      <th></th>
-    </tr>
-
+  <div class="container">
+    <table class="table table-striped">
       <tr>
-        <td><%= tutoring_session.user.first_name %> <%= tutoring_session.user.last_name %></td>
-        <td><%= tutoring_session.course.subject.abbrev %></td>
-        <td><%= tutoring_session.course.number %></td>
-        <td><%= tutoring_session.question %></td>
-        <td><%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: tutor.id), class: "btn btn-primary" %></td>
+        <th>Tutee</th>
+        <th>Subject</th>
+        <th>Course</th>
+        <th>Question</th>
+        <th></th>
       </tr>
-  </table>
+
+        <tr>
+          <td><%= tutoring_session.user.first_name %> <%= tutoring_session.user.last_name %></td>
+          <td><%= tutoring_session.course.subject.abbrev %></td>
+          <td><%= tutoring_session.course.number %></td>
+          <td><%= tutoring_session.question %></td>
+          <td><%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: tutor.id), class: "btn btn-primary", remote: true %></td>
+        </tr>
+    </table>
+  </div>
 </div>

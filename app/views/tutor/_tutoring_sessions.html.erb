@@ -4,6 +4,6 @@
     <td><%= session.course.subject.abbrev %></td>
     <td><%= session.course.number %></td>
     <td><%= session.question %></td>
-    <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary" %></td>
+    <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary", remote: true %></td>
   </tr>
 <% end %>
