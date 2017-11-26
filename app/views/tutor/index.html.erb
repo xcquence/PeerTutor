@@ -22,6 +22,9 @@
 				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
 				<li><%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></li>
 				<li><%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn" %></li>
+				<%= link_to home_authentication_path do %>
+					<li>>Switch role<</li>
+				<% end %>
 			</ul>
 		</nav>
 	</div>
