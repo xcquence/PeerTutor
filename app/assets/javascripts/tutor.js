@@ -27,7 +27,8 @@
 
 window.onload = function () {
   var incoming_requests_link = document.querySelector("#incoming_requests_link");
+  if (incoming_requests_link != null) {
   incoming_requests_link.onclick = function() {
     incoming_requests_link.classList = "btn"
-  }
+  }}
 }
