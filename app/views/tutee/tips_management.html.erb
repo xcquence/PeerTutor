@@ -1,38 +1,5 @@
 <h1>Buy Tip Points to Tip your favorite Tutor!</h1>
 
-<h2> Tip Points Bundle </h2>
-
-<strong>
-      <tr>
-        <p> 5 Bundle </p>
-        <p> $5.00 </p>
-        <p> 450 tip points </p>
-        <p> Buy $5.00 for 450 Tip Points! </p>
-
-      </tr>
-<<<<<<< HEAD
-
-
-
-  <% @product.each do |f| %>
-    <tr>
-<form>
-      <input type="radio">
-      <td><%= f.name %> </td>
-      <td><%= f.price %></td>
-      <td><%= f.v_currency %></td>
-      <td><%= f.description %></td>
-      <br>
-    </tr>
-
-  <% end %>
-</form>
-</table>
-
-<%= link_to "Buy now", new_currency_path, class: "btn btn-primary" %>
-=======
-</strong>
-<%= link_to "Buy now", new_currency_path(sku: "sku_BlQPQ7QvCibtwN"), class: "btn btn-primary" %>
 
 
 <%= form_tag currency_path do %>
@@ -42,15 +9,31 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5</span>
-    </label>
+
+
+
   </article>
 
+<img src="http://i.ebayimg.com/images/g/5CcAAOxyyFhTcRhG/s-l1600.jpg" width = 200 height = 200>
+<p>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="450 tip points"
+          data-description="You are paying $5.00"
           data-amount="500"
+          data-email="<%= current_user.email %>"
           data-locale="auto"></script>
+</p>
+
+
+<img src= "http://www.publicdomainpictures.net/pictures/160000/velka/getal-10-kunstwerk.jpg" width= 200 height = 200>
+<p>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="You are paying $10.00"
+              data-amount="1000"
+              data-email="<%= current_user.email %>"
+
+              data-locale="auto">
+    </script>
+</p>
 <% end %>
->>>>>>> 69c8f3295239c390c7f7815fd51bf21b13918c2b

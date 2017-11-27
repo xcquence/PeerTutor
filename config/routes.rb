@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   post 'tutor/update'
 
+  get 'thanks' , to: 'currencies#thanks', as: 'thanks'
 
 
 

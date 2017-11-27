@@ -1,23 +1,36 @@
 class CurrenciesController < ApplicationController
   before_action :authenticate_user!
 
+
   def new
   end
 
   def create
   #  customer = current_user.stripe_customer
-  customer = Stripe::Customer.create(
+  @amount = 500
+  customer = StripeTool.create_customer(
     email: params[:stripeEmail],
-    source: params[:stripeToken]
+    stripe_token: params[:stripeToken]
   )
 
-    @amount = 500
-    charge = Stripe::Charge.create(
-      customer: customer.id,
+
+    charge = StripeTool.create_charge(
+      customer_id: customer.id,
       amount: @amount,
       description: 'Rails Stripe Customer',
-      currency: 'usd'
+
     )
-    render action: :new
+
+    redirect_to thanks_path
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect to new_currency_path
   end
+
+
+  def thanks
+
+  end
+
 end

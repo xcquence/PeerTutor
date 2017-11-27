@@ -13,7 +13,7 @@ class TuteeController < ApplicationController
 
 
   def tips_management
-    @product = Product.all
+  
   end
 
   def schedule
