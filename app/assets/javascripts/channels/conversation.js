@@ -6,14 +6,15 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
-      var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
-      a.firstChild.className = "btn btn-success";
-
-
       if (document.querySelector('#incoming_requests table'))
       {
+        var h = document.querySelector("#incoming_requests h1");
+        h.innerHTML = "You have new requests!";
         var tb = document.querySelector('#incoming_requests table').children[0]
         tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      } else {
+        var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
+        a.firstChild.className = "btn btn-success";
       }
     }
     else if (data['command'] == 'tutor_accepted') {
