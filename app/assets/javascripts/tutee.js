@@ -12,6 +12,3 @@
   });
 
 }).call(this);
-
-
-alert("HELLO");
