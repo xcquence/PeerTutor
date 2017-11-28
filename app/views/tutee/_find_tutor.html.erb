@@ -1,6 +1,7 @@
+<div id="frame">
 <div class="container" style="padding: 100px;">
 
-<%= form_for TutoringSession.new, url: {action: "create"} do |f| %>
+<%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
 
     <div class="form-group ts-field">
       <div class="subject-area">
@@ -30,3 +31,4 @@
   <a href="/tutee/tutoring_sessions">Check Tutoring Sessions</a>
 
 <div>
+</div>

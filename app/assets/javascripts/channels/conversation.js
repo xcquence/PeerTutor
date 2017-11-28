@@ -4,6 +4,33 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   //search for a specified conversation, based on passed conversation_id,
   //and appended a HTML code within a message to a conversation window
   received: function(data) {
+    if (data['command'] == 'tutor_picked')
+    {
+      var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
+      a.firstChild.className = "btn btn-success";
+
+
+      if (document.querySelector('#incoming_requests table'))
+      {
+        var tb = document.querySelector('#incoming_requests table').children[0]
+        tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      }
+    }
+    else if (data['command'] == 'tutor_accepted') {
+      var outer_frame = document.querySelector('#outer_frame');
+      var frame = document.querySelector('#frame');
+      //body.innerHTML = data['being_tutored'];
+      frame.remove();
+      outer_frame.innerHTML = data['being_tutored'];
+    }
+    else if (data['command'] == 'session_canceled') {
+      alert("Session is canceled.");
+      var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
+      var table = document.querySelector('#table');
+      if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
+
+    }
+
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
     // check if under the data[‘window’] we pass a partial.
