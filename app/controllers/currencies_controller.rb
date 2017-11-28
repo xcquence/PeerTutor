@@ -7,7 +7,26 @@ class CurrenciesController < ApplicationController
 
   def create
   #  customer = current_user.stripe_customer
-  @amount = 500
+  @amount = params[:amount]
+  @amount = @amount.gsub('$', '').gsub(',', '')
+
+  begin
+   @amount = Float(@amount).round(2)
+ rescue
+   flash[:error] = 'Charge cannot be completed. Please enter a valid amount in USD ($).'
+   redirect_to new_currencies_path
+   return
+ end
+
+ @amount = (@amount * 100).to_i # Must be an integer!
+
+ if @amount < 500
+   flash[:error] = 'Charge cannot be completed. Payment amount must be at least $5.'
+   redirect_to new_currencies_path
+   return
+ end
+
+
   customer = StripeTool.create_customer(
     email: params[:stripeEmail],
     stripe_token: params[:stripeToken]
@@ -17,20 +36,25 @@ class CurrenciesController < ApplicationController
     charge = StripeTool.create_charge(
       customer_id: customer.id,
       amount: @amount,
-      description: 'Rails Stripe Customer',
+      description: 'Peer Tutor Tutee Customer',
 
     )
 
-    redirect_to thanks_path
+
+
+
 
   rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect to new_currency_path
+  flash[:error] = e.message
+  redirect_to new_currencies_path
   end
+
+
+  end
+
+
 
 
   def thanks
 
   end
-
-end
