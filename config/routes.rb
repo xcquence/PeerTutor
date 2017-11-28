@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'tutee/currency'
 
+  get 'tutee/schedule'
+
   get 'tutee/messenger'
 
   get 'tutee/list_of_tutors'

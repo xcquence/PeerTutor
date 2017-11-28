@@ -43,22 +43,6 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.decimal "price"
-    t.integer "v_currency"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "schedules", force: :cascade do |t|
-    t.date "startdate"
-    t.date "enddate"
-    t.time "starttime"
-    t.time "endtime"
-  end
-
   create_table "subjects", force: :cascade do |t|
     t.string "abbrev"
     t.string "name"
@@ -86,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   end
 
   create_table "tutors", force: :cascade do |t|
-    t.string "subject", default: "", null: false
+    t.integer "user_id"
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
     t.datetime "created_at", null: false
