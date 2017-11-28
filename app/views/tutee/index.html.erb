@@ -2,29 +2,55 @@
 
 <!--============= Tutee Dashbaord ============-->
 
-<div class="dashboard">
-	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
+
+<div class="row dashboard">
+	<div id="nav_container" class="col-lg-2 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
-					<li id="tutee_option_1" class="option_selected"> Find Tutor</li>
-				</a>
-				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
-					<li id="tutee_option_2">Schedule</li>
-				</a>
-				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
-					<li id="tutee_option_3">Messenger</li>
-				</a>
-				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
-					<li id="tutee_option_4">Tip Management</li>
-				</a>
+				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
+				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></li>
 				<%= link_to home_authentication_path do %>
 					<li>>Switch role<</li>
 				<% end %>
 			</ul>
 		</nav>
 	</div>
-	<div id="frame_container" class="col-lg-4 col-sm-12">
-		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
+
+	<div id="outer_frame">
+		<!-- This frame is being replaced with another page from the dashboard -->
+		<div id="frame">
+						<div class="container" style="padding: 100px;">
+
+						<%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
+
+						    <div class="form-group ts-field">
+						      <div class="subject-area">
+						        <%= label :tutoring_session, :subject %>
+						        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+						      </div>
+						    </div>
+
+						    <div class="form-group ts-field">
+						      <div class="course-area">
+						        <%= render partial: 'select_course', locals: {subject_id: nil} %>
+						      </div>
+						    </div>
+
+						    <div class="form-group ts-field">
+						      <div class="question-area">
+						        <%= label :tutoring_session, "Question" %>
+						        <%= f.text_area :question, value: ""%>
+						      </div>
+						    </div>
+
+						    <%= f.hidden_field :user_id, value: current_user.id%>
+						    <%= f.submit "Submit" %>
+						<% end %>
+
+						  <!-- temporary just to check if the data stored in TutoringSession -->
+						  <a href="/tutee/tutoring_sessions">Check Tutoring Sessions</a>
+					</div>
 	</div>
 </div>

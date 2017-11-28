@@ -251,7 +251,7 @@ subject_id,name,number
 9,Asian American Women Writers,22001
 9,Asian American Literature,22012
 9,Arab American Literature,22004
-9,South Asian Women’s Literature,22005
+9,South Asian Womenï¿½s Literature,22005
 9,Filipino American Literature,22006
 9,Gender and Genre in Asian American Literature and Film,22009
 9,Introduction to Writing About Asian American Literature,22100
@@ -314,7 +314,7 @@ subject_id,name,number
 11,Endocrinology,37600
 11,Molecular Neurobiology,38000
 11,Laboratory in Cell Structure,39000
-11,Laboratory in Cell Structure – Biological Electron Microscopy,39100
+11,Laboratory in Cell Structure ï¿½ Biological Electron Microscopy,39100
 11,Computational Molecular Biology,42500
 11,Individual Tutorial in Biology,45000
 11,Introduction to Planning and Teaching of Laboratory Work in Biology,46000
@@ -784,7 +784,7 @@ subject_id,name,number
 39,Multicultural Perspectives in Cinema,21400
 39,Women and Film,21500
 39,Topics in Genre Studies,22200
-39,Topics in Genre Studies: “The Woman's Film” of the 1940s,22252
+39,Topics in Genre Studies: ï¿½The Woman's Filmï¿½ of the 1940s,22252
 39,Cinematic Space,22400
 39,Movies in American Culture,23000
 39,Studies of Selected Directors,23100
@@ -1049,13 +1049,13 @@ subject_id,name,number
 48,German Literature from Its Origins to the Age of Goethe,34300
 48,Gottfried von Strassburg: Tristan,36100
 48,Wolfram von Eschenbach: Parzival in translation,36200
-48,Goethe’s Faust in English translation,36300
+48,Goetheï¿½s Faust in English translation,36300
 48,Heinrich von Kleist,36400
-48,Georg Büchner,36500
+48,Georg Bï¿½chner,36500
 48,Hermann Hesse,36600
 48,Hermann Hesse: Magister Ludi,36700
-48,Rainer Maria Rilke’s Duino Elegies,36800
-48,Thomas Mann’s The Magic Mountain,36900
+48,Rainer Maria Rilkeï¿½s Duino Elegies,36800
+48,Thomas Mannï¿½s The Magic Mountain,36900
 48,Franz Kafka,37000
 48,Bertolt Brecht,37100
 48,Masterpieces of Modern German Prose in English Translation,37600
@@ -1355,7 +1355,7 @@ subject_id,name,number
 65,Topics: Medical Technology,40067
 65,Cell and Tissue Culture,45000
 65,Immunology,46000
-65,8003 - Independent Study,48001
+65,8003ï¿½-ï¿½Independent Study,48001
 65,Honors,49000
 64,Fundamental Concepts and Techniques in the Medical Laboratory,30000
 64,Hematology,34900
@@ -1717,18 +1717,18 @@ subject_id,name,number
 75,Feminist Political Theory,30900
 75,Utopian Theory,31100
 75,Political Theory of Human Rights,31600
-75,9003 - Independent Study in Political Science,29001
-75,9103 - Directed Research,29102
+75,9003ï¿½-ï¿½Independent Study in Political Science,29001
+75,9103ï¿½-ï¿½Directed Research,29102
 75,Seminar in Selected Problems of Political Science,48000
 75,Senior Colloquium,48600
 75,Independent Study - Honors Thesis Inception,49100
 75,Independent Study Honors Thesis Completion,49200
-75,9203 - Honors Independent Study in Political Science,49202
+75,9203ï¿½-ï¿½Honors Independent Study in Political Science,49202
 75,Conducting and Presenting Political Science Research,49300
 75,Seminar/Internship in New York City Government,22200
 75,Topics in Political Science,29200
 75,Topics in Political Science,29400
-75,9806 - Internship in Political Science,29801
+75,9806ï¿½-ï¿½Internship in Political Science,29801
 76,Introduction to Psychology,10000
 76,Psychological Adjustment,14000
 76,Human Development,15000
@@ -1863,7 +1863,7 @@ subject_id,name,number
 78,Islam,32200
 78,Christianity,32300
 78,Islam and Buddhism,32400
-78,Religious Meanings of the Qur’?n,32600
+78,Religious Meanings of the Qurï¿½?n,32600
 78,New Testament Religion,33000
 78,Christian Theology,33300
 78,Zen,33600

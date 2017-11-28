@@ -1,0 +1,7 @@
+<div id="frame">
+
+
+  <h1>Waiting for Tutor <%= @tutor.first_name %></h1>
+
+  <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: @tutor.id), class: "btn btn-primary", remote: true %>
+</div>

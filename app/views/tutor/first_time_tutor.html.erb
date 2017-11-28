@@ -1,24 +1,45 @@
 <%= render 'layouts/navigation_bar' %>
 
-<h1>Become a Tutor!</h1>
+<h1 class="text-center">Become a Tutor!</h1>
 
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6">
 
+			<%= form_for TutorCourse.new, url: {action: "create"} do |f| %>
+
+			    <div class="form-group ts-field">
+			      <div class="subject-area-tutor">
+			        <%= label :tutor_courses, :subject %>
+			        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor'} %>
+			      </div>
+			    </div>
+
+			    <div class="form-group ts-field">
+			      <div class="course-area-tutor">
+			        <%= render partial: 'select_course_tutor', locals: {subject_id: nil} %>
+			      </div>
+			    </div>
+
+					<!-- <div class="tutor-classes-field" style="border-radius: 7px; border: 0.5px solid #707070; width: 350px; height: 70px; padding: 10px; margin: 15px; ">
+					</div> -->
+
+			    <!-- <div class="form-group ts-field">
+			      <div class="question-area">
+			        <%= label :tutoring_session, "Question" %>
+			        <%= f.text_area :question, value: ""%>
+			      </div>
+			    </div> -->
+
+			    <!-- <%= f.hidden_field :user_id, value: current_user.id%> -->
+			    <%= f.submit "Register", class: "btn btn-primary" %>
+
+					<!--Register button
+					<%= f.submit 'Register', { :controller => "tutor", :action => "update"} %>
+					-->
+			<% end %>
+
 		</div>
 	</div>
 
-	<div class="row">
-		<%= simple_form_for(@tutor) do |f| %>
-
-		<%= f.association :subject, label_method: :abbrev_and_name, hint: "What subject do you prefer to tutor?", include_blank: false %>
-		<%= f.input :schedule, label_method: :startdate, label: "Start Date" %>
-		<%= f.input :schedule, label_method: :starttime, label: "End Date" %>
-		<%= f.input :schedule, label_method: :starttime, label: "Start Time" %>
-		<%= f.input :schedule, label_method: :starttime, label: "End Time" %>
-		<% end %>
-		<!--Register button here-->
-		<%= button_to 'Register', { :controller => "tutor", :action => "update"} %>
-	</div>
 </div>

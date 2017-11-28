@@ -1,0 +1,9 @@
+<% tutoring_sessions.each do |session| %>
+  <tr data-tutee_id=<%= session.user_id %>>
+    <td><%= session.user.first_name %> <%= session.user.last_name %></td>
+    <td><%= session.course.subject.abbrev %></td>
+    <td><%= session.course.number %></td>
+    <td><%= session.question %></td>
+    <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary", remote: true %></td>
+  </tr>
+<% end %>
