@@ -1,0 +1,20 @@
+<div id="frame">
+
+  <h1>Avalable Tutors:</h1>
+  <table class="table">
+    <thead>
+
+    </thead>
+
+    <% @tutors.each do |tutor| %>
+    <tbody>
+      <tr>
+        <td><%= image_tag("avatar.png", size: "70x70") %></td>
+        <td><%= tutor.first_name %></td>
+        <td><%= tutor.last_name %></td>
+        <td><%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "btn btn-primary", remote: true %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
