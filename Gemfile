@@ -38,6 +38,8 @@ gem 'devise'
 
 gem 'utf8-cleaner'
 
+gem 'figaro'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,6 +52,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
