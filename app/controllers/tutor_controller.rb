@@ -37,10 +37,15 @@ class TutorController < ApplicationController
     @tutor = Tutor.where(user_id: current_user.id).take
     if @tutor.is_live
       @tutor.update_attribute(:is_live, false)
-      redirect_to tutor_is_live_path
+      #redirect_to tutor_is_live_path
+      #respond with ajax
+      
     else
       @tutor.update_attribute(:is_live, true)
-      redirect_to tutor_incoming_requests_path
+      #redirect_to tutor_incoming_requests_path
+      # respond_to do |format|
+      #   format.js
+      # end
     end
   end
 
