@@ -32,13 +32,13 @@ class TuteeController < ApplicationController
 
   #create
   def create
-    TutoringSession.create(tutoring_session_params)
+    # TutoringSession.create(tutoring_session_params)
 
-    # @tutoring_session = TutoringSession.new
-    # @tutoring_session.course = Course.find(params[:course][:id])
-    # @tutoring_session.question = params[:tutoring_session][:question]
-    # @tutoring_session.user = User.find(current_user.id)
-    # @tutoring_session.save()
+    @tutoring_session = TutoringSession.new
+    @tutoring_session.course_id = params[:course][:id].to_i
+    @tutoring_session.question = params[:tutoring_session][:question]
+    @tutoring_session.user_id = current_user.id
+    @tutoring_session.save()
 
 
     #  tutors = User.where(is_tutor: true).id
