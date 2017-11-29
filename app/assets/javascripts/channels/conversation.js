@@ -20,7 +20,6 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     else if (data['command'] == 'tutor_accepted') {
       var outer_frame = document.querySelector('#outer_frame');
       var frame = document.querySelector('#frame');
-      //body.innerHTML = data['being_tutored'];
       frame.remove();
       outer_frame.innerHTML = data['being_tutored'];
     }
