@@ -1,13 +1,15 @@
 <div id="frame">
-  <% if @users.nil? %>
+  <% users ||= @users %>
+  <% conversations ||= @conversations %>
+  <% if users.nil? %>
   <h1>You have no messages.</h1>
   <% else %>
   <div class="row">
 
     <div class="col-md-9">
       <ul id="conversations-list">
-        <% if @conversations[0] != nil %>
-          <% @conversations.each do |conversation| %>
+        <% if conversations[0] != nil %>
+          <% conversations.each do |conversation| %>
             <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
           <% end %>
         <% end %>
@@ -15,7 +17,7 @@
     </div>
 
     <div class="col-md-3">
-        <% @users.each do |user| %>
+        <% users.each do |user| %>
           <%= link_to "Open Chat", conversations_path(user_id: user), remote: true, method: :post, class: "btn btn-primary btn-block" %>
         <% end %>
     </div>
