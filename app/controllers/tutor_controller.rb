@@ -22,30 +22,13 @@ class TutorController < ApplicationController
     TutoringSession.find(params[:session_id]).update(accepted: true)
 
     tutoring_session = TutoringSession.find(params[:session_id])
-    tutor = []
-    tutor << User.find(tutoring_session.tutor_id)
+    tutor = User.find(tutoring_session.tutor_id)
     @tutee = User.find(tutoring_session.user_id)
-
-    #Taken form ChatController#index: start
-    session[:conversations] ||= []
-
-
-    tutoring_session = TutoringSession.where(user_id: current_user.id).or(TutoringSession.where(tutor_id: current_user.id)).last
-
-
-    if !tutoring_session.nil? && tutoring_session.accepted
-      @conversations = []
-      @users = User.all.where(id: tutoring_session.user_id).or(User.all.where(id: tutoring_session.tutor_id)).where.not(id: current_user)                 #select all users that are not us
-      @conversations << Conversation.includes(:recipient, :messages)
-                                   .find_by(id: session[:conversations])
-    end
-    ##Taken form ChatController#index: end
-
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
-      being_tutored: ApplicationController.render(partial: 'chat/index', locals: {users: tutor, conversations: @conversations })
+      being_tutored: ApplicationController.render(partial: 'tutee/being_tutored', locals: {tutoring_session: tutoring_session, tutor: tutor })
     )
 
 
