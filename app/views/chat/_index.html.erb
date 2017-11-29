@@ -16,10 +16,13 @@
 
     <div class="col-md-3">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <% users.each do |user| %>
         <!-- Workaround: this link is triggered automaticly when this page loads. -->
           <%= link_to "", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
 =======
+=======
+>>>>>>> parent of 9baa2ec... pop up a chat on tutee side when tutor accepts the request
         <% @users.each do |user| %>
           <%= link_to "Open Chat", conversations_path(user_id: user), remote: true, method: :post, class: "btn btn-primary btn-block" %>
 >>>>>>> parent of 9baa2ec... pop up a chat on tutee side when tutor accepts the request
