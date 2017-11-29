@@ -25,10 +25,10 @@
 
 }).call(this);
 
+//cahnge incoming_requests from green to regular when clicked:
 window.onload = function () {
-  var incoming_requests_link = document.querySelector("#incoming_requests_link");
-  if (incoming_requests_link != null) {
-  incoming_requests_link.onclick = function() {
-    incoming_requests_link.classList = "btn"
-  }}
+  document.querySelector("#incoming_requests_link").addEventListener("click", function() {
+    var incoming_requests_link = document.querySelector("#incoming_requests_link")
+    incoming_requests_link.classList = "btn";
+  });;
 }
