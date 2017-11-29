@@ -12,12 +12,6 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
-<<<<<<< HEAD
-    # all the tutor's requests
-    @my_tutoring_requests = TutoringSession.where(:tutor_id => current_user.id)
-    # the tutor request's requested course information
-    # @course_number = Course.where(:id => @my_tutoring_requests.course_id)
-=======
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
     respond_to do |format|
       format.js
@@ -41,7 +35,6 @@ class TutorController < ApplicationController
     respond_to do |format|
       format.js
     end
->>>>>>> d872029796b19e8b1c2e6140dbf85da30eeb0095
   end
 
   def currently_tutoring
@@ -93,20 +86,6 @@ class TutorController < ApplicationController
   end
 
   def first_time_tutor
-<<<<<<< HEAD
-    if current_user.is_tutor
-      redirect_to tutor_index_path
-    end
-  end
-
-  def update
-    ##creates a new tutor record
-    @new_tutor = Tutor.new(:user_id => current_user.id)
-    @new_tutor.save
-    ##udates the user's is_tutor
-    @user = current_user
-    @user.update_attribute(:is_tutor, true)
-=======
     @subject = Subject.new
   end
 
@@ -136,9 +115,6 @@ class TutorController < ApplicationController
       TutorCourse.create(tutor_id: current_user.tutor.id, course_id: course_id.to_i)
     end
 
-
-
->>>>>>> d872029796b19e8b1c2e6140dbf85da30eeb0095
     redirect_to tutor_index_path
   end
 
