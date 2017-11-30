@@ -40,7 +40,6 @@ class TuteeController < ApplicationController
     # @tutoring_session.user_id = current_user.id
     # @tutoring_session.save()
 
-
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
     @tutors = User.all
@@ -50,10 +49,10 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutoring_session
-    @tutor = User.find(params[:tutor_id])
+    @tutor = Tutor.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.destroy!
     ActionCable.server.broadcast(
-      "conversations-#{@tutor.id}",
+      "conversations-#{@tutor.user_id}",
       command: "session_canceled",
       tutee_id: current_user.id
     )
@@ -67,12 +66,13 @@ class TuteeController < ApplicationController
   end
 
   def pick_tutor
-    @tutor = User.find(params[:tutor_id])   # !!make sure to rename :tutor_id to :user_id
+    @tutor = Tutor.where(user_id: params[:tutor_id]).first   # !! Plz rename :tutor_id to :user_id !!
+    @user = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
     tutoring_sessions = TutoringSession.where(user_id: current_user.id)
     #Inform tutor
     ActionCable.server.broadcast(
-      "conversations-#{@tutor.id}",
+      "conversations-#{@user.id}",
       command: "tutor_picked",
       tutoring_session: ApplicationController.render(partial: 'tutor/tutoring_sessions', locals: {tutoring_sessions: tutoring_sessions, })
     )
