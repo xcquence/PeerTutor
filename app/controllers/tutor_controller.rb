@@ -75,7 +75,7 @@ class TutorController < ApplicationController
       @tutor.update_attribute(:is_live, false)
       #redirect_to tutor_is_live_path
       #respond with ajax
-      
+
     else
       @tutor.update_attribute(:is_live, true)
       #redirect_to tutor_incoming_requests_path
@@ -117,14 +117,6 @@ class TutorController < ApplicationController
 
     redirect_to tutor_index_path
   end
-  def create
-    @tutor = Tutor.new(params[:tutor])
-    if @tutor.save
-      redirect_to tutor_index_path, notice: "Successfully created Tutor."
-    else
-      render :new
-    end
-  end
 
   # def update
   #   @tutor = current_user
@@ -133,9 +125,12 @@ class TutorController < ApplicationController
   # end
 
   private
-
+  #Strong parameter
   def tutor_course_params
-
+    # params.require(:tutors).merge(
+    #   user_id: current_user.id,
+    #   total_tip: 0
+    # )
   end
 
 end
