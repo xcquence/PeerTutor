@@ -67,7 +67,7 @@ class TuteeController < ApplicationController
   end
 
   def pick_tutor
-    @tutor = User.find(params[:tutor_id])
+    @tutor = User.find(params[:tutor_id])   # !!make sure to rename :tutor_id to :user_id
     TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
     tutoring_sessions = TutoringSession.where(user_id: current_user.id)
     #Inform tutor
