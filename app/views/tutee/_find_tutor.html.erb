@@ -3,9 +3,6 @@
 
 <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
 
-<h3 id="find_tutor_heading">Fill out the form below to find a tutor: </h3>
-
-<%= form_for :tutoring_session, remote: true do |f|%>
     <!--Subject field-->
     <div class="form-group ts-field">
       <div class="subject-area form_field">
