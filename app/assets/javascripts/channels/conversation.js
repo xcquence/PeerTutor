@@ -24,10 +24,16 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
 
       //
       if (document.querySelector('#waiting_for_tutor')) {
-        var outer_frame = document.querySelector('#outer_frame');
-        var frame = document.querySelector('#frame');
-        frame.remove();
-        outer_frame.innerHTML = data['being_tutored'];
+        //var outer_frame = document.querySelector('#outer_frame');
+        //var frame = document.querySelector('#frame');
+        //frame.remove();
+        //outer_frame.innerHTML = data['being_tutored'];
+
+        $link = $('#messenger:first');
+        $link[0].click();
+        //add Location:
+        var f = document.querySelector("#frame");
+        f.insertAdjacentHTML('beforebegin', data['tutor_response']);
       } else {
 
       }

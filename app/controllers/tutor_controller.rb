@@ -32,9 +32,10 @@ class TutorController < ApplicationController
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
-      being_tutored: ApplicationController.render(
-        partial: 'chat/index',
-        locals: {conversations: conversations, xxx: tutors })
+      tutor_response: ApplicationController.render(
+        partial: 'tutor/location',
+        locals: {location: "3rd Floor by the Window", item2: "" }
+      )
     )
 
 

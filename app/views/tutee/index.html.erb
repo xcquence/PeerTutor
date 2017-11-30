@@ -9,7 +9,7 @@
 			<ul>
 				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
 				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
+				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn", id: "messenger" %></li>
 				<li><%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></li>
 				<%= link_to home_authentication_path do %>
 					<li>>Switch role<</li>
