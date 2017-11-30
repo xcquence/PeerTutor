@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
-  create_table "courses", id: false, force: :cascade do |t|
+  create_table "courses", force: :cascade do |t|
     t.string "subject_id"
     t.string "name"
     t.integer "number"
