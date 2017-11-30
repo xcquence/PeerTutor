@@ -21,6 +21,7 @@ password = 'pass123'
   )
 end
 
+
 csv_file1 = 'courses_data.csv'
 CSV.read(csv_file1, :encoding => 'windows-1251:utf-8')
 csv_file2 = 'subjects_data.csv'
