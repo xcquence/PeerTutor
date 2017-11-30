@@ -49,6 +49,12 @@ class CurrenciesController < ApplicationController
   redirect_to new_currencies_path
   end
 
+  @acc_balance = User.find(params[:account_balance])
+
+  @spending_total = @acc_balance + @amount
+
+
+
 
   end
 
