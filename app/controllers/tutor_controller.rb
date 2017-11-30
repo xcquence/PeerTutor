@@ -62,6 +62,29 @@ class TutorController < ApplicationController
     end
   end
 
+  def is_live
+    @tutor = Tutor.where(user_id: current_user.id).take
+    if @tutor.is_live
+      redirect_to tutor_incoming_requests_path
+    end
+  end
+
+  def toggle_is_live
+    @tutor = Tutor.where(user_id: current_user.id).take
+    if @tutor.is_live
+      @tutor.update_attribute(:is_live, false)
+      #redirect_to tutor_is_live_path
+      #respond with ajax
+      
+    else
+      @tutor.update_attribute(:is_live, true)
+      #redirect_to tutor_incoming_requests_path
+      # respond_to do |format|
+      #   format.js
+      # end
+    end
+  end
+
   def first_time_tutor
     @subject = Subject.new
   end
@@ -92,9 +115,15 @@ class TutorController < ApplicationController
       TutorCourse.create(tutor_id: current_user.tutor.id, course_id: course_id.to_i)
     end
 
-
-
     redirect_to tutor_index_path
+  end
+  def create
+    @tutor = Tutor.new(params[:tutor])
+    if @tutor.save
+      redirect_to tutor_index_path, notice: "Successfully created Tutor."
+    else
+      render :new
+    end
   end
 
   # def update
