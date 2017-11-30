@@ -99,8 +99,8 @@ class TuteeController < ApplicationController
   #Strong Parameter
   def tutoring_session_params
     params.require(:tutoring_session).permit(:question).merge(
-      user: User.find(current_user.id),
-      course: Course.find(params[:course][:id])
+      user_id: current_user.id,
+      course_id: params[:course][:id].to_i
     )
   end
 

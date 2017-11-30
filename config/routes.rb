@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   get 'tutee/tips_management'
 
+  get 'tutee/currency'
+
   get 'tutee/schedule'
 
   get 'tutee/messenger'
@@ -70,6 +72,9 @@ Rails.application.routes.draw do
       get 'get_courses'  # /tutee/get_courses
     end
   end
+  resources :tutors
+  resource :currency
+
 
   resources :tutor, only: [:first_time_tutor] do
     collection do

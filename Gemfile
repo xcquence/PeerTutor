@@ -35,9 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-
+gem 'simple_form'
 gem 'utf8-cleaner'
-
+gem 'stripe', '~> 3.4', '>= 3.4.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -117,6 +117,14 @@ class TutorController < ApplicationController
 
     redirect_to tutor_index_path
   end
+  def create
+    @tutor = Tutor.new(params[:tutor])
+    if @tutor.save
+      redirect_to tutor_index_path, notice: "Successfully created Tutor."
+    else
+      render :new
+    end
+  end
 
   # def update
   #   @tutor = current_user
