@@ -19,18 +19,22 @@ class TutorController < ApplicationController
   end
 
   def accept_request
+
     TutoringSession.find(params[:session_id]).update(accepted: true)
 
     tutoring_session = TutoringSession.find(params[:session_id])
-    tutor = User.find(tutoring_session.tutor_id)
+    tutors = []
+    tutors << User.find(tutoring_session.tutor_id)
     @tutee = User.find(tutoring_session.user_id)
+
+    conversations = Conversation.where(recipient_id: tutors[0], sender_id: @tutee.id)
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
       being_tutored: ApplicationController.render(
-        partial: 'tutee/being_tutored',
-        locals: {tutoring_session: tutoring_session, tutor: tutor })
+        partial: 'chat/index',
+        locals: {conversations: conversations, xxx: tutors })
     )
 
 
