@@ -1,2 +1,9 @@
-<h1>Tutor#tutor_profile</h1>
-<p>Find me in app/views/tutor/tutor_profile.html.erb</p>
+<h1>Tutor Profile</h1>
+<!--<p>Find me in app/views/tutor/tutor_profile.html.erb</p>-->
+
+<%= image_tag(current_user.avatar.url(:medium), size: "300x300") %>
+
+<p> <%= current_user.first_name %></p>
+<p> <%= current_user.last_name %></p>
+
+<%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>

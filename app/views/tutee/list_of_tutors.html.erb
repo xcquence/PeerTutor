@@ -7,7 +7,7 @@
   <% @tutors.each do |tutor| %>
   <tbody>
     <tr>
-      <td><%= image_tag("avatar.png", size: "70x70") %></td>
+      <td><%= image_tag(tutor.avatar.url(:thumb), size: "70x70") %></td>
       <td><%= tutor.first_name %></td>
       <td><%= tutor.last_name %></td>
       <td><%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "btn btn-primary" %></td>

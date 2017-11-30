@@ -24,6 +24,7 @@ class TutorController < ApplicationController
   end
 
   def tutor_profile
+    #@tutor = Tutor.all
   end
 
   def piggy_bank
