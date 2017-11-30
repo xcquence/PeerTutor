@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "subject_id"
-    t.string "name"
+    t.bigint "subject_id"
     t.integer "number"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_courses_on_subject_id"
@@ -73,11 +73,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   end
 
   create_table "tutors", force: :cascade do |t|
-<<<<<<< HEAD
     t.bigint "user_id"
-=======
-    t.integer "user_id"
->>>>>>> 18b87cb0fb6c9cd522e1b47e49ce0eb162bcb70c
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
     t.datetime "created_at", null: false
