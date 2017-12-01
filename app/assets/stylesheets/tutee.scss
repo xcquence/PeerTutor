@@ -14,8 +14,21 @@ body.tutee-index {
   height: 30px;
 }
 
-#frame {
-  width: 70%;
-  overflow: scroll;
-  border: 5px solid black;
+#outer_frame {
+	border: 5px solid #190455;
+	border-radius: 5px;
+	margin-top: 20px;
+	overflow: scroll;
+	height: 600px;
+	background-color: #fff;
+}
+
+.nav_link {
+	width: 100%;
+	padding: 25px;
+	outline: none;
+}
+
+.nav_link:hover {
+	background-color: #F4EDFE;
 }

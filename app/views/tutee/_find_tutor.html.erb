@@ -1,5 +1,5 @@
 <div id="frame">
-<div class="container" style="padding: 100px;">
+<div>
 
 <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
 
@@ -33,6 +33,6 @@
 
   <!-- temporary just to check if the data stored in TutoringSession -->
   <a href="/tutee/tutoring_sessions">Check Tutoring Sessions</a>
-
+<%end%>
 <div>
 </div>

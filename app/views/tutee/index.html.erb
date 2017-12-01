@@ -16,24 +16,24 @@
 
 
 <div class="row dashboard">
-	<div id="nav_container" class="col-lg-2 col-sm-4 hidden-xs">
+	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
-				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></li>
-				<%= link_to home_authentication_path do %>
-					<li>>Switch role<</li>
+				<li><%= button_to "Find Tutor", tutee_find_tutor_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%= button_to "Schedule", tutee_schedule_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%= button_to "Tip Management", tutee_tips_management_path, remote: true, :method => "get", class: "nav_link"%></li>
+				<%= button_to home_authentication_path,  :method => "get", class: "nav_link" do %>
+					<li> Switch Role </li>
 				<% end %>
 			</ul>
 		</nav>
 	</div>
 
-	<div id="outer_frame">
+	<div id="outer_frame" class="col-lg-9 col-md-8 col-sm-12">
 		<!-- This frame is being replaced with another page from the dashboard -->
 		<div id="frame">
-						<div class="container" style="padding: 100px;">
+						<div class="container-fluid" style="padding: 100px;">
 
 						<%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
 
