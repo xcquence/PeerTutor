@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get 'tutor/messenger'
 
+  get 'tutor/toggle_is_live'
+
+  get 'tutor/is_live'
+
+  post 'tutor/toggle_is_live'
+
   get 'tutee/index'
 
   get 'tutee/find_tutor'
@@ -22,6 +28,8 @@ Rails.application.routes.draw do
   get 'tutee/tutoring_sessions'
 
   get 'tutee/tips_management'
+
+  get 'tutee/currency'
 
   get 'tutee/schedule'
 
@@ -39,6 +47,10 @@ Rails.application.routes.draw do
 
   get 'tutor/first_time_tutor'
   post 'tutor/first_time_tutor' => 'tutor#create'
+
+  get 'tutee/get_courses'
+
+  get 'tutee/update'
 
   post 'tutor/update'
 
@@ -61,6 +73,9 @@ Rails.application.routes.draw do
       get 'get_courses'  # /tutee/get_courses
     end
   end
+  resources :tutors
+  resource :currency
+
 
   resources :tutor, only: [:first_time_tutor] do
     collection do
