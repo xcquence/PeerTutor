@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :email,              null: false, default: ""
 
       t.boolean :is_tutor
+      t.boolean :is_live, default: false
 
       t.string :encrypted_password, null: false, default: ""
 
