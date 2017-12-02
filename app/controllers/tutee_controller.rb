@@ -66,10 +66,9 @@ class TuteeController < ApplicationController
   end
 
   def pick_tutor
-    @tutor = Tutor.where(user_id: params[:tutor_id]).first   # !! Plz rename :tutor_id to :user_id !!
-    @user = User.find(params[:tutor_id])
-    TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
-    tutoring_sessions = TutoringSession.where(user_id: current_user.id)
+    @tutor = User.find(params[:tutor_id])
+   TutoringSession.where(user_id: current_user.id).last.update(tutor_id: @tutor.id)
+   tutoring_sessions = TutoringSession.where(user_id: current_user.id)
     #Inform tutor
     ActionCable.server.broadcast(
       "conversations-#{@user.id}",
