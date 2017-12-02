@@ -104,6 +104,11 @@ class TutorController < ApplicationController
     redirect_to tutor_index_path
   end
 
+
+  def toggle_is_live
+
+  end
+
   # def update
   #   @tutor = current_user
   #   @tutor.update_attributes(is_tutor: true)

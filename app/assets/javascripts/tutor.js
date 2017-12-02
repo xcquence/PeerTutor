@@ -34,4 +34,12 @@ window.onload = function () {
       incoming_requests_link.classList = "btn";
     });;
   }
+
+
+  //turn on the live button
+  $bulb = $( "#live_btn" );
+  $bulb.click(function(e) {
+    e.preventDefault();
+    $bulb.attr('src', 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/6/6f/Lightbulb.png/revision/latest/scale-to-width-down/278?cb=20161222154836');
+  });
 }

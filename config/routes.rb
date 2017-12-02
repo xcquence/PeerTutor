@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   post 'tutor/update'
 
   get 'tutor/accept_request'
+  get 'tutor/toggle_is_live'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
