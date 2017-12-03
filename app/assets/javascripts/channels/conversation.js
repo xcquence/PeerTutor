@@ -33,7 +33,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
         $link[0].click();
         //add Location:
         var f = document.querySelector("#frame");
-        f.insertAdjacentHTML('beforebegin', data['tutor_response']);
+        //f.insertAdjacentHTML('beforebegin', data['tutor_response']);
       } else {
 
       }
