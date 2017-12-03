@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20171106000631) do
 
   create_table "courses", force: :cascade do |t|
     t.bigint "subject_id"
-    t.integer "number"
     t.string "name"
+    t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_courses_on_subject_id"
@@ -68,17 +68,8 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.datetime "updated_at", null: false
     t.boolean "accepted", default: false
     t.index ["course_id"], name: "index_tutoring_sessions_on_course_id"
-    t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id"
-    t.index ["user_id"], name: "index_tutoring_sessions_on_user_id"
-  end
-
-  create_table "tutors", force: :cascade do |t|
-    t.bigint "user_id"
-    t.boolean "is_live", default: false
-    t.decimal "total_tip", precision: 10, scale: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_tutors_on_user_id"
+    t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id", unique: true
+    t.index ["user_id"], name: "index_tutoring_sessions_on_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,6 +77,8 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.boolean "is_tutor", default: false
+    t.boolean "is_live", default: false
+    t.decimal "total_tip", precision: 10, scale: 2
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -112,9 +105,8 @@ ActiveRecord::Schema.define(version: 20171106000631) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "tutor_courses", "courses"
-  add_foreign_key "tutor_courses", "tutors"
+  add_foreign_key "tutor_courses", "users", column: "tutor_id"
   add_foreign_key "tutoring_sessions", "courses"
-  add_foreign_key "tutoring_sessions", "tutors"
   add_foreign_key "tutoring_sessions", "users"
-  add_foreign_key "tutors", "users"
+  add_foreign_key "tutoring_sessions", "users", column: "tutor_id"
 end
