@@ -12,9 +12,15 @@ class TutorController < ApplicationController
   end
 
   def incoming_requests
-    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
-    respond_to do |format|
-      format.js
+    if current_user.is_live
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+      respond_to do |format|
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.js {render 'offline'}
+      end
     end
   end
 
