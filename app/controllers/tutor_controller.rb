@@ -8,7 +8,11 @@ class TutorController < ApplicationController
       redirect_to tutor_first_time_tutor_path
     end
 
-    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    if current_user.is_live
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    else
+      @not_live = true
+    end
   end
 
   def incoming_requests

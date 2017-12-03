@@ -34,11 +34,13 @@
 	<!--board-->
 
 
-	<div class="">
+	<div id="outer_frame">
 		<%= render 'is_live' %>
-		<div id="frame">
-
-		</div>
+				<% if @not_live %>
+							<%= render 'offline' %>
+				<% else %>
+							<%= render 'incoming_requests' %>
+				<% end %>
 	</div>
 
 
