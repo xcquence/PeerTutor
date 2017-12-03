@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :tutoring_session
-  has_one :tutor
+  has_one :tutoring_session, foreign_key: :user_id
+  has_one :tutoring_session, foreign_key: :tutor_id
+
+  #has_many :tutor_courses
+  has_many :courses, :through => :tutor_courses
 
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
