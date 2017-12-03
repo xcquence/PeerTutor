@@ -40,6 +40,13 @@ window.onload = function () {
   $bulb = $( "#live_btn" );
   $bulb.click(function(e) {
     e.preventDefault();
-    $bulb.attr('src', 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/6/6f/Lightbulb.png/revision/latest/scale-to-width-down/278?cb=20161222154836');
+    if ($bulb.data().status == 'off') {
+      $bulb.data().status = 'on'
+      $bulb.attr('src', 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/6/6f/Lightbulb.png/revision/latest/scale-to-width-down/278?cb=20161222154836');
+    } else {
+      $bulb.data().status = 'off'
+      $bulb.attr('src', 'http://images.clipartpanda.com/light-bulb-png-MiLxq9oyT.png');
+    }
+
   });
 }
