@@ -8,27 +8,44 @@ class TutorController < ApplicationController
       redirect_to tutor_first_time_tutor_path
     end
 
-    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    if current_user.is_live
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+    else
+      @not_live = true
+    end
   end
 
   def incoming_requests
-    @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
-    respond_to do |format|
-      format.js
+    if current_user.is_live
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+      respond_to do |format|
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.js {render 'offline'}
+      end
     end
   end
 
   def accept_request
+
     TutoringSession.find(params[:session_id]).update(accepted: true)
 
     tutoring_session = TutoringSession.find(params[:session_id])
-    tutor = User.find(tutoring_session.tutor_id)
+    tutors = []
+    tutors << User.find(tutoring_session.tutor_id)
     @tutee = User.find(tutoring_session.user_id)
+
+    conversations = Conversation.where(recipient_id: tutors[0], sender_id: @tutee.id)
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
-      being_tutored: ApplicationController.render(partial: 'tutee/being_tutored', locals: {tutoring_session: tutoring_session, tutor: tutor })
+      tutor_response: ApplicationController.render(
+        partial: 'tutor/location',
+        locals: {location: "3rd Floor by the Window", item2: "" }
+      )
     )
 
 
@@ -75,7 +92,7 @@ class TutorController < ApplicationController
       @tutor.update_attribute(:is_live, false)
       #redirect_to tutor_is_live_path
       #respond with ajax
-      
+
     else
       @tutor.update_attribute(:is_live, true)
       #redirect_to tutor_incoming_requests_path
@@ -124,6 +141,23 @@ class TutorController < ApplicationController
     else
       render :new
     end
+  end
+
+
+  def toggle_is_live
+    if current_user.is_live
+      current_user.update_attributes(is_live: false)
+      respond_to do |format|
+        format.js { render 'offline'}
+      end
+    else
+      current_user.update_attributes(is_live: true)
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+      respond_to do |format|
+        format.js { render 'incoming_requests'}
+      end
+    end
+
   end
 
   # def update
