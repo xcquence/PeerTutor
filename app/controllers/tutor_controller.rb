@@ -86,21 +86,6 @@ class TutorController < ApplicationController
     end
   end
 
-  def toggle_is_live
-    if current_user.is_live
-      current_user.update_attributes(is_live: false)
-      respond_to do |format|
-        format.js { render 'offline'}
-      end
-    else
-      current_user.update_attributes(is_live: true)
-      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
-      respond_to do |format|
-        format.js { render 'incoming_requests'}
-      end
-    end
-
-  end
 
   def first_time_tutor
     @subject = Subject.new
@@ -134,6 +119,20 @@ class TutorController < ApplicationController
 
     redirect_to tutor_index_path
   end
+
+  def toggle_is_live
+    if current_user.is_live
+      current_user.update_attributes(is_live: false)
+      respond_to do |format|
+        format.js { render 'offline'}
+      end
+    else
+      current_user.update_attributes(is_live: true)
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+      respond_to do |format|
+        format.js { render 'incoming_requests'}
+      end
+    end
 
   private
 
