@@ -133,6 +133,7 @@ class TutorController < ApplicationController
         format.js { render 'incoming_requests'}
       end
     end
+  end
 
   private
 
