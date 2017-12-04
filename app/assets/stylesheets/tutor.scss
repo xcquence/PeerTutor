@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.font_styling {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+}
 body.tutor-index {
 	background-image: url(asset-path('dashboard-bg.png'));
 	background-size: 100%;
@@ -88,7 +93,44 @@ body.tutor-index {
 	margin: 0 auto;
 	width: 15%;
 }
+/* First time tutor form */
+body.tutor-first_time_tutor {
+	background-image: url(asset-path('loginbg.png'));
+	background-size: 100%;
+}
 
+.course_selection  {
+	padding: 10px;
+}
+.course_container {
+	margin: 0 auto !important;
+}
+.course_selection_container {
+	height: 400px;
+	overflow-y: scroll;
+	border: solid 4px #190455;
+	border-radius: 5px;
+	margin: 0 20%;
+	text-align: left;
+	background-color: #fdfcff;
+}
+.first_time_tutor_reg_btn {
+	margin: 0;
+    background-color: transparent;
+    text-align: center;
+    padding: 10px 0px 30px 0px;
+}
+
+.first_time_tutor_reg_btn .btn {
+	border: solid 3px #190455;
+	background-color: #fdfcff;
+	box-shadow: 0px 5px 0px #e8c6e7; /*#80E3FD*/
+}
+
+.first_time_tutor_reg_btn .btn:hover {
+	border: solid 3px #80E3FD;
+}
+/* For different screen sizes */
 @media only screen and (max-width: 730px){
 	.dashboard {
 		margin: 0px;
@@ -97,5 +139,12 @@ body.tutor-index {
 		width: 95%;
 		box-shadow: -5px 5px 0px #190455;
 		margin: 0 auto;
+	}
+	.course_selection_container {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	.first_time_tutor_reg_btn {
+		padding: 40px 0px;
 	}
 }
