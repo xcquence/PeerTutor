@@ -17,42 +17,33 @@
 	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
 		<nav>
 			<ul>
-				<li><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn"  %></li>
+				<li><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link"  %></li>
 				<li><%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn" %></li>
 				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
 				<li><%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></li>
 				<li><%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn" %></li>
+				<%= link_to home_authentication_path do %>
+					<li>>Switch role<</li>
+				<% end %>
 			</ul>
 		</nav>
 	</div>
 
+
+
 	<!--board-->
 
 
-	<div class="">
-		<div id="frame">
-			<h1 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h1>
-
-			<div class="container">
-				<table class="table" id="table">
-					<tr>
-						<th>Tutee</th>
-						<th>Subject</th>
-						<th>Course</th>
-						<th>Question</th>
-						<th></th>
-					</tr>
-					<% @tutoring_sessions.each do |session| %>
-						<tr data-tutee_id=<%= session.user_id %>>
-							<td><%= session.user.first_name %> <%= session.user.last_name %></td>
-							<td><%= session.course.subject.abbrev %></td>
-							<td><%= session.course.number %></td>
-							<td><%= session.question %></td>
-							<td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), remote: true, class: "btn btn-primary" %></td>
-						</tr>
-					<% end %>
-				</table>
-			</div>
-		</div>
+	<div id="outer_frame">
+		<%= render 'is_live' %>
+				<% if @not_live %>
+							<%= render 'offline' %>
+				<% else %>
+							<%= render 'incoming_requests' %>
+				<% end %>
 	</div>
+
+
+
+
 </div>
