@@ -34,6 +34,7 @@ Rails.application.routes.draw do
 
   get 'thanks' , to: 'currencies#thanks', as: 'thanks'
 
+  get 'stripe_accounts/full', to: 'stripe_accounts#full'
 
 
 
@@ -56,6 +57,7 @@ Rails.application.routes.draw do
   end
   resources :tutors
   resource :currency
-
+  resources :stripe_accounts
+  resources :bank_accounts
 
 end
