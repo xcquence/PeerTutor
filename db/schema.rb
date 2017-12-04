@@ -78,10 +78,7 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.string "email", default: "", null: false
     t.boolean "is_tutor", default: false
     t.boolean "is_live", default: false
-<<<<<<< HEAD
     t.decimal "total_tip", precision: 10, scale: 2
-=======
->>>>>>> 3faee2c5fb16c6faa129d13007bf77baec6a6c42
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

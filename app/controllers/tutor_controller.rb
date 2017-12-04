@@ -87,19 +87,19 @@ class TutorController < ApplicationController
   end
 
   def toggle_is_live
-    @tutor = Tutor.where(user_id: current_user.id).take
-    if @tutor.is_live
-      @tutor.update_attribute(:is_live, false)
-      #redirect_to tutor_is_live_path
-      #respond with ajax
-
+    if current_user.is_live
+      current_user.update_attributes(is_live: false)
+      respond_to do |format|
+        format.js { render 'offline'}
+      end
     else
-      @tutor.update_attribute(:is_live, true)
-      #redirect_to tutor_incoming_requests_path
-      # respond_to do |format|
-      #   format.js
-      # end
+      current_user.update_attributes(is_live: true)
+      @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
+      respond_to do |format|
+        format.js { render 'incoming_requests'}
+      end
     end
+
   end
 
   def first_time_tutor
