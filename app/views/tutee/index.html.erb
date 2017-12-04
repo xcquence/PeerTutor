@@ -19,10 +19,10 @@
 	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<li><%= button_to "Find Tutor", tutee_find_tutor_path, remote: true, :method => "get", class: "nav_link" %></li>
-				<li><%= button_to "Schedule", tutee_schedule_path, remote: true, :method => "get", class: "nav_link" %></li>
-				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link" %></li>
-				<li><%= button_to "Tip Management", tutee_tips_management_path, remote: true, :method => "get", class: "nav_link"%></li>
+				<li><%= button_to "Find Tutor", tutee_find_tutor_path, remote: true, :method => "get", class: "nav_link underline" %></li>
+				<li><%= button_to "Schedule", tutee_schedule_path, remote: true, :method => "get", class: "nav_link underline" %></li>
+				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link underline" %></li>
+				<li><%= button_to "Tip Management", tutee_tips_management_path, remote: true, :method => "get", class: "nav_link underline"%></li>
 				<%= button_to home_authentication_path,  :method => "get", class: "nav_link" do %>
 					<li> Switch Role </li>
 				<% end %>

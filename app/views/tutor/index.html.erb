@@ -19,11 +19,11 @@
 	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<li><%=button_to "Incoming Request", tutor_incoming_requests_path, remote: true, :method => "get", class: "nav_link"  %></li>
-				<li><%= button_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, :method => "get", class: "nav_link" %></li>
-				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link" %></li>
-				<li><%= button_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, :method => "get", class: "nav_link"%></li>
-				<li><%= button_to "Tutor Profile", tutor_tutor_profile_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%=button_to "Incoming Request", tutor_incoming_requests_path, remote: true, :method => "get", class: "nav_link underline"  %></li>
+				<li><%= button_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, :method => "get", class: "nav_link underline" %></li>
+				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link underline" %></li>
+				<li><%= button_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, :method => "get", class: "nav_link underline"%></li>
+				<li><%= button_to "Tutor Profile", tutor_tutor_profile_path, remote: true, :method => "get", class: "nav_link underline" %></li>
 				<%= button_to home_authentication_path, :method => "get", class: "nav_link" do %>
 					<li>>Switch role<</li>
 				<% end %>
