@@ -32,3 +32,48 @@ body.tutee-index {
 .nav_link:hover {
 	background-color: #F4EDFE;
 }
+
+#find_tutor_heading {
+	color: #190455;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+
+#question_box {
+	resize: none;
+	width: 50%;
+	height: 200px;
+	border: solid 4px #190455;
+	border-radius: 5px;
+	outline: none;
+	padding: 5px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+	background-color: #F4EDFE;
+}
+
+.find_tutor_form_label {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 1.6rem !important;
+	color: #190455;
+}
+
+.question-area p {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+
+#find_tutor_submit_btn {
+	outline: none;
+	padding: 3px 10px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+	border: solid 3px #190455;
+	background-color: #F4EDFE;
+}
+#find_tutor_submit_btn:hover {
+	border: solid 3px #80e3fd;
+}

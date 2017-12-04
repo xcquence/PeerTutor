@@ -2,15 +2,15 @@
 <div>
 
 <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
-
 <h3 id="find_tutor_heading">Fill out the form below to find a tutor: </h3>
 
 <%= form_for :tutoring_session, remote: true do |f|%>
     <!--Subject field-->
     <div class="form-group ts-field">
       <div class="subject-area form_field">
-        <%= label :tutoring_session, :subject %>
-        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+        <%= label :tutoring_session, :subject, class: "find_tutor_form_label"%>
+        <br />
+        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'}%>
       </div>
     </div>
     <!--Course field-->
@@ -22,13 +22,15 @@
     <!--Question field-->
     <div class="form-group ts-field">
       <div class="question-area form_field">
-        <%= label :tutoring_session, "Question" %>
-        <%= f.text_area :question, value: ""%>
+        <%= label :tutoring_session, "Question", class: "find_tutor_form_label"%>
+        <br />
+        <p> Explain the problem you're having below. </p>
+        <%= f.text_area :question, value: "", :id => 'question_box'%>
       </div>
     </div>
 
     <%= f.hidden_field :user_id, value: current_user.id%>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit", :id => 'find_tutor_submit_btn' %>
 <% end %>
 
   <!-- temporary just to check if the data stored in TutoringSession -->
