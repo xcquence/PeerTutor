@@ -10,7 +10,7 @@
       <div class="subject-area form_field">
         <%= label :tutoring_session, :subject, class: "find_tutor_form_label"%>
         <br />
-        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'}%>
+        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select', :required => true} %>
       </div>
     </div>
     <!--Course field-->
