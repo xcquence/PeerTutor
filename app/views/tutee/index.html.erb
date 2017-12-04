@@ -32,37 +32,6 @@
 
 	<div id="outer_frame" class="col-lg-9 col-md-8 col-sm-12">
 		<!-- This frame is being replaced with another page from the dashboard -->
-		<div id="frame">
-						<div class="container-fluid" style="padding: 100px;">
+						<%=  render "tutee/find_tutor"%>
 
-						<%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
-
-						    <div class="form-group ts-field">
-						      <div class="subject-area">
-						        <%= label :tutoring_session, :subject %>
-						        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
-						      </div>
-						    </div>
-
-						    <div class="form-group ts-field">
-						      <div class="course-area">
-						        <%= render partial: 'select_course', locals: {subject_id: nil} %>
-						      </div>
-						    </div>
-
-						    <div class="form-group ts-field">
-						      <div class="question-area">
-						        <%= label :tutoring_session, "Question" %>
-						        <%= f.text_area :question, value: ""%>
-						      </div>
-						    </div>
-
-						    <%= f.hidden_field :user_id, value: current_user.id%>
-						    <%= f.submit "Submit" %>
-						<% end %>
-
-						  <!-- temporary just to check if the data stored in TutoringSession -->
-						  <a href="/tutee/tutoring_sessions">Check Tutoring Sessions</a>
-					</div>
-	</div>
 </div>
