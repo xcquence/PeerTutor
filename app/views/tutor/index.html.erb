@@ -12,29 +12,26 @@
 		</div>
 	</div>
 </div>
+
+
 <div class="dashboard">
 	<!--navigation for dashboard-->
-	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
+	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
 		<nav>
 			<ul>
-				<li><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link"  %></li>
-				<li><%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></li>
-				<li><%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn" %></li>
-				<%= link_to home_authentication_path do %>
+				<li><%=button_to "Incoming Request", tutor_incoming_requests_path, remote: true, :method => "get", class: "nav_link"  %></li>
+				<li><%= button_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<li><%= button_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, :method => "get", class: "nav_link"%></li>
+				<li><%= button_to "Tutor Profile", tutor_tutor_profile_path, remote: true, :method => "get", class: "nav_link" %></li>
+				<%= button_to home_authentication_path, :method => "get", class: "nav_link" do %>
 					<li>>Switch role<</li>
 				<% end %>
 			</ul>
 		</nav>
 	</div>
 
-
-
-	<!--board-->
-
-
-	<div id="outer_frame">
+	<div id="outer_frame" class="col-lg-9 col-md-8 col-sm-12">
 		<%= render 'is_live' %>
 				<% if @not_live %>
 							<%= render 'offline' %>
@@ -42,8 +39,4 @@
 							<%= render 'incoming_requests' %>
 				<% end %>
 	</div>
-
-
-
-
 </div>
