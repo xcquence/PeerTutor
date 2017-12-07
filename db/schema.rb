@@ -16,21 +16,21 @@ ActiveRecord::Schema.define(version: 20171107204414) do
   enable_extension "plpgsql"
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "recipient_id"
-    t.integer "sender_id"
+    t.bigint "recipient_id"
+    t.bigint "sender_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
-    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
-    t.index ["sender_id"], name: "index_conversations_on_sender_id"
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id", unique: true
+    t.index ["sender_id"], name: "index_conversations_on_sender_id", unique: true
   end
 
   create_table "courses", force: :cascade do |t|
-    t.integer "subject_id"
-    t.string "number"
+    t.bigint "subject_id"
     t.string "name"
+    t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_courses_on_subject_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -60,13 +60,16 @@ ActiveRecord::Schema.define(version: 20171107204414) do
   end
 
   create_table "tutoring_sessions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tutor_id"
-    t.integer "course_id"
+    t.bigint "user_id"
+    t.bigint "tutor_id"
+    t.bigint "course_id"
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "accepted", default: false
+    t.index ["course_id"], name: "index_tutoring_sessions_on_course_id"
+    t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id", unique: true
+    t.index ["user_id"], name: "index_tutoring_sessions_on_user_id", unique: true
   end
 
   create_table "tutors", force: :cascade do |t|
@@ -82,6 +85,8 @@ ActiveRecord::Schema.define(version: 20171107204414) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.boolean "is_tutor", default: false
+    t.boolean "is_live", default: false
+    t.decimal "total_tip", precision: 10, scale: 2
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -95,6 +100,7 @@ ActiveRecord::Schema.define(version: 20171107204414) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "stripe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
@@ -105,6 +111,14 @@ ActiveRecord::Schema.define(version: 20171107204414) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conversations", "users", column: "recipient_id"
+  add_foreign_key "conversations", "users", column: "sender_id"
+  add_foreign_key "courses", "subjects"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "tutor_courses", "courses"
+  add_foreign_key "tutor_courses", "users", column: "tutor_id"
+  add_foreign_key "tutoring_sessions", "courses"
+  add_foreign_key "tutoring_sessions", "users"
+  add_foreign_key "tutoring_sessions", "users", column: "tutor_id"
 end

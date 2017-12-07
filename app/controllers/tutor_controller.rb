@@ -49,10 +49,6 @@ class TutorController < ApplicationController
     @mysubject = Subject.all
   end
 
-  def courses_edit
-    render partial: 'select_course_tutor', locals: {subject_id: params[:subject_id]}
-  end
-
   def create
     #TutorCourse.create(tutor_course_params)
     @tutor = Tutor.new
@@ -70,11 +66,26 @@ class TutorController < ApplicationController
     @tutor_courses.each do |course_id|
       TutorCourse.create(tutor_id: current_user.tutor.id, course_id: course_id.to_i)
     end
-
-
-
-    redirect_to tutor_index_path
   end
+
+    def courses_edit
+
+    end
+
+    def courses_update
+      #update DB
+      #TutorCourse.create(tutor_course_params)
+      @tutor = Tutor.where(user_id: current_user.id)
+
+      @user_tutor = User.find(current_user.id)
+
+      @tutor_courses = params[:course][:id]
+      @tutor_courses.shift
+
+      @tutor_courses.each do |course_id|
+        TutorCourse.update_attributes(tutor_id: current_user.tutor.id, course_id: course_id.to_i)
+      end
+    end
 
   # def update
   #   @tutor = current_user

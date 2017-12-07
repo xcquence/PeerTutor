@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get 'tutor/first_time_tutor'
 
   get 'tutor/courses_edit'
+  post 'tutor/courses_update'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
