@@ -1,0 +1,11 @@
+<%= label :tutor_courses, :course%>
+<!-- <%= collection_select :course, :id, Course.where(subject_id: subject_id), :id, :name, {:include_blank => true}, {:id => 'course_select_tutor'} %> -->
+<%= collection_check_boxes(:course, :id, Course.where(subject_id: subject_id), :id, :name) %>
+
+
+ <div class="form-group ts-field">
+			      <div class="course-area-tutor">
+			        <%= render partial: 'select_course_tutor', locals: {subject_id: Subject.first.id} %>
+			      </div>
+			    </div>
+

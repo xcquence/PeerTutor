@@ -45,6 +45,14 @@ class TutorController < ApplicationController
     render partial: 'course_tag_tutor', locals: {course_id: params[:course_id]}
   end
 
+  def first_time_tutor
+    @mysubject = Subject.all
+  end
+
+  def courses_edit
+    render partial: 'select_course_tutor', locals: {subject_id: params[:subject_id]}
+  end
+
   def create
     #TutorCourse.create(tutor_course_params)
     @tutor = Tutor.new
