@@ -1,38 +1,36 @@
 <%= render 'layouts/navigation_bar' %>
 
-<!--============= Tutee Dashbaord ============-->
-<!--Mobile navigation bar-->
-<div id="mobile_nav" class="container visible-xs">
-	<div class="dropdown">
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">C:</button>
-		<div class="dropdown-menu">
-			<a class="dropdown-ltem" href="find_tutor" target="tutee_view_frame">Find Tutor</a>
-			<a class="dropdown-item" href="schedule" target="tutee_view_frame">Schedule</a>
-			<a class="dropdown-item" href="messenger" target="tutee_view_frame">Messenger</a>
-			<a class="dropdown-item" href=tip_management target="tutee_view_frame">Tip Management</a>
-		</div>
+<nav class="menu" tabindex="0">
+	<div class="smartphone-menu-trigger"></div>
+  <header class="avatar">
+		<img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+    <h2><%= current_user.first_name %></h2>
+  </header>
+	<ul>
+    <li tabindex="0" class="icon-dashboard"><span>
+			<%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></span>
+		</li>
+    <li tabindex="0" class="icon-customers"><span>
+			<%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></span>
+		</li>
+    <li tabindex="0" class="icon-users"><span>
+			<%= link_to "Messenger", chat_index_path, remote: true, class: "btn", id: "messenger" %></span>
+		</li>
+    <li tabindex="0" class="icon-settings"><span>
+			<%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></span>
+		</li>
+		<li tabindex="0" class=""><span>
+			<%= link_to home_authentication_path do %>
+				<li>>Switch role<</li>
+			<% end %>
+		</li>
+  </ul>
+</nav>
+
+
+		<div id="outer_frame">
+			<!-- This frame is being replaced with another page from the dashboard -->
+
+							<%= render "tutee/find_tutor"%>
+
 	</div>
-</div>
-
-
-<div class="row dashboard">
-	<div id="nav_container" class="col-lg-2 col-sm-4 hidden-xs">
-		<nav>
-			<ul>
-				<li><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></li>
-				<li><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></li>
-				<li><%= link_to "Messenger", chat_index_path, remote: true, class: "btn", id: "messenger" %></li>
-				<li><%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></li>
-				<%= link_to home_authentication_path do %>
-					<li>>Switch role<</li>
-				<% end %>
-			</ul>
-		</nav>
-	</div>
-
-	<div id="outer_frame">
-		<!-- This frame is being replaced with another page from the dashboard -->
-
-						<%=  render "tutee/find_tutor"%>
-
-</div>
