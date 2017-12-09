@@ -1,36 +1,51 @@
+<div class="row">
 <%= render 'layouts/navigation_bar' %>
-
-<nav class="menu" tabindex="0">
-	<div class="smartphone-menu-trigger"></div>
-  <header class="avatar">
-		<img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
-    <h2><%= current_user.first_name %></h2>
-  </header>
-	<ul>
-    <li tabindex="0" class="icon-dashboard"><span>
-			<%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn"  %></span>
-		</li>
-    <li tabindex="0" class="icon-customers"><span>
-			<%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn" %></span>
-		</li>
-    <li tabindex="0" class="icon-users"><span>
-			<%= link_to "Messenger", chat_index_path, remote: true, class: "btn", id: "messenger" %></span>
-		</li>
-    <li tabindex="0" class="icon-settings"><span>
-			<%= link_to "Tip Management", tutee_tips_management_path, remote: true, class: "btn"%></span>
-		</li>
-		<li tabindex="0" class=""><span>
-			<%= link_to home_authentication_path do %>
-				<li>>Switch role<</li>
-			<% end %>
-		</li>
-  </ul>
-</nav>
+</div>
 
 
-		<div id="outer_frame">
-			<!-- This frame is being replaced with another page from the dashboard -->
+<div class="row">
+	<div class="col">
+		<nav class="menu" tabindex="0">
+			<div class="smartphone-menu-trigger"></div>
+		  <header class="avatar">
 
-							<%= render "tutee/find_tutor"%>
-
+				<%= image_tag "avatar.png" %>
+		    <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
+		  </header>
+			<ul>
+		    <li tabindex="0"><span>
+					<i class="fa fa-search" aria-hidden="true" style="color:white"></i>
+					<%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn new_btn"  %></span>
+				</li>
+		    <li tabindex="0"><span>
+					<i class="fa fa-th-list" aria-hidden="true" style="color:white"></i>
+					<%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn new_btn" %></span>
+				</li>
+		    <li tabindex="0"><span>
+					<i class="fa fa-comments" aria-hidden="true" style="color:white"></i>
+					<%= link_to "Messenger", chat_index_path, remote: true, class: "btn new_btn", id: "messenger" %></span>
+				</li>
+		    <li tabindex="0"><span>
+					<i class="fa fa-money" aria-hidden="true" style="color:white"></i>
+					<%= link_to "Tips Box", tutee_tips_management_path, remote: true, class: "btn new_btn"%></span>
+				</li>
+				<li tabindex="0" class=""><span>
+					<i class="fa fa-chevron-circle-up" aria-hidden="true"  style="color:white"></i>
+					<%= link_to "Switch Role", home_authentication_path, class: "btn new_btn" %>
+				</li>
+		  </ul>
+		</nav>
 	</div>
+
+	<div class="col container-fluid">
+		<main>
+				<div id="outer_frame">
+					<!-- This frame is being replaced with another page from the dashboard -->
+
+									<%= render "tutee/find_tutor"%>
+					</div>
+			<%= image_tag "cloud.png", class: "cloud" %>
+		</main>
+	</div>
+
+</div>

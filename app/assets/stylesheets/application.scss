@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
 * {
 	box-sizing: border-box;
@@ -96,7 +97,7 @@ ul {
 /*==================== DASHBOARD: =======================*/
 
 body {
-  background: #ffea92;
+  background-color: coral;
   margin: 0;
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #fff;
@@ -125,7 +126,7 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: #5bc995;
+  background: #2F5D9E;
   height: 100vh;
   width: 240px;
   position: fixed;
@@ -165,18 +166,7 @@ main .helper span {
   transition: all 0.15s linear;
   cursor: pointer;
 }
-.menu ul li.icon-dashboard {
-  background-image: url("http://www.entypo.com/images//gauge.svg");
-}
-.menu ul li.icon-customers {
-  background-image: url("http://www.entypo.com/images//briefcase.svg");
-}
-.menu ul li.icon-users {
-  background-image: url("http://www.entypo.com/images//users.svg");
-}
-.menu ul li.icon-settings {
-  background-image: url("http://www.entypo.com/images//tools.svg");
-}
+
 .menu ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -293,7 +283,20 @@ main .helper span {
   }
 }
 
+.new_btn {
+	color: white;
+}
 
+#outer_frame {
+
+}
+
+li {
+	font-family: 'Work Sans', sans-serif;
+}
+h1	{
+	font-family: 'Work Sans', sans-serif;
+}
 
 
 /*==================== DASHBOARD: END =======================*/
