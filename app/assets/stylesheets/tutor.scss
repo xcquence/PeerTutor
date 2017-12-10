@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutor-index {
-	background-image: url(asset-path('dashboard-bg.png'));
+	background-image: url(asset-path('background/diagmonds.jpg'));
 	background-size: 100%;
 }
 .dashboard {
@@ -98,4 +98,22 @@ body.tutor-index {
 		box-shadow: -5px 5px 0px #190455;
 		margin: 0 auto;
 	}
+}
+
+.menu .avatar #live_btn {
+	height: 100%;
+}
+
+.is_live_box {
+	margin: auto;
+	padding: 5px;
+	border: 2px solid yellow;
+	border-radius: 15px;
+	height: 47px;
+	width: 150px;
+}
+
+.offline_alert_box {
+	width: 85%;
+	margin: auto;
 }

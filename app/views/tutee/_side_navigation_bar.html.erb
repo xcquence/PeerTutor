@@ -1,12 +1,14 @@
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
 
-  <%= link_to tutee_index_path do %>
+
     <header class="avatar">
-      <%= image_tag "avatar.png" %>
+      <%= link_to tutee_index_path do %>
+      <%= image_tag "avatar.png", :id => "avatar"%>
       <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
+      <% end %>
     </header>
-  <% end %>
+
 
 
   <div class="side_navigation_bar">

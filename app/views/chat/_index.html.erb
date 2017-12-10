@@ -3,7 +3,9 @@
   <% users ||= @users %>
   <% conversations ||= @conversations %>
   <% if users.nil? %>
-  <h1>You have no messages.</h1>
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no messages.</h4>
+  </div>
   <% else %>
   <div class="row">
 
