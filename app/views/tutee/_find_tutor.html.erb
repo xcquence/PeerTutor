@@ -10,20 +10,21 @@
           <div class="form-group ts-field">
             <div class="subject-area">
               <%= label :tutoring_session, :subject %>
-              <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select', :class => "ft-field"} %>
+              <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:required => true, :id => 'subjects_select', :class => "ft-field"} %>
             </div>
           </div>
           <!--Course field-->
           <div class="form-group ts-field">
             <div class="course-area">
-              <%= render partial: 'select_course', locals: {subject_id: nil}, class: "ft-field" %>
+              <%= render partial: 'select_course', locals: {subject_id: nil}, required: 'required', class: "ft-field" %>
             </div>
           </div>
           <!--Question field-->
           <div class="form-group ts-field">
             <div class="question-area">
               <%= label :tutoring_session, "Question" %>
-              <%= f.text_area :question, value: "", class: "ft-field" %>
+              <p>(Give a short overview of the problem you're having issues with.)</p>
+              <%= f.text_area :question, required: 'required', value: "", class: "ft-field" %>
             </div>
           </div>
 

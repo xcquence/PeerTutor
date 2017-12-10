@@ -6,12 +6,17 @@ class TuteeController < ApplicationController
   def find_tutor
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
-    if @tutoring_session.nil? || @tutoring_session.tutor_id.nil?
+    if @tutoring_session.nil?
       @subject = Subject.new
       respond_to do |format|
         format.js {render "find_tutor" }
       end
       #@courses = Course.all
+    elsif @tutoring_session.tutor_id.nil? ## if the session created but tutee hasn't picked tutors yet
+      @tutors = User.all
+      respond_to do |format|
+        format.js {render 'list_of_tutors'}
+      end
     elsif @tutoring_session.accepted
       @tutor = User.find(@tutoring_session.tutor_id)
       #render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
@@ -40,7 +45,6 @@ class TuteeController < ApplicationController
     # @tutoring_session.user = User.find(current_user.id)
     # @tutoring_session.save()
 
-
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
     @tutors = User.all
@@ -63,7 +67,10 @@ class TuteeController < ApplicationController
   end
 
   def list_of_tutors
-
+    # @tutors = User.all
+    respond_to do |format|
+      format.js {render 'list_of_tutors'}
+    end
   end
 
   def pick_tutor
