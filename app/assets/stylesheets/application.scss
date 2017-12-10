@@ -312,6 +312,7 @@ h1	{
 	border-right: 1.3px solid #DBDBDB;
 	height: 40px;
 	margin: 7px 0;
+	width: 100%;
 }
 
 .side_navigation_bar	{
@@ -329,4 +330,20 @@ footer {
 	padding: 20px;
 	color: #777;
 	height: 10%;
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: -13px;
+}
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@media (min-width: 992px) {
+	.container {
+	    width: 100% !important;
+	}
 }

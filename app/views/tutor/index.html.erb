@@ -2,9 +2,9 @@
 
 <!--============= Tutor Dashbaord ============-->
 <div class="row">
-	<%= render 'layouts/navigation_bar_leaf' %>
+
 </div>
-<div class="row">
+<div class="row no-gutter">
 	<div class="col-xs-3">
 		<!--Sidebar content-->
 		<%= render 'tutor/side_navigation_bar' %>
@@ -12,6 +12,7 @@
 	<div class="col-xs-9">
 		<!--Body content-->
 		<div id="outer_frame">
+			<%= render 'layouts/navigation_bar_leaf' %>
 			<!-- <%= render 'is_live' %> -->
 					<% if @not_live %>
 								<%= render 'offline' %>
