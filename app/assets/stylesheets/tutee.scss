@@ -34,10 +34,10 @@ body.tutee-index {
 
 }
 #find_tutor_heading {
-	color: white;
-	font-size: 25pt;
+	//color: white;
+	font-size: 3em;
 	font-family: 'Work Sans', sans-serif;
-	margin-left: 175px;
+	text-align: center;
 }
 #dash_board_user_name {
 	color: white;
@@ -50,6 +50,12 @@ body.tutee-index {
 .submit {
     margin-left: 175px;
 
+}
+
+.navbar-header-leaf {
+	border-right: 1.3px solid #DBDBDB;
+	height: 35px;
+	margin: 7px 0;
 }
 
 .side_navigation_bar	{
@@ -66,4 +72,25 @@ body.tutee-index {
 
 .row {
 	margin-left: -30px !important;
+}
+
+.container_box {
+	margin-top: 70px;
+}
+
+#find_tutor_box .ft-field {
+		width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    //box-sizing: border-box;
+		border: 1.3px solid #DBDBDB;
+		border-radius: 10px;
+}
+
+#find_tutor_box label {
+	font-size: 1.3em;
+}
+
+#find_tutor_box .submit {
+	background-color: #76BFB5;
 }
