@@ -5,7 +5,7 @@
 body.tutee-index {
 	//background-image: url(asset-path('dashboard-bg.png'));
 	background-size: 100%;
-	background-image: url(asset-path('background/telegram.jpg'));
+	background-image: url(asset-path('background/diagmonds.jpg'));
 
 
 }
@@ -18,8 +18,8 @@ body.tutee-index {
 }
 
 #frame {
-	float: right;
-	margin-right: 100px;
+	//float: right;
+	//margin-right: 100px;
 
 }
 .cloud {
@@ -50,4 +50,11 @@ body.tutee-index {
 .submit {
     margin-left: 175px;
 
+}
+
+.side_navigation_bar{
+	font-size: 1.5rem;
+	padding: 30px 0;
+	margin: auto;
+	max-width: 50%
 }
