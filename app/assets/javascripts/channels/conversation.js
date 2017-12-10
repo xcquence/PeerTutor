@@ -18,11 +18,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       }
     }
     else if (data['command'] == 'tutor_accepted') {
-      //notification when tutor responds:
-      var a = document.querySelectorAll('#nav_container ul li')[0];
-      a.firstChild.innerHTML = "Being Tutored";
-
-      //
+      
       if (document.querySelector('#waiting_for_tutor')) {
         //var outer_frame = document.querySelector('#outer_frame');
         //var frame = document.querySelector('#frame');

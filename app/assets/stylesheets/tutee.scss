@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutee-index {
-	background-image: url(asset-path('dashboard-bg.png'));
+	//background-image: url(asset-path('dashboard-bg.png'));
 	background-size: 100%;
+	background-image: url(asset-path('background/diagmonds.jpg'));
+
 }
 .ts-field label {
   width: 15%;
@@ -110,10 +112,70 @@ body.tutee-index {
 	color: #190455;
 }
 
-.choose_tutor_submit_btn:hover {
-	border-color: #80E3FD;
-	color: #190455;
-	text-decoration: none;
+#frame {
+	//float: right;
+	//margin-right: 100px;
+
+}
+.cloud {
+	width: 300px;
+	margin-top: 150px;
+	margin-right: 100px;
+	float: right;
+}
+
+/*FIND TUTOR PAGE:*/
+.request_form_container {
+
+}
+#find_tutor_heading {
+	//color: white;
+	font-size: 3em;
+	font-family: 'Work Sans', sans-serif;
+	text-align: center;
+}
+#dash_board_user_name {
+	color: white;
+	font-family: 'Work Sans', sans-serif;
+
+}
+#new_tutoring_session {
+
+}
+.submit {
+    margin-left: 175px;
+
+}
+
+.find_tutor_box {
+	margin: auto;
+	max-width: 50px;
+}
+
+.row {
+	margin-left: -30px !important;
+	height: 100%;
+}
+
+.container_box {
+	margin-top: 70px;
+}
+
+#find_tutor_box .ft-field {
+		width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    //box-sizing: border-box;
+		border: 1.3px solid #DBDBDB;
+		border-radius: 10px;
+}
+
+#find_tutor_box label {
+	font-size: 1.3em;
+}
+
+#find_tutor_box .submit {
+	background-color: #76BFB5;
 }
 .choose_tutor_submit_btn:active {
 	text-decoration: none;

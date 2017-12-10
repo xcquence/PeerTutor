@@ -1,0 +1,40 @@
+<nav class="menu" tabindex="0">
+  <div class="smartphone-menu-trigger"></div>
+
+    <header class="avatar">
+      <div style="margin-bottom: 25px;">
+        <%= link_to tutor_index_path do %>
+        <%= image_tag "avatar.png", :id => "avatar" %>
+        <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
+        <% end %>
+      </div>
+      <%= render 'is_live' %>
+    </header>
+
+
+
+  <div class="side_navigation_bar">
+    <ul>
+      <li tabindex="0"><span>
+        <i class="fa fa-search" aria-hidden="true" style="color:white"></i>
+        <%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link"  %></span>
+      </li>
+      <li tabindex="0"><span>
+        <i class="fa fa-th-list" aria-hidden="true" style="color:white"></i>
+        <%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn" %></span>
+      </li>
+      <li tabindex="0"><span>
+        <i class="fa fa-comments" aria-hidden="true" style="color:white"></i>
+        <%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %></span>
+      </li>
+      <li tabindex="0"><span>
+        <i class="fa fa-money" aria-hidden="true" style="color:white"></i>
+        <%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></span>
+      </li>
+      <li tabindex="0" class=""><span>
+        <i class="fa fa-chevron-circle-up" aria-hidden="true"  style="color:white"></i>
+        <%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn" %></span>
+      </li>
+    </ul>
+  </div>
+</nav>

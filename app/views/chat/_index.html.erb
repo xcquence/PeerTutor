@@ -1,8 +1,11 @@
-<div id="frame">
+<div id="frame" class="animated bounceInUp">
+  <div class="col-sm-8 col-sm-offset-2 container_box">
   <% users ||= @users %>
   <% conversations ||= @conversations %>
   <% if users.nil? %>
-  <h1>You have no messages.</h1>
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no messages.</h4>
+  </div>
   <% else %>
   <div class="row">
 
@@ -23,5 +26,6 @@
         <% end %>
     </div>
   </div>
+</div>
 </div>
 <% end %>

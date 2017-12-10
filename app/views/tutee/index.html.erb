@@ -1,37 +1,24 @@
-<%= render 'layouts/navigation_bar' %>
+<div class="container-fluid">
+  <div class="row">
 
-<!--============= Tutee Dashbaord ============-->
-<!--Mobile navigation bar-->
-<div id="mobile_nav" class="container visible-xs">
-	<div class="dropdown">
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">C:</button>
-		<div class="dropdown-menu">
-			<a class="dropdown-ltem load" href="find_tutor" target="tutee_view_frame">Find Tutor</a>
-			<a class="dropdown-item load" href="schedule" target="tutee_view_frame">Schedule</a>
-			<a class="dropdown-item load" href="messenger" target="tutee_view_frame">Messenger</a>
-			<a class="dropdown-item load" href=tip_management target="tutee_view_frame">Tip Management</a>
-		</div>
-	</div>
+  </div>
+  <div class="row no-gutter">
+    <div class="col-xs-3">
+      <!--Sidebar content-->
+			<%= render 'tutee/side_navigation_bar' %>
+    </div>
+    <div class="col-xs-9">
+      <%= render 'layouts/navigation_bar_leaf' %>
+      <!--Body content-->
+			<main>
+					<div id="outer_frame">
+						<!-- This frame is being replaced with another page from the dashboard -->
+										<%= render "tutee/find_tutor"%>
+						</div>
+				<%= image_tag "cloud.png", class: "cloud" %>
+			</main>
+    </div>
+  </div>
 </div>
 
-
-<div class="dashboard">
-	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
-		<nav>
-			<ul>
-				<li><%= button_to "Find Tutor", tutee_find_tutor_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<li><%= button_to "Schedule", tutee_schedule_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<li><%= button_to "Tip Management", tutee_tips_management_path, remote: true, :method => "get", class: "nav_link underline"%></li>
-				<%= button_to home_authentication_path,  :method => "get", class: "nav_link" do %>
-					<li> Switch Role </li>
-				<% end %>
-			</ul>
-		</nav>
-	</div>
-
-	<div id="outer_frame" class="col-lg-9 col-md-8 col-sm-12">
-		<!-- This frame is being replaced with another page from the dashboard -->
-						<%=  render "tutee/find_tutor"%>
-
-</div>
+<%= render 'layouts/footer' %>

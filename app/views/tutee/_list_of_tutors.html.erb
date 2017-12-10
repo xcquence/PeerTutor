@@ -1,16 +1,22 @@
-<div id="frame" class="list_of_tutors">
-
-  <h1>Avaliable Tutors:</h1>
+<div id="frame" class="animated bounceInUp">
+<div class="col-sm-8 col-sm-offset-2 container_box">
+  <h1>Avalable Tutors:</h1>
+  <table class="table">
+    <thead>
 
   <hr />
 
   <div class="container-fluid tutor_info_container">
     <% @tutors.each do |tutor| %>
-      <div class="row tutor_info">
-          <span class="col-lg-4 col-xs-12"><%= image_tag("avatar.png", size: "70x70") %></span>
-          <span class="col-lg-3 col-xs-12 tutor_name"><%= tutor.first_name %> <%= tutor.last_name %></span>
-          <span class="col-lg-5 col-xs-12"><%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "choose_tutor_submit_btn", remote: true %></span>
-      </div>
-    <% end %>
-  </div>
+    <tbody>
+      <tr>
+        <td><%= image_tag("avatar.png", size: "70x70") %></td>
+        <td><%= tutor.first_name %></td>
+        <td><%= tutor.last_name %></td>
+        <td><%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "btn btn-primary", remote: true %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 </div>

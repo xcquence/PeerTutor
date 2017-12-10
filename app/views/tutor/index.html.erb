@@ -1,42 +1,27 @@
-<%= render 'layouts/navigation_bar' %>
+<div class="container-fluid">
 
 <!--============= Tutor Dashbaord ============-->
-<!--Mobile navigation bar-->
-<div id="mobile_nav" class="container visible-xs">
-	<div class="dropdown">
-		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">C:</button>
-		<div class="dropdown-menu">
-			<a class="dropdown-ltem load" href="incoming_requests" target="tutor_view_frame">Incoming Request</a>
-			<a class="dropdown-item load" href="currently_tutoring" target="tutor_view_frame">Currently Tutoring</a>
-			<a class="dropdown-item load" href="messenger" target="tutor_view_frame">Messenger</a>
+<div class="row">
+
+</div>
+	<div class="row no-gutter">
+		<div class="col-xs-3">
+			<!--Sidebar content-->
+			<%= render 'tutor/side_navigation_bar' %>
+		</div>
+		<div class="col-xs-9">
+			<!--Body content-->
+			<div id="outer_frame">
+				<%= render 'layouts/navigation_bar_leaf' %>
+				<!-- <%= render 'is_live' %> -->
+						<% if @not_live %>
+									<%= render 'offline' %>
+						<% else %>
+									<%= render 'incoming_requests' %>
+						<% end %>
+			</div>
 		</div>
 	</div>
 </div>
 
-
-<div class="dashboard">
-	<!--navigation for dashboard-->
-	<div id="nav_container" class="col-lg-2 col-md-3 col-sm-4 hidden-xs">
-		<nav>
-			<ul>
-				<li><%=button_to "Incoming Request", tutor_incoming_requests_path, remote: true, :method => "get", class: "nav_link underline"  %></li>
-				<li><%= button_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<li><%= button_to "Messenger", chat_index_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<li><%= button_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, :method => "get", class: "nav_link underline"%></li>
-				<li><%= button_to "Tutor Profile", tutor_tutor_profile_path, remote: true, :method => "get", class: "nav_link underline" %></li>
-				<%= button_to home_authentication_path, :method => "get", class: "nav_link" do %>
-					<li>>Switch role<</li>
-				<% end %>
-			</ul>
-		</nav>
-	</div>
-
-	<div id="outer_frame" class="col-lg-9 col-md-8 col-sm-12">
-		<%= render 'is_live' %>
-				<% if @not_live %>
-							<%= render 'offline' %>
-				<% else %>
-							<%= render 'incoming_requests' %>
-				<% end %>
-	</div>
-</div>
+<%= render 'layouts/footer' %>

@@ -8,7 +8,7 @@
 	color: #190455;
 }
 body.tutor-index {
-	background-image: url(asset-path('dashboard-bg.png'));
+	background-image: url(asset-path('background/diagmonds.jpg'));
 	background-size: 100%;
 }
 .dashboard {
@@ -141,4 +141,22 @@ input[type='checkbox'] {
 	.first_time_tutor_reg_btn {
 		padding: 40px 0px;
 	}
+}
+
+.menu .avatar #live_btn {
+	height: 100%;
+}
+
+.is_live_box {
+	margin: auto;
+	padding: 5px;
+	border: 2px solid yellow;
+	border-radius: 15px;
+	height: 47px;
+	width: 150px;
+}
+
+.offline_alert_box {
+	width: 85%;
+	margin: auto;
 }

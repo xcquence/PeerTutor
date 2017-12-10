@@ -1,5 +1,12 @@
-<div id="frame">
+<div id="frame" class="animated bounceInUp">
+  <div class="container container_box">
   <div id="incoming_requests">
+    <% if @tutoring_sessions.count == 0 %>
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no request.</h4>
+    </div>
+    <% else %>
+
     <h1 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h1>
 
     <div class="container">
@@ -22,7 +29,9 @@
         <% end %>
       </table>
     </div>
+    <% end %>
   </div>
+</div>
 
 
 </div>

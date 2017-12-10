@@ -16,7 +16,7 @@
 //**************************** DASHBOARD ***************************
 //responsible for switching views in the dashboard on click
 $(function(){
-  $("a.load").click(function (e) { 
+  $("a.load").click(function (e) {
     e.preventDefault();
     $("#tutor_view_frame").load($(this).attr("href"));
   });

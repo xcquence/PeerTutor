@@ -1,15 +1,19 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+    height:100%;
+}
 
 * {
 	box-sizing: border-box;
 }
 
-body.home-index {
+body #main_page_body {
 	background-image: url(asset-path('bg.png'));
 	background-size: 100%;
 	background-repeat: no-repeat;
+	height: 100%;
 }
 .style_text {
 	color: #190455;
@@ -43,9 +47,9 @@ body.home-index {
 #start_img {
 	margin: 0 auto;
     position: relative;
-	width: 10%; 
+	width: 10%;
     height: auto;
-	background-size: contain;	
+	background-size: contain;
 	background-repeat: no-repeat;
 }
 
@@ -54,10 +58,11 @@ body.home-index {
 }
 
 /*========= ROLE PAGE ==========*/
-body.home-authentication {
+body #role_container {
 	background-image: url(asset-path('rolebg.png'));
 	background-size: 100%;
 	background-repeat: no-repeat;
+	height: 100%;
 }
 #role_text h1 {
 	padding-top: 50%;
