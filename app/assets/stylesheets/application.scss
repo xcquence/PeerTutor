@@ -44,6 +44,9 @@ nav .navbar {
 #navigation {
 	margin: 0;
 	background-color: transparent;
+	border-top: none;
+	border-left: none;
+	border-right: none;
 	border-bottom: 1.3px solid #DBDBDB;
 	font-size: 1.1em;
 	padding: 0 7px;
@@ -137,7 +140,7 @@ main .helper span {
 }
 .menu {
   background: #6FB4DA;
-  height: 100vh;
+  height: -webkit-fill-available;
   width: 100%;
   //position: fixed;
   // top: 0;
@@ -330,6 +333,11 @@ footer {
 	padding: 20px;
 	color: #777;
 	height: 10%;
+}
+
+.row {
+	margin-left: -30px !important;
+	overflow: hidden;
 }
 
 .row.no-gutter {
