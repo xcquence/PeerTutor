@@ -338,6 +338,13 @@ footer {
 .row {
 	margin-left: -30px !important;
 	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }
 
 .row.no-gutter {
