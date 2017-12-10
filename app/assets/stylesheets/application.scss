@@ -42,12 +42,22 @@ nav .navbar {
 }
 
 #navigation {
+	margin-top: 17px;
 	background-color: transparent;
 	border-style: none;
+	font-size: 1.1em;
+	padding: 0 7px;
 }
 
 #navigation tutor-index {
 	display: none;
+}
+
+#navigation .btn {
+	border: 2px solid #ABACD3;
+	padding: 7px 10px;
+	margin: 8px;
+	color: #ABACD3;
 }
 
 .style_nav_txt {

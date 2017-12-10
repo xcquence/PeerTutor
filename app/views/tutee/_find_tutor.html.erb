@@ -1,36 +1,38 @@
 <div id="frame" class="animated bounceInUp">
-<div class="container">
 
-<h3 class="" id="find_tutor_heading">FIND A TUTOR</h3>
+  <div class="container">
 
-<%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
-    <!--Subject field-->
-    <div class="form-group ts-field">
-      <div class="subject-area">
-        <%= label :tutoring_session, :subject %>
-        <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
-      </div>
-    </div>
-    <!--Course field-->
-    <div class="form-group ts-field">
-      <div class="course-area">
-        <%= render partial: 'select_course', locals: {subject_id: nil} %>
-      </div>
-    </div>
-    <!--Question field-->
-    <div class="form-group ts-field">
-      <div class="question-area">
-        <%= label :tutoring_session, "Question" %>
-        <%= f.text_area :question, value: ""%>
-      </div>
-    </div>
+  <h3 class="" id="find_tutor_heading">FIND A TUTOR</h3>
 
-    <div class="form-group">
-      <%= f.hidden_field :user_id, value: current_user.id%>
-      <%= f.submit "Submit", class: "btn btn-primary submit" %>
-    </div>
-<% end %>
+    <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
+        <!--Subject field-->
+        <div class="form-group ts-field">
+          <div class="subject-area">
+            <%= label :tutoring_session, :subject %>
+            <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+          </div>
+        </div>
+        <!--Course field-->
+        <div class="form-group ts-field">
+          <div class="course-area">
+            <%= render partial: 'select_course', locals: {subject_id: nil} %>
+          </div>
+        </div>
+        <!--Question field-->
+        <div class="form-group ts-field">
+          <div class="question-area">
+            <%= label :tutoring_session, "Question" %>
+            <%= f.text_area :question, value: ""%>
+          </div>
+        </div>
 
-  <!-- temporary just to check if the data stored in TutoringSession -->
-<div>
+        <div class="form-group">
+          <%= f.hidden_field :user_id, value: current_user.id%>
+          <%= f.submit "Submit", class: "btn btn-primary submit" %>
+        </div>
+    <% end %>
+
+    <!-- temporary just to check if the data stored in TutoringSession -->
+  <div>
+
 </div>
