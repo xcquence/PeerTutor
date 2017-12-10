@@ -1,9 +1,13 @@
 <nav class="navbar navbar-default" id="navigation">
 			<div class="container-fluid">
 				<div class="collapse navbar-collapse">
+					<div class="navbar-header">
+						<a class="navbar-brand style_nav_txt" href="/"><i class="fa fa-leaf" aria-hidden="true"></i></a>
+					</div>
+
 					<ul class="nav navbar-nav navbar-right">
 						<% if user_signed_in? %>
-							<li><a href="#">Signed In As <%= current_user.first_name %></a></li>
+							<!-- <li><a href="#">Signed In As <%= current_user.first_name %></a></li> -->
 							<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 						<% else %>
 							<li><%= link_to "Log in", home_authentication_path %></li>
