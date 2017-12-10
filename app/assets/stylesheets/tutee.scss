@@ -16,11 +16,11 @@ body.tutee-index {
   height: 30px;
 }
 #outer_frame {
-	border: 5px solid #190455;
+	/*border: 5px solid #190455;
 	border-radius: 5px;
-	margin-top: 20px;
+	margin-top: 20px;*/
 	overflow: scroll;
-	height: 600px;
+	height: 100%;
 	background-color: #fff;
 }
 .nav_link {
@@ -113,8 +113,8 @@ body.tutee-index {
 }
 
 #frame {
-	//float: right;
-	//margin-right: 100px;
+	/*float: right;
+	margin-right: 100px;*/
 
 }
 .cloud {
