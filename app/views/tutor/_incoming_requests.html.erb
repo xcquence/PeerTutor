@@ -1,37 +1,36 @@
 <div id="frame" class="animated bounceInUp">
   <div class="container container_box">
   <div id="incoming_requests">
+
+
+
     <% if @tutoring_sessions.count == 0 %>
     <div class="alert alert-info" role="alert">
       <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no request.</h4>
     </div>
     <% else %>
 
-    <h1 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h1>
+    <!-- <h1 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h1> -->
 
-    <div class="container">
-      <table class="table" id="table">
-        <tr>
-          <th>Tutee</th>
-          <th>Subject</th>
-          <th>Course</th>
-          <th>Question</th>
-          <th></th>
-        </tr>
-        <% @tutoring_sessions.each do |session| %>
-          <tr data-tutee_id=<%= session.user_id %>>
-            <td><%= session.user.first_name %> <%= session.user.last_name %></td>
-            <td><%= session.course.subject.abbrev %></td>
-            <td><%= session.course.number %></td>
-            <td><%= session.question %></td>
-            <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), remote: true, class: "btn btn-primary accept" %></td>
-          </tr>
-        <% end %>
-      </table>
+
+    <% @tutoring_sessions.each do |session| %>
+    <div class="card" data-tutee_id=<%= session.user_id %>>
+      <%= image_tag "avatar.png", size: "60x60" %>
+      <div class="container">
+        <h4><b><%= session.user.first_name %> <%= session.user.last_name %></b></h4>
+        <p><pre>Subject: <%= session.course.subject.abbrev %></pre></p>
+        <p><pre>Course: <%= session.course.number %></pre></p>
+        <p><pre>Question: <%= session.question %></pre></p>
+        <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary", remote: true %>
+      </div>
     </div>
     <% end %>
+
+
+    <% end %>
+
+
+
   </div>
 </div>
-
-
 </div>
