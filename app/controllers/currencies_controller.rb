@@ -1,69 +1,23 @@
 class CurrenciesController < ApplicationController
   before_action :authenticate_user!
 
-
   def new
-      @user = user.find(params[:id])
   end
 
   def create
   #  customer = current_user.stripe_customer
-  @amount = params[:amount]
-  @amount = @amount.gsub('$', '').gsub(',', '')
-
-  begin
-   @amount = Float(@amount).round(2)
- rescue
-   flash[:error] = 'Charge cannot be completed. Please enter a valid amount in USD ($).'
-   redirect_to new_currencies_path
-   return
- end
-
- @amount = (@amount * 100).to_i # Must be an integer!
-
- if @amount < 500
-   flash[:error] = 'Charge cannot be completed. Payment amount must be at least $5.'
-   redirect_to new_currencies_path
-   return
- end
-
-
-  customer = StripeTool.create_customer(
+  customer = Stripe::Customer.create(
     email: params[:stripeEmail],
-    stripe_token: params[:stripeToken]
+    source: params[:stripeToken]
   )
 
-
-    charge = StripeTool.create_charge(
-      customer_id: customer.id,
+    @amount = 500
+    charge = Stripe::Charge.create(
+      customer: customer.id,
       amount: @amount,
-      description: 'Peer Tutor Tutee Customer',
-
+      description: 'Rails Stripe Customer',
+      currency: 'usd'
     )
-
-
-
-
-
-  rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_currencies_path
+    render action: :new
   end
-
-
-
-
-
-  end
-
-
-
-
-  def thanks
-
-  end
-
-  def update
-    @user.update(account_balance: @amount)
-    @user.save
-  end
+end
