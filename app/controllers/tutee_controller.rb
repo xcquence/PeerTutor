@@ -73,15 +73,20 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutoring_session
-    @tutor = User.find(params[:tutor_id])
-    TutoringSession.where(user_id: current_user.id).last.destroy!
-    ActionCable.server.broadcast(
-      "conversations-#{@tutor.id}",
-      command: "session_canceled",
-      tutee_id: current_user.id
-    )
-    respond_to do |format|
-      format.js {render 'find_tutor'}
+    if !:tutor_id.nil?
+      TutoringSession.where(user_id: current_user.id).last.destroy!
+      render 'find_tutor'
+    else
+      @tutor = User.find(params[:tutor_id])
+      TutoringSession.where(user_id: current_user.id).last.destroy!
+      ActionCable.server.broadcast(
+        "conversations-#{@tutor.id}",
+        command: "session_canceled",
+        tutee_id: current_user.id
+      )
+      respond_to do |format|
+        format.js {render 'find_tutor'}
+      end
     end
   end
 

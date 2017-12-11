@@ -13,12 +13,12 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
         var tb = document.querySelector('#incoming_requests table').children[0]
         tb.insertAdjacentHTML('afterend', data['tutoring_session']);
       } else {
-        var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
+        var a = document.querySelectorAll('.side_navigation_bar ul li')[0]; //notification when new request comes in
         a.firstChild.className = "btn btn-success";
       }
     }
     else if (data['command'] == 'tutor_accepted') {
-      
+
       if (document.querySelector('#waiting_for_tutor')) {
         //var outer_frame = document.querySelector('#outer_frame');
         //var frame = document.querySelector('#frame');

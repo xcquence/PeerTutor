@@ -1,5 +1,9 @@
 <div id="frame" class="animated bounceInUp">
 <div class="col-sm-8 col-sm-offset-2 container_box">
+  <% if @available_tutors == nil || @available_tutors.count == 0 %>
+    <h3> Sorry! There is not available tutors. </h3>
+    <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: 0), class: "btn btn-warning btn-lg cancel", remote: true %>
+  <% else %>
   <h1>Avalable Tutors:</h1>
   <table class="table">
     <thead>
@@ -17,5 +21,6 @@
       <% end %>
     </tbody>
   </table>
+  <% end %>
 </div>
 </div>

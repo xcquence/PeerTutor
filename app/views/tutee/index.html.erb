@@ -1,16 +1,16 @@
-<div class="container-fluid">
+<div class="container container-fluid">
   <div class="row">
 
   </div>
-  <div class="row no-gutter">
-    <div class="col-xs-3">
+  <div class="row">
+    <div class="col col-xs-3">
       <!--Sidebar content-->
 			<%= render 'tutee/side_navigation_bar' %>
     </div>
-    <div class="col-xs-9">
+    <div class="col col-xs-9">
       <%= render 'layouts/navigation_bar_leaf' %>
       <!--Body content-->
-			<main>
+			<main style="overflow: auto;">
 					<div id="outer_frame">
 						<!-- This frame is being replaced with another page from the dashboard -->
             <% if @command == "find_tutor" %>
