@@ -66,7 +66,7 @@ class TuteeController < ApplicationController
 
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
-    @tutors = User.all
+    @available_tutors = User.all
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
