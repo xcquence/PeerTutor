@@ -19,9 +19,10 @@ body.tutee-index {
 	/*border: 5px solid #190455;
 	border-radius: 5px;
 	margin-top: 20px;*/
-	width: 75%;
-	overflow: scroll;
+	padding: 0px 100px;
+	width: 100%;
 	height: 100%;
+	margin: 0 auto;
 	background-color: #fff;
 }
 .nav_link {
@@ -182,5 +183,11 @@ body.tutee-index {
 @media only screen and (max-width: 730px){
 	.list_of_tutors {
 		padding: 0px 5px;
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	#outer_frame {
+		padding: 10px;
 	}
 }

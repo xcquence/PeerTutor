@@ -46,7 +46,6 @@ nav .navbar {
 	background-color: transparent;
 	border-bottom: 1.3px solid #DBDBDB;
 	font-size: 1.1em;
-	padding: 0 7px;
 }
 
 #navigation tutor-index {
@@ -115,7 +114,7 @@ body {
 }
 main {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 main .helper {
   background: rgba(0, 0, 0, 0.2);
@@ -346,4 +345,8 @@ footer {
 	.container {
 	    width: 100% !important;
 	}
+}
+
+@media only screen and (max-width: 565px) {
+
 }
