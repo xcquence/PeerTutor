@@ -10,7 +10,7 @@
 
     </thead>
 
-    <% @available_tutors.each do |tutor| %>
+    <% @available_tutors.to_a.each do |tutor| %>
     <tbody>
       <tr>
         <td><%= image_tag("avatar.png", size: "70x70") %></td>

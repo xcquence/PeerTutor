@@ -64,9 +64,8 @@ class TuteeController < ApplicationController
     # @tutoring_session.user = User.find(current_user.id)
     # @tutoring_session.save()
 
-    #  tutors = User.where(is_tutor: true).id
-    #  tutors.each do
-    @tutors = User.all
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+    available_tutors(@tutoring_session.course_id)
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
@@ -152,8 +151,8 @@ class TuteeController < ApplicationController
       else
       end
     end
-
     @available_tutors = course_tutor_ids
+
   end
 
 end

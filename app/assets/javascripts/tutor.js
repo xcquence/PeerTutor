@@ -23,6 +23,11 @@
     });
   });
 
+  $(document).on('click', '.accept', function() {
+    a = document.querySelectorAll('.side_navigation_bar ul li')[1]; //notification when new request comes in
+    a.firstChild.className = "btn btn-success";
+  });
+
 }).call(this);
 
 //cahnge incoming_requests from green to regular when clicked:
@@ -47,6 +52,7 @@ window.onload = function () {
       $bulb.data().status = 'off'
       $bulb.attr('src', 'http://images.clipartpanda.com/light-bulb-png-MiLxq9oyT.png');
     }
-
   });
+
+
 }
