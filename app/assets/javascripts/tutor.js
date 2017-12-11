@@ -35,8 +35,8 @@ window.onload = function () {
   if (document.querySelector("#incoming_requests_link")) {
     document.querySelector("#incoming_requests_link").addEventListener("click", function() {
       //alert("works");
-      var incoming_requests_link = document.querySelector("#incoming_requests_link")
-      incoming_requests_link.classList = "btn";
+      var incoming_requests_link = document.querySelector("#incoming_requests_notify")
+      jQuery(incoming_requests_link).removeClass('notify');
     });;
   }
 

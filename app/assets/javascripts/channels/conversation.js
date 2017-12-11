@@ -9,7 +9,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       if (document.querySelector('#incoming_requests'))
       {
         var da = document.querySelector("#incoming_requests .alert");
-        jQuery(da).addClass('alert-warning');
+        da.classList.add('alert-warning');
         var h = document.querySelector("#incoming_requests h4");
         h.innerHTML = "You have a new request!";
         var tb = document.querySelector('#incoming_requests')
@@ -18,7 +18,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       else
       {
         var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
-        jQuery(a).addClass('notify');
+        a.classList.add('notify');
+        //jQuery(a).addClass('notify');
       }
     }
     else if (data['command'] == 'tutor_accepted') {
