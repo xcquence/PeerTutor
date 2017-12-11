@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 20171204012516) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+<<<<<<< HEAD
+=======
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.integer "v_currency"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> 5233d7103d6b16f4e8a7f5ecd25a08a4fd579ded
   create_table "stripe_accounts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -189,15 +201,6 @@ ActiveRecord::Schema.define(version: 20171106183456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tutor_courses", force: :cascade do |t|
-    t.bigint "tutor_id"
-    t.bigint "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_tutor_courses_on_course_id"
-    t.index ["tutor_id"], name: "index_tutor_courses_on_tutor_id"
-  end
-
   create_table "tutoring_sessions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tutor_id"
@@ -205,7 +208,6 @@ ActiveRecord::Schema.define(version: 20171106183456) do
     t.string "question"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "accepted", default: false
   end
 
   create_table "tutors", force: :cascade do |t|
@@ -234,6 +236,8 @@ ActiveRecord::Schema.define(version: 20171106183456) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "stripe_id"
+    t.integer "account_balance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
