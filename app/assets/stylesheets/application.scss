@@ -367,3 +367,24 @@ footer {
 	    width: 100% !important;
 	}
 }
+
+
+// Notification
+.side_navigation_bar li mark {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  width: 20px;
+  height: 20px;
+  background-color: #FF6B6B;
+  position: absolute;
+  //top: -5px;
+  //left: -10px;
+  font-size: 10px;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  font-weight: 100;
+}
