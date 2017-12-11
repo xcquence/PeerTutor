@@ -2,6 +2,8 @@
 
   <div class="container container_box">
 
+    <%= render partial: "tutoring_sessions", locals: {tutoring_sessions: @tutoring_sessions} %>
+    <!--
     <h1 class="text-center">You're tutoring <%= @tutoring_sessions.count %> people.</h1>
 
     <div class="container">
@@ -24,5 +26,7 @@
         <% end %>
       </table>
     </div>
+
+  -->
   </div>
 </div>

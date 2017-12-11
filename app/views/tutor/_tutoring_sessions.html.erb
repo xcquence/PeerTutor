@@ -3,9 +3,9 @@
   <%= image_tag "avatar.png", size: "60x60" %>
   <div class="container">
     <h4><b><%= session.user.first_name %> <%= session.user.last_name %></b></h4>
-    <p>Subject: <%= session.course.subject.abbrev %></p>
-    <p>Course: <%= session.course.number %></p>
-    <p>Question:<%= session.question %></p>
+    <p><pre>Subject: <%= session.course.subject.abbrev %></pre></p>
+    <p><pre>Course: <%= session.course.number %></pre></p>
+    <p><pre>Question: <%= session.question %></pre></p>
     <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary", remote: true %>
   </div>
 </div>
