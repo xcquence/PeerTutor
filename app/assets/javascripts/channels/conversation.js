@@ -46,6 +46,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var table = document.querySelector('#table');
       if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
+      // ??Refresh incoming_requests??
+
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");

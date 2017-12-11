@@ -72,7 +72,7 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutoring_session
-    if !:tutor_id.nil?
+    if !params[:tutor_id].present?
       TutoringSession.where(user_id: current_user.id).last.destroy!
       render 'find_tutor'
     else
@@ -93,8 +93,6 @@ class TuteeController < ApplicationController
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
     available_tutors(@tutoring_session.course_id)
-
-    # @tutors = User.all
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
