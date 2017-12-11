@@ -13,7 +13,16 @@
 			<main>
 					<div id="outer_frame">
 						<!-- This frame is being replaced with another page from the dashboard -->
-            <%= render "tutee/find_tutor" %>
+            <% if @command == "find_tutor" %>
+              <%= render partial: "find_tutor", object: @subject %>
+            <% elsif @command == "list_of_tutors"%>
+              <%= render partial: "tutee/list_of_tutors", object: @tutors %>
+            <% elsif @command == "being_tutored" %>
+              <%= render partial: "tutee/being_tutored", object: @tutor %>
+            <% else %>
+              <%= render partial: "tutee/pick_tutor", object: @tutor %>
+            <% end %>
+
 					</div>
 				<%= image_tag "cloud.png", class: "cloud" %>
 			</main>

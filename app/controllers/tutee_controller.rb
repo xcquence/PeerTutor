@@ -2,6 +2,25 @@ class TuteeController < ApplicationController
 
   before_action :authenticate_user!   ## User has to be logged in
 
+  def index
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+
+    if @tutoring_session.nil?
+      @subject = Subject.new
+      @command = "find_tutor"
+    elsif @tutoring_session.tutor_id.nil? ## if the session created but tutee hasn't picked tutors yet
+      @tutors = User.all
+      @command = "list_of_tutors"
+    elsif @tutoring_session.accepted
+      @tutor = User.find(@tutoring_session.tutor_id)
+      @command = "being_tutored"
+    else
+      @tutor = User.find(@tutoring_session.tutor_id)
+      @command = "pick_tutor"
+    end
+
+  end
+
   #new
   def find_tutor
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
