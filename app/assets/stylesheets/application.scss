@@ -79,6 +79,7 @@ nav .navbar {
 ul {
   padding-left: 0px;
   list-style: none;
+	text-decoration: none;
 }
 
 .messages-list {
@@ -323,6 +324,10 @@ h1	{
 	padding: 30px 0;
 	margin: auto;
 	max-width: 65%;
+}
+
+.side_navigation_bar ul li a{
+	color: white;
 }
 
 /*==================== DASHBOARD: END =======================*/
