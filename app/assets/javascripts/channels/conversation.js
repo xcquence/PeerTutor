@@ -8,8 +8,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     {
       if (document.querySelector('#incoming_requests'))
       {
-        var dv = document.querySelector("#incoming_requests div");
-        jQuery(dv).addClass('alert-warning');
+        var da = document.querySelector("#incoming_requests .alert");
+        jQuery(da).addClass('alert-warning');
         var h = document.querySelector("#incoming_requests h4");
         h.innerHTML = "You have a new request!";
         var tb = document.querySelector('#incoming_requests')

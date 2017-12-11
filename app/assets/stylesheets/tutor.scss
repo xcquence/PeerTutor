@@ -107,8 +107,8 @@ body.tutor-index {
 .is_live_box {
 	margin: auto;
 	padding: 5px;
-	border: 2px solid yellow;
-	border-radius: 15px;
+	border: 1.7px solid yellow;
+	border-radius: 10px;
 	height: 47px;
 	width: 150px;
 }
@@ -137,4 +137,15 @@ img {
 
 .container {
     padding: 2px 16px;
+}
+
+#incoming_requests h3 {
+	color: #777;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1.7em;
+}
+
+.card {
+	text-align: center;
+	padding: 35px;
 }
