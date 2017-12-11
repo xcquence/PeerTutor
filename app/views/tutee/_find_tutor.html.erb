@@ -9,8 +9,8 @@
           <!--Subject field-->
           <div class="form-group ts-field">
             <div class="subject-area">
-              <%= label :tutoring_session, :subject %>
-              <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select', :class => "ft-field"} %>
+              <%= label :tutoring_session, :subject, :class => "find_tutor_form_label" %>
+              <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select', :class => "ft-field", :required => true} %>
             </div>
           </div>
           <!--Course field-->
@@ -22,8 +22,8 @@
           <!--Question field-->
           <div class="form-group ts-field">
             <div class="question-area">
-              <%= label :tutoring_session, "Question" %>
-              <%= f.text_area :question, value: "", class: "ft-field" %>
+              <%= label :tutoring_session, "Question", :class => "find_tutor_form_label" %>
+              <%= f.text_area :question, value: "", class: "question_box" %>
             </div>
           </div>
 

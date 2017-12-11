@@ -44,7 +44,8 @@ nav .navbar {
 #navigation {
 	margin: 0;
 	background-color: transparent;
-	border-bottom: 1.3px solid #DBDBDB;
+  border: none;
+	/*border-bottom: 1.3px solid #DBDBDB;*/
 	font-size: 1.1em;
 }
 
@@ -135,7 +136,7 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: #6FB4DA;
+  background: linear-gradient(white, #8f77bb, #80e3fd, white);
   height: 100%;
   width: 25%;
   position: fixed;
@@ -273,6 +274,7 @@ main .helper span {
     position: absolute;
     top: 45%;
     left: 50%;
+    z-index: 1000;
     transform: translate3d(-50%, -50%, 0);
   }
   .menu .smartphone-menu-trigger:after {
@@ -324,11 +326,15 @@ h1	{
 /*==================== DASHBOARD: END =======================*/
 
 footer {
-	background-color: #3A5F72;
-	text-align: center;
-	padding: 20px;
-	color: #777;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+	color: #553f7a;
 	height: 10%;
+  bottom: 0;
+  opacity: 0.4;
+  font-size: 1rem;
+  background-blend-mode: multiply;
 }
 
 .row.no-gutter {
