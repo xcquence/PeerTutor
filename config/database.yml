@@ -1,4 +1,3 @@
-<<<<<<< current
 #development:
 #  adapter: sqlite3
 #  database: db/development.sqlite3
@@ -26,32 +25,3 @@ test:
   pool: 5 #default
   username: postgres ##Same username in line 12
   password: 123 ##Same password in line 13
-=======
-#development:
-#  adapter: sqlite3
-#  database: db/development.sqlite3
-#  pool: 5
-#  timeout: 5000
-
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: postgres
-  pool: 5
-  username: postgres ##Username belongs here
-  password: 123 ##Password belongs here
-
-#test:
-#  adapter: sqlite3
-#  database: db/test.sqlite3
-#  pool: 5
-#  timeout: 5000
-
-test:
-  adapter: postgresql
-  encoding: unicode
-  database: postgres
-  pool: 5 #default
-  username: postgres ##Same username in line 12
-  password: 123 ##Same password in line 13
->>>>>>> before discard
