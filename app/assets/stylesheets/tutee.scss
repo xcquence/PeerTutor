@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutee-index {
-	//background-image: url(asset-path('dashboard-bg.png'));
+	/*background-image: url(asset-path('dashboard-bg.png'));*/
 	background-size: 100%;
 	background-image: url(asset-path('background/diagmonds.jpg'));
 
@@ -19,6 +19,7 @@ body.tutee-index {
 	/*border: 5px solid #190455;
 	border-radius: 5px;
 	margin-top: 20px;*/
+	width: 75%;
 	overflow: scroll;
 	height: 100%;
 	background-color: #fff;
@@ -33,10 +34,13 @@ body.tutee-index {
 }
 #find_tutor_heading {
 	color: #190455;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Work Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 3rem;
+	text-align: center;
 	font-weight: bold;
 }
-#question_box {
+.question_box {
 	resize: none;
 	width: 50%;
 	height: 200px;
@@ -115,24 +119,18 @@ body.tutee-index {
 #frame {
 	/*float: right;
 	margin-right: 100px;*/
-
 }
 .cloud {
-	width: 300px;
+	visibility: hidden;
+	/*width: 300px;
 	margin-top: 150px;
 	margin-right: 100px;
-	float: right;
+	float: right;*/
 }
 
 /*FIND TUTOR PAGE:*/
 .request_form_container {
 
-}
-#find_tutor_heading {
-	//color: white;
-	font-size: 3em;
-	font-family: 'Work Sans', sans-serif;
-	text-align: center;
 }
 #dash_board_user_name {
 	color: white;
@@ -162,12 +160,12 @@ body.tutee-index {
 }
 
 #find_tutor_box .ft-field {
-		width: 100%;
+	width: 100%;
     padding: 20px;
     margin: 8px 0;
-    //box-sizing: border-box;
-		border: 1.3px solid #DBDBDB;
-		border-radius: 10px;
+    box-sizing: border-box;
+	border: 1.3px solid #DBDBDB;
+	border-radius: 10px;
 }
 
 #find_tutor_box label {
