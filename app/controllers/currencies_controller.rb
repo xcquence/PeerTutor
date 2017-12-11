@@ -3,6 +3,7 @@ class CurrenciesController < ApplicationController
 
 
   def new
+      @user = user.find(params[:id])
   end
 
   def create
@@ -49,9 +50,6 @@ class CurrenciesController < ApplicationController
   redirect_to new_currencies_path
   end
 
-  @acc_balance = User.find(params[:account_balance])
-
-  @spending_total = @acc_balance + @amount
 
 
 
@@ -63,4 +61,9 @@ class CurrenciesController < ApplicationController
 
   def thanks
 
+  end
+
+  def update
+    @user.update(account_balance: @amount)
+    @user.save
   end
