@@ -370,17 +370,20 @@ footer {
 
 
 // Notification
-.side_navigation_bar li mark {
+mark {
+  background-color: transparent !important;
+}
+
+.notify {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  border: 1px solid #FFF;
-  width: 20px;
-  height: 20px;
-  background-color: #FF6B6B;
+  border: 0.5px solid #FFF;
+  box-shadow: 0.6px 0.6px #505551;
+  width: 19px;
+  height: 19px;
+  background-color: #2dbc82 !important;
   position: absolute;
-  //top: -5px;
-  //left: -10px;
   font-size: 10px;
   line-height: 20px;
   font-family: 'Roboto', sans-serif;

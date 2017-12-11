@@ -17,8 +17,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       }
       else
       {
-        var a = document.querySelector('#incoming_requests_link'); //notification when new request comes in
-        a.className = "btn btn-success";
+        var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
+        jQuery(a).addClass('notify');
       }
     }
     else if (data['command'] == 'tutor_accepted') {
