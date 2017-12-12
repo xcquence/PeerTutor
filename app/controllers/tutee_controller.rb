@@ -140,7 +140,6 @@ class TuteeController < ApplicationController
     @tutors = User.where(is_tutor: true, is_live: true).where.not(id: current_user.id).all  # @tutors.ids returns the array of live_tutor's ids
 
     course_tutor_ids = Array.new
-    course_tutor_ids.clear
 
     @tutors.each do |d|
       @course_tutor = TutorCourse.where(tutor_id: d, course_id: course_id.to_i).first

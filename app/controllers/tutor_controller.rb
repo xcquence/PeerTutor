@@ -50,7 +50,7 @@ class TutorController < ApplicationController
 
 
     respond_to do |format|
-      format.js
+      format.js {render 'incoming_requests'}
     end
   end
 

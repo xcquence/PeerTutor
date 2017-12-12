@@ -23,21 +23,34 @@
     });
   });
 
-  $(document).on('click', '.accept', function() {
-    a = document.querySelectorAll('.side_navigation_bar ul li')[1]; //notification when new request comes in
-    a.firstChild.className = "btn btn-success";
-  });
-
 }).call(this);
 
-//cahnge incoming_requests from green to regular when clicked:
+
 window.onload = function () {
+  //cahnge incoming_requests from green to regular when clicked:
   if (document.querySelector("#incoming_requests_link")) {
     document.querySelector("#incoming_requests_link").addEventListener("click", function() {
       //alert("works");
       var incoming_requests_link = document.querySelector("#incoming_requests_notify")
       jQuery(incoming_requests_link).removeClass('notify');
     });;
+
+  }
+
+  //change currently_tutoring to green when tutor accept request
+  else if (document.querySelector("#accept")) {
+    document.querySelector("#accept").addEventListener("click", function() {
+      var a = document.querySelector('#currently_tutoring_notify');
+      a.classList.add('notify');
+    });
+  }
+
+  else if (document.querySelector("#currently_tutoring_link")) {
+    document.querySelector("#currently_tutoring_link").addEventListener("click", function() {
+      //alert("works");
+      var incoming_requests_link = document.querySelector("#currently_tutoring_notify")
+      jQuery(incoming_requests_link).removeClass('notify');
+    });
   }
 
 
