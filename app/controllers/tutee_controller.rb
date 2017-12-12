@@ -80,9 +80,9 @@ class TuteeController < ApplicationController
 
 
   def tips_management
-    respond_to do |format|
-      format.js
-    end
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   def schedule

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get 'stripe_accounts/full', to: 'stripe_accounts#full'
 
-
+  post 'currency/update'
 
 
   devise_for :users

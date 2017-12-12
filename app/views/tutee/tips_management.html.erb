@@ -16,6 +16,7 @@
 <article>
    <%= label_tag(:amount, 'Amount: $') %>
    <%= text_field_tag(:amount) %>
+  <%= hidden_field_tag 'method', 'update'%>
  </article>
  <article>
    <%= hidden_field_tag(:stripeToken) %>
