@@ -21,7 +21,7 @@
         <label>Question</label>
         <p><%= session.question %></p>
         <hr>
-        <%= link_to "Complete", tutor_complete_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-primary", remote: true %>
+        <%= link_to "Cancel", tutee_cancel_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-warning", remote: true %>
       </div>
     </div>
 
