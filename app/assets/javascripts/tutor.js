@@ -33,26 +33,9 @@ window.onload = function () {
       //alert("works");
       var incoming_requests_link = document.querySelector("#incoming_requests_notify")
       jQuery(incoming_requests_link).removeClass('notify');
-    });;
-
-  }
-
-  //change currently_tutoring to green when tutor accept request
-  else if (document.querySelector("#accept")) {
-    document.querySelector("#accept").addEventListener("click", function() {
-      var a = document.querySelector('#currently_tutoring_notify');
-      a.classList.add('notify');
     });
-  }
 
-  else if (document.querySelector("#currently_tutoring_link")) {
-    document.querySelector("#currently_tutoring_link").addEventListener("click", function() {
-      //alert("works");
-      var incoming_requests_link = document.querySelector("#currently_tutoring_notify")
-      jQuery(incoming_requests_link).removeClass('notify');
-    });
   }
-
 
   //turn on the live button
   $bulb = $( "#live_btn" );
@@ -66,6 +49,4 @@ window.onload = function () {
       $bulb.attr('src', 'http://images.clipartpanda.com/light-bulb-png-MiLxq9oyT.png');
     }
   });
-
-
 }

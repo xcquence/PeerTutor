@@ -1,0 +1,23 @@
+<div id="frame" class="animated bounceInUp">
+  <div class="container container_box">
+    <% tutee ||= @tutee %>
+    <div class="container">
+      <div class="col-sm-8 col-sm-offset-2" id="profile_box">
+        <h2 style="text-align: center;">Profile</h2>
+
+        <span>First Name</span>
+        <p><%= tutee.first_name %></p>
+        <hr>
+        <span>Last Name</span>
+        <p><%= tutee.last_name %></p>
+        <hr>
+        <spna>Email</span>
+        <p><%= tutee.email %>
+        <hr>
+        <%= link_to "Edit", tutee_profile_path, remote: true, class: "btn btn-primary btn-lg edit" %>
+      </div>
+
+    </div>
+
+  </div>
+</div>
