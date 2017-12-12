@@ -136,6 +136,7 @@ class TuteeController < ApplicationController
   end
 
   def profile
+    @tutee = User.find(current_user.id)
     respond_to do |format|
       format.js
     end
