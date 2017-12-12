@@ -21,10 +21,6 @@ password = 'pass123'
   )
 end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 
 csv_file1 = 'courses_data.csv'
 CSV.read(csv_file1, :encoding => 'windows-1251:utf-8')
