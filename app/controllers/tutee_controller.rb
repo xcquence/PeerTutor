@@ -89,6 +89,14 @@ class TuteeController < ApplicationController
     end
   end
 
+  def being_tutored
+    @tutoring_session = TutoringSession.where(user_id: current_user.id, accepted: true).last
+    @tutor = User.where(id: @tutoring_session.tutor_id).last
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def list_of_tutors
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
