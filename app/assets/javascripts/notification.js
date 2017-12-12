@@ -7,7 +7,7 @@ $('.container_box').on('click','#accept', function(){
 });
 
 //change currently_tutoring from green to regular when clicked:
-$('.row').on('click', '#currently_tutoring_link', function() {
+$('.menu').on('click', '#currently_tutoring_link', function() {
   var incoming_requests_link = document.querySelector('#currently_tutoring_notify');
   $(incoming_requests_link).removeClass('notify');
 });

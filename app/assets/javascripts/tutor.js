@@ -33,7 +33,7 @@ window.onload = function () {
       //alert("works");
       var incoming_requests_link = document.querySelector("#incoming_requests_notify")
       jQuery(incoming_requests_link).removeClass('notify');
-    });;
+    });
 
   }
 

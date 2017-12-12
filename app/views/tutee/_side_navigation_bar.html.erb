@@ -13,15 +13,21 @@
     <ul>
       <li tabindex="0"><span>
         <i class="fa fa-search" aria-hidden="true" style="color:white"></i>
-        <%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn new_btn" %></span>
+        <%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn new_btn", id: "" %>
+        <mark id="" class=""></mark>
+      </span>
       </li>
       <li tabindex="0"><span>
         <i class="fa fa-th-list" aria-hidden="true" style="color:white"></i>
-        <%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn new_btn" %></span>
+        <%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn new_btn", id: "" %>
+        <mark id="" class=""></mark>
+      </span>
       </li>
       <li tabindex="0"><span>
         <i class="fa fa-comments" aria-hidden="true" style="color:white"></i>
-        <%= link_to "Messenger", chat_index_path, remote: true, class: "btn new_btn", id: "messenger" %></span>
+        <%= link_to "Messenger", chat_index_path, remote: true, class: "btn new_btn", id: "messenger_link" %>
+        <mark id="messenger_notify" class=""></mark>
+      </span>
       </li>
       <li tabindex="0"><span>
         <i class="fa fa-money" aria-hidden="true" style="color:white"></i>
