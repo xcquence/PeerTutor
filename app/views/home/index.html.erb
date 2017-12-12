@@ -1,5 +1,7 @@
 <!--=============HOME PAGE=================-->
+<header>
 <%= render 'layouts/navigation_bar' %>
+</header>
 
 <div id="main_page_body" class="text-center">
 	<div class="style_text" id="main-header">
@@ -21,13 +23,4 @@
 		<% end %>
 	</div>
 </div>
-
-
-
-<!--<div id="header" class="text-center box">
-		<h1 id="po">Main Page</h1>
-		<div>
-		<button type="button" class="btn btn-info btn-lg"><%= link_to "Start", home_authentication_path%></button>
-			
-</div>-->
-
+<%= render 'layouts/footer' %>

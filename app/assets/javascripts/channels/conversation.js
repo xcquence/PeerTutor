@@ -6,6 +6,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
+<<<<<<< HEAD
       var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
       a.firstChild.className = "btn btn-success";
 
@@ -22,6 +23,41 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       //body.innerHTML = data['being_tutored'];
       frame.remove();
       outer_frame.innerHTML = data['being_tutored'];
+=======
+      if (document.querySelector('#incoming_requests'))
+      {
+        var da = document.querySelector("#incoming_requests .alert");
+        da.classList.add('alert-warning');
+        var h = document.querySelector("#incoming_requests h4");
+        h.innerHTML = "You have a new request!";
+        var tb = document.querySelector('#incoming_requests')
+        tb.insertAdjacentHTML('afterend', data['tutoring_session']);
+      }
+      else
+      {
+        var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
+        a.classList.add('notify');
+        //jQuery(a).addClass('notify');
+      }
+    }
+    else if (data['command'] == 'tutor_accepted') {
+
+      if (document.querySelector('#waiting_for_tutor')) {
+        //var outer_frame = document.querySelector('#outer_frame');
+        //var frame = document.querySelector('#frame');
+        //frame.remove();
+        //outer_frame.innerHTML = data['being_tutored'];
+
+        $link = $('#messenger:first');
+        $link[0].click();
+        //add Location:
+        var f = document.querySelector("#frame");
+        //f.insertAdjacentHTML('beforebegin', data['tutor_response']);
+      } else {
+
+      }
+
+>>>>>>> master
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
@@ -29,6 +65,11 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var table = document.querySelector('#table');
       if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
+<<<<<<< HEAD
+=======
+      // ??Refresh incoming_requests??
+
+>>>>>>> master
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");

@@ -1,30 +1,33 @@
-<%= render 'layouts/navigation_bar' %>
+<div class="container container-fluid">
+  <div class="row">
 
-<!--============= Tutee Dashbaord ============-->
+  </div>
+  <div class="row">
+    <div class="col col-xs-3">
+      <!--Sidebar content-->
+			<%= render 'tutee/side_navigation_bar' %>
+    </div>
+    <div class="col col-xs-9">
+      <%= render 'layouts/navigation_bar_leaf' %>
+      <!--Body content-->
+			<main style="overflow: auto;">
+					<div id="outer_frame">
+						<!-- This frame is being replaced with another page from the dashboard -->
+            <% if @command == "find_tutor" %>
+              <%= render partial: "find_tutor", object: @subject %>
+            <% elsif @command == "list_of_tutors"%>
+              <%= render partial: "tutee/list_of_tutors", object: @available_tutors %>
+            <% elsif @command == "being_tutored" %>
+              <%= render partial: "tutee/being_tutored", object: @tutor %>
+            <% else %>
+              <%= render partial: "tutee/pick_tutor", object: @tutor %>
+            <% end %>
 
-<div class="dashboard">
-	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
-		<nav>
-			<ul>
-				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
-					<li id="tutee_option_1" class="option_selected"> Find Tutor</li>
-				</a>
-				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
-					<li id="tutee_option_2">Schedule</li>
-				</a>
-				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
-					<li id="tutee_option_3">Messenger</li>
-				</a>
-				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
-					<li id="tutee_option_4">Tip Management</li>
-				</a>
-				<%= link_to home_authentication_path do %>
-					<li>>Switch role<</li>
-				<% end %>
-			</ul>
-		</nav>
-	</div>
-	<div id="frame_container" class="col-lg-4 col-sm-12">
-		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
-	</div>
+					</div>
+				<%= image_tag "cloud.png", class: "cloud" %>
+			</main>
+    </div>
+  </div>
 </div>
+
+<%= render 'layouts/footer' %>

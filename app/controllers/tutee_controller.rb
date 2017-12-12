@@ -2,16 +2,50 @@ class TuteeController < ApplicationController
 
   before_action :authenticate_user!   ## User has to be logged in
 
+<<<<<<< HEAD
+=======
+  def index
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+
+    if @tutoring_session.nil?
+      @subject = Subject.new
+      @command = "find_tutor"
+    elsif @tutoring_session.tutor_id.nil? ## if the session created but tutee hasn't picked tutors yet
+      available_tutors(@tutoring_session.course_id)
+      @command = "list_of_tutors"
+    elsif @tutoring_session.accepted
+      @tutor = User.find(@tutoring_session.tutor_id)
+      @command = "being_tutored"
+    else
+      @tutor = User.find(@tutoring_session.tutor_id)
+      @command = "pick_tutor"
+    end
+
+  end
+
+>>>>>>> master
   #new
   def find_tutor
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
+<<<<<<< HEAD
     if @tutoring_session.nil? || @tutoring_session.tutor_id.nil?
+=======
+    if @tutoring_session.nil?
+>>>>>>> master
       @subject = Subject.new
       respond_to do |format|
         format.js {render "find_tutor" }
       end
       #@courses = Course.all
+<<<<<<< HEAD
+=======
+    elsif @tutoring_session.tutor_id.nil? ## if the session created but tutee hasn't picked tutors yet
+      available_tutors(@tutoring_session.course_id)
+      respond_to do |format|
+        format.js {render 'list_of_tutors'}
+      end
+>>>>>>> master
     elsif @tutoring_session.accepted
       @tutor = User.find(@tutoring_session.tutor_id)
       #render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
@@ -40,16 +74,22 @@ class TuteeController < ApplicationController
     # @tutoring_session.user = User.find(current_user.id)
     # @tutoring_session.save()
 
+<<<<<<< HEAD
 
     #  tutors = User.where(is_tutor: true).id
     #  tutors.each do
     @tutors = User.all
+=======
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+    available_tutors(@tutoring_session.course_id)
+>>>>>>> master
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
   end
 
   def cancel_tutoring_session
+<<<<<<< HEAD
     @tutor = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.destroy!
     ActionCable.server.broadcast(
@@ -59,11 +99,36 @@ class TuteeController < ApplicationController
     )
     respond_to do |format|
       format.js {render 'find_tutor'}
+=======
+    if !params[:tutor_id].present?
+      TutoringSession.where(user_id: current_user.id).last.destroy!
+      render 'find_tutor'
+    else
+      @tutor = User.find(params[:tutor_id])
+      TutoringSession.where(user_id: current_user.id).last.destroy!
+      ActionCable.server.broadcast(
+        "conversations-#{@tutor.id}",
+        command: "session_canceled",
+        tutee_id: current_user.id
+      )
+      respond_to do |format|
+        format.js {render 'find_tutor'}
+      end
+>>>>>>> master
     end
   end
 
   def list_of_tutors
+<<<<<<< HEAD
 
+=======
+    @tutoring_session = TutoringSession.where(user_id: current_user.id).last
+
+    available_tutors(@tutoring_session.course_id)
+    respond_to do |format|
+      format.js {render 'list_of_tutors'}
+    end
+>>>>>>> master
   end
 
   def pick_tutor
@@ -80,9 +145,15 @@ class TuteeController < ApplicationController
 
 
   def tips_management
+<<<<<<< HEAD
     # respond_to do |format|
     #   format.js
     # end
+=======
+    respond_to do |format|
+      format.js
+    end
+>>>>>>> master
   end
 
   def schedule
@@ -102,6 +173,25 @@ class TuteeController < ApplicationController
       user_id: current_user.id,
       course_id: params[:course][:id].to_i
     )
+<<<<<<< HEAD
+=======
+  end
+
+  def available_tutors(course_id)
+    @tutors = User.where(is_tutor: true, is_live: true).where.not(id: current_user.id).all  # @tutors.ids returns the array of live_tutor's ids
+
+    course_tutor_ids = Array.new
+
+    @tutors.each do |d|
+      @course_tutor = TutorCourse.where(tutor_id: d, course_id: course_id.to_i).first
+      if !@course_tutor.nil?
+        course_tutor_ids << User.find(@course_tutor.tutor_id)
+      else
+      end
+    end
+    @available_tutors = course_tutor_ids
+
+>>>>>>> master
   end
 
 end
