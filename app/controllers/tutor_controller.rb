@@ -75,6 +75,7 @@ class TutorController < ApplicationController
   end
 
   def tutor_profile_update
+    current_user.update(user_params)
     redirect_to root_path
   end
 
@@ -152,5 +153,11 @@ class TutorController < ApplicationController
   def tutor_course_params
 
   end
+
+  def user_params
+
+    params.require(:user).permit(:avatar)
+
+     end
 
 end
