@@ -125,7 +125,7 @@ body {
 }
 main {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 main .helper {
   background: rgba(0, 0, 0, 0.2);
@@ -146,13 +146,13 @@ main .helper span {
   display: block;
 }
 .menu {
-  background: #6FB4DA;
-  height: -webkit-fill-available;
-  width: 100%;
-  //position: fixed;
-  // top: 0;
-  // left: 0;
-  //z-index: 5;
+  background: linear-gradient(#4E4A85,#4E4A85,#80e3fd, white);
+  height: 100%;
+  width: 25%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
   outline: none;
 }
 .menu .avatar {
@@ -262,7 +262,7 @@ main .helper span {
     padding-left: 0;
   }
   .menu {
-    width: 230px;
+    width: 25%;
     box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
     transform: translate3d(-230px, 0, 0);
     transition: all 0.3s ease-in-out;
@@ -284,6 +284,7 @@ main .helper span {
     position: absolute;
     top: 45%;
     left: 50%;
+    z-index: 1000;
     transform: translate3d(-50%, -50%, 0);
   }
   .menu .smartphone-menu-trigger:after {
@@ -343,15 +344,15 @@ h2 {
 /*==================== DASHBOARD: END =======================*/
 
 footer {
-	background-color: #3A5F72;
-	text-align: center;
-	padding: 20px;
-	color: #777;
-	height: auto;
-  margin-top: -1.7px;
-	margin-right: -15px;
-	z-index:5;
-	position: relative;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+	color: #553f7a;
+	height: 10%;
+  bottom: 0;
+  opacity: 0.4;
+  font-size: 1rem;
+  background-blend-mode: multiply;
 }
 
 .container-fluid {

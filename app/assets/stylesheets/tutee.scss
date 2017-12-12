@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutee-index {
-	//background-image: url(asset-path('dashboard-bg.png'));
+	/*background-image: url(asset-path('dashboard-bg.png'));*/
 	background-size: 100%;
 	background-image: url(asset-path('background/diagmonds.jpg'));
 
@@ -16,12 +16,13 @@ body.tutee-index {
   height: 30px;
 }
 #outer_frame {
-	// border: 5px solid #190455;
-	// border-radius: 5px;
-	// margin-top: 20px;
-	// overflow: scroll;
-	// height: 600px;
-	// background-color: #fff;
+	/*border: 5px solid #190455;
+	border-radius: 5px;
+	margin-top: 20px;*/
+	padding: 0px 100px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 }
 .nav_link {
 	width: 100%;
@@ -33,32 +34,34 @@ body.tutee-index {
 }
 #find_tutor_heading {
 	color: #190455;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Work Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 3rem;
+	text-align: center;
 	font-weight: bold;
 }
-#question_box {
+.question_box {
 	resize: none;
-	width: 50%;
+	width: 100%;
 	height: 200px;
-	border: solid 4px #190455;
+	border: 1.5px solid lightgray;
 	border-radius: 5px;
 	outline: none;
 	padding: 5px;
-	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
+	font-family: 'Work Sans', sans-serif;
 	color: #190455;
-	background-color: #F4EDFE;
+	background-color: #f8f8f8;
 }
 .find_tutor_form_label {
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Work Sans', sans-serif;
 	font-weight: bold;
 	font-size: 1.6rem !important;
 	color: #190455;
 }
-.question-area p {
+/*.question-area p {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
-}
+}*/
 #find_tutor_submit_btn {
 	outline: none;
 	padding: 3px 10px;
@@ -113,32 +116,24 @@ body.tutee-index {
 }
 
 #frame {
-	//float: right;
-	//margin-right: 100px;
-
+	/*float: right;
+	margin-right: 100px;*/
 }
 .cloud {
-	width: 285px;
-	margin-top: 50px;
-	margin-right: 90px;
-	margin-bottom: 60px;
-	float: right;
+	visibility: hidden;
+	/*width: 300px;
+	margin-top: 150px;
+	margin-right: 100px;
+	float: right;*/
 }
 
-//FIND TUTOR PAGE:
+/*FIND TUTOR PAGE:*/
 .request_form_container {
 
-}
-#find_tutor_heading {
-	//color: white;
-	font-size: 3em;
-	font-family: 'Work Sans', sans-serif;
-	text-align: center;
 }
 #dash_board_user_name {
 	color: white;
 	font-family: 'Work Sans', sans-serif;
-
 }
 #new_tutoring_session {
 
@@ -157,12 +152,12 @@ body.tutee-index {
 }
 
 #find_tutor_box .ft-field {
-		width: 100%;
+	width: 100%;
     padding: 20px;
     margin: 8px 0;
-    //box-sizing: border-box;
-		border: 1.3px solid #DBDBDB;
-		border-radius: 10px;
+    box-sizing: border-box;
+	border: 1.3px solid #DBDBDB;
+	border-radius: 10px;
 }
 
 #find_tutor_box label {
@@ -216,5 +211,11 @@ body.tutee-index {
 @media only screen and (max-width: 730px){
 	.list_of_tutors {
 		padding: 0px 5px;
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	#outer_frame {
+		padding: 10px;
 	}
 }

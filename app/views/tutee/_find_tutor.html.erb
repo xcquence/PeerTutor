@@ -2,8 +2,8 @@
 
   <div class="container container_box">
 
-  <div class="col-sm-8 col-sm-offset-2" id="find_tutor_box">
-    <h3 class="" id="find_tutor_heading">FIND A TUTOR</h3>
+  <div class="col-lg-12 col-md-12 col-sm-9" id="find_tutor_box">
+    <h3 id="find_tutor_heading">Find a Tutor</h3>
 
       <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
           <!--Subject field-->
@@ -24,7 +24,7 @@
             <div class="question-area">
               <%= label :tutoring_session, "Question" %>
               <p>(Give a short overview of the problem you're having issues with.)</p>
-              <%= f.text_area :question, required: 'required', value: "", class: "ft-field" %>
+              <%= f.text_area :question, required: 'required', value: "", class: "ft-field question_box" %>
             </div>
           </div>
 
