@@ -54,6 +54,20 @@ class TutorController < ApplicationController
     end
   end
 
+  def complete_tutoring_session
+    @tutee = User.find(params[:user_id])
+    @session_id = params[:session_id]
+    TutoringSession.where(id: @session_id).last.destroy!
+    ActionCable.server.broadcast(
+      "conversations-#{@tutee.id}",
+      command: "session_completed",
+      tutee_id: current_user.id
+    )
+    respond_to do |format|
+      format.js {render 'incoming_requests'}
+    end
+  end
+
   def currently_tutoring
     @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: true)
     respond_to do |format|

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'tutor/incoming_requests'
 
+  get 'tutor/complete_tutoring_session'
+
   get 'tutor/currently_tutoring'
 
   get 'tutor/tutor_profile'

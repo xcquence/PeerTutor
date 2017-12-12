@@ -54,6 +54,9 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       // ??Refresh incoming_requests??
 
     }
+    else if (data['command'] == 'session_completed') {
+      alert("Session is completed.");
+    }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
 
