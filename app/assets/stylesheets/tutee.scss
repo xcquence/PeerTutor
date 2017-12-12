@@ -15,6 +15,102 @@ body.tutee-index {
   width: 50%;
   height: 30px;
 }
+#outer_frame {
+	// border: 5px solid #190455;
+	// border-radius: 5px;
+	// margin-top: 20px;
+	// overflow: scroll;
+	// height: 600px;
+	// background-color: #fff;
+}
+.nav_link {
+	width: 100%;
+	padding: 25px;
+	outline: none;
+}
+.nav_link:hover {
+	background-color: #F4EDFE;
+}
+#find_tutor_heading {
+	color: #190455;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+#question_box {
+	resize: none;
+	width: 50%;
+	height: 200px;
+	border: solid 4px #190455;
+	border-radius: 5px;
+	outline: none;
+	padding: 5px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+	background-color: #F4EDFE;
+}
+.find_tutor_form_label {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 1.6rem !important;
+	color: #190455;
+}
+.question-area p {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+#find_tutor_submit_btn {
+	outline: none;
+	padding: 3px 10px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+	border: solid 3px #190455;
+	background-color: #F4EDFE;
+}
+#find_tutor_submit_btn:hover {
+	border: solid 3px #80e3fd;
+}
+.list_of_tutors {
+	padding: 0px 100px;
+	height: 70px;
+}
+.list_of_tutors h1 {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+	margin-bottom: 30px;
+}
+.tutor_info_container {
+	overflow-y: scroll;
+}
+.tutor_info{
+	border: solid 2px #190455;
+	box-shadow: 0px 5px 0px #190455; /*#80E3FD*/
+	padding: 15px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: #fdfcff;
+}
+.tutor_info:hover {
+	box-shadow: 0px 5px 0px #e8c6e7; /*#80E3FD*/
+}
+.tutor_name {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 1.5rem;
+	line-height: 70px;
+}
+.choose_tutor_submit_btn {
+	line-height: 70px;
+	border-radius: 5px;
+	border: solid 2px #190455;
+	padding: 8px 50px;
+	background-color: #F4EDFE;
+	font-weight: bold;
+	font-family: 'Nunito', sans-serif;
+	color: #190455;
+}
 
 #frame {
 	//float: right;
@@ -99,4 +195,20 @@ body.tutee-index {
 #waiting_for_tutor h2 {
 	color: #777;
 	font-family: 'Work Sans', sans-serif;
+}
+
+.choose_tutor_submit_btn:hover {
+	border-color: #80E3FD;
+	color: #190455;
+	text-decoration: none;
+}
+
+.choose_tutor_submit_btn:active {
+	text-decoration: none;
+}
+
+@media only screen and (max-width: 730px){
+	.list_of_tutors {
+		padding: 0px 5px;
+	}
 }
