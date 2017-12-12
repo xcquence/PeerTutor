@@ -19,7 +19,6 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       {
         var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
         a.classList.add('notify');
-        //jQuery(a).addClass('notify');
       }
     }
     else if (data['command'] == 'tutor_accepted') {
