@@ -6,23 +6,24 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
-      if (document.querySelector('#incoming_requests table'))
+      if (document.querySelector('#incoming_requests'))
       {
-        var h = document.querySelector("#incoming_requests h1");
-        h.innerHTML = "You have new requests!";
-        var tb = document.querySelector('#incoming_requests table').children[0]
+        var da = document.querySelector("#incoming_requests .alert");
+        da.classList.add('alert-warning');
+        var h = document.querySelector("#incoming_requests h4");
+        h.innerHTML = "You have a new request!";
+        var tb = document.querySelector('#incoming_requests')
         tb.insertAdjacentHTML('afterend', data['tutoring_session']);
-      } else {
-        var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
-        a.firstChild.className = "btn btn-success";
+      }
+      else
+      {
+        var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
+        a.classList.add('notify');
+        //jQuery(a).addClass('notify');
       }
     }
     else if (data['command'] == 'tutor_accepted') {
-      //notification when tutor responds:
-      var a = document.querySelectorAll('#nav_container ul li')[0];
-      a.firstChild.innerHTML = "Being Tutored";
 
-      //
       if (document.querySelector('#waiting_for_tutor')) {
         //var outer_frame = document.querySelector('#outer_frame');
         //var frame = document.querySelector('#frame');
@@ -44,6 +45,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
       var table = document.querySelector('#table');
       if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
+
+      // ??Refresh incoming_requests??
 
     }
 

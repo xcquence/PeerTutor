@@ -1,3 +1,2 @@
-<%= label :tutoring_session, :course, class: "find_tutor_form_label"%>
-<br />
-<%= collection_select :course, :id, Course.where(subject_id: subject_id), :id, :name, :include_blank => true%>
+<%= label :tutoring_session, :course%>
+<%= collection_select :course, :id, Course.where(subject_id: subject_id), :id, :name, {:include_blank => true}, {:required => true, :class => "ft-field"} %>

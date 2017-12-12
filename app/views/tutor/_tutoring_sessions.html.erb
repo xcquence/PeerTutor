@@ -1,9 +1,21 @@
 <% tutoring_sessions.each do |session| %>
-  <tr data-tutee_id=<%= session.user_id %>>
-    <td><%= session.user.first_name %> <%= session.user.last_name %></td>
-    <td><%= session.course.subject.abbrev %></td>
-    <td><%= session.course.number %></td>
-    <td><%= session.question %></td>
-    <td><%= link_to "Accept", tutor_accept_request_path(session_id: session.id), class: "btn btn-primary", remote: true %></td>
-  </tr>
+<div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
+  <div class="card_top text-center">
+  <%= image_tag "avatar.png", size: "60x60" %>
+  <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
+</div>
+  <div class="container">
+
+    <label>Subject</label>
+    <p><%= session.course.subject.abbrev %></p>
+    <hr>
+    <label>Course</label>
+    <p><%= session.course.number %></p>
+    <hr>
+    <label>Question</label>
+    <p><%= session.question %></p>
+    <hr>
+    <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-primary", remote: true %>
+  </div>
+</div>
 <% end %>

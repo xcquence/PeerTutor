@@ -1,27 +1,34 @@
-<div id="frame">
-  <% users ||= @users %>
-  <% conversations ||= @conversations %>
-  <% if users.nil? %>
-  <h1>You have no messages.</h1>
-  <% else %>
-  <div class="row">
+<div id="frame" class="animated bounceInUp">
+  <div class="container container_box">
+  <div class="col-sm-10 col-sm-offset-1">
+    <% users ||= @users %>
+    <% conversations ||= @conversations %>
 
-    <div class="col-md-9">
-      <ul id="conversations-list">
-        <% if conversations[0] != nil %>
-          <% conversations.each do |conversation| %>
-            <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+    <% if users.nil? %>
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no messages.</h4>
+      </div>
+    <% else %>
+    <div class="row">
+
+      <div class="">
+        <ul id="conversations-list">
+          <% if conversations[0] != nil %>
+            <% conversations.each do |conversation| %>
+              <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
 
-    <div class="col-md-3">
-        <% users.each do |user| %>
-        <!-- Workaround: this link is triggered automaticly when this page loads. -->
-          <%= link_to "", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
-        <% end %>
+      <div class="">
+          <% users.each do |user| %>
+          <!-- Workaround: this link is triggered automaticly when this page loads. -->
+            <%= link_to "", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
+          <% end %>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
-<% end %>
+</div>
