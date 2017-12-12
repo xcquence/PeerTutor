@@ -37,7 +37,6 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       {
         var a = document.querySelector('#incoming_requests_notify'); //notification when new request comes in
         a.classList.add('notify');
-        //jQuery(a).addClass('notify');
       }
     }
     else if (data['command'] == 'tutor_accepted') {
@@ -48,13 +47,19 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
         //frame.remove();
         //outer_frame.innerHTML = data['being_tutored'];
 
-        $link = $('#messenger:first');
+        $link = $('#messenger_link:first');
         $link[0].click();
         //add Location:
         var f = document.querySelector("#frame");
         //f.insertAdjacentHTML('beforebegin', data['tutor_response']);
+      } else if (document.querySelector('#inside_messenger')) {
+        alert("Session is accepted!");
+        $link = $('#messenger_link:first');
+        $link[0].click();
       } else {
-
+        alert("Session is accepted!");
+        var a = document.querySelector('#messenger_notify');
+        a.classList.add('notify');
       }
 
 >>>>>>> master
@@ -70,6 +75,9 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       // ??Refresh incoming_requests??
 
 >>>>>>> master
+    }
+    else if (data['command'] == 'session_completed') {
+      alert("Session is completed.");
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");

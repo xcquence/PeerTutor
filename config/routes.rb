@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'tutor/incoming_requests'
 
+  get 'tutor/complete_tutoring_session'
+
   get 'tutor/currently_tutoring'
 
   get 'tutor/tutor_profile'
@@ -35,11 +37,15 @@ Rails.application.routes.draw do
 
   get 'tutee/messenger'
 
+  get 'tutee/being_tutored'
+
   get 'tutee/list_of_tutors'
 
   get 'tutee/pick_tutor'
 
   get 'tutee/cancel_tutoring_session'
+
+  get 'tutee/profile'
 
   root 'home#index'
 
