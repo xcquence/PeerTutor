@@ -67,6 +67,18 @@ class TutorController < ApplicationController
     end
   end
 
+
+  def tutor_profile_edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def tutor_profile_update
+    redirect_to root_path
+  end
+
+
   def piggy_bank
     respond_to do |format|
       format.js
