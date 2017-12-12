@@ -3,6 +3,8 @@
     <% tutor ||= @tutor %>
     <% session ||= @tutoring_session %>
 
+    <h2> Currently In Session </h2>
+
     <div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
       <div class="card_top text-center">
       <%= image_tag "avatar.png", size: "60x60" %>
