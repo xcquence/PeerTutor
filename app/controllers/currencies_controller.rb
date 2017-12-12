@@ -28,6 +28,7 @@ class CurrenciesController < ApplicationController
 
   if params[:method] == 'update'
         @user = current_user
+        @amount = @amount + current_user.account_balance
         @user.update_attributes(account_balance: @amount)
         @user.save
       else

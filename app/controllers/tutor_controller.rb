@@ -51,9 +51,10 @@ class TutorController < ApplicationController
   end
 
   def piggy_bank
-    respond_to do |format|
-      format.js
-    end
+
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   def messenger
@@ -75,7 +76,7 @@ class TutorController < ApplicationController
       @tutor.update_attribute(:is_live, false)
       #redirect_to tutor_is_live_path
       #respond with ajax
-      
+
     else
       @tutor.update_attribute(:is_live, true)
       #redirect_to tutor_incoming_requests_path
@@ -126,11 +127,11 @@ class TutorController < ApplicationController
     end
   end
 
-  # def update
-  #   @tutor = current_user
-  #   @tutor.update_attributes(is_tutor: true)
-  #   redirect_to tutor_index_path
-  # end
+  def update
+    @tutor = current_user
+    @tutor.update_attributes(is_tutor: true)
+    redirect_to tutor_index_path
+  end
 
   private
 
