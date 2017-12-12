@@ -135,6 +135,12 @@ class TuteeController < ApplicationController
     @tutoring_sessions = TutoringSession.all
   end
 
+  def profile
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
   #Strong Parameter
   def tutoring_session_params
