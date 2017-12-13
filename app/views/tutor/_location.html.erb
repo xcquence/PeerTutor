@@ -1,5 +1,32 @@
 <div id="frame" class="animated bounceInUp">
+
   <div class="container container_box">
-    <h1>Enter Your Location:</h1>
-  </div>
+
+  <div class="col-lg-12 col-md-12 col-sm-9" id="find_tutor_box">
+    <h3 id="find_tutor_heading">ENTER YOUR LOCATION</h3>
+
+      <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
+          <!--Subject field-->
+          <div class="form-group ts-field">
+          </div>
+          <!--Course field-->
+          <!--Question field-->
+          <div class="form-group ts-field">
+            <div class="question-area">
+              <%= label :tutoring_session, "Location" %>
+              <p>(Example: Library in the West Building, 3rd Floor by the window)</p>
+              <%= f.text_area :question, required: 'required', value: "", class: "ft-field" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.hidden_field :user_id, value: current_user.id%>
+            <%= f.submit "Submit", class: "btn btn-primary submit ft-field" %>
+          </div>
+      <% end %>
+    </div>
+
+    <!-- temporary just to check if the data stored in TutoringSession -->
+  <div>
+
 </div>
