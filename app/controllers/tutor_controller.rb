@@ -153,7 +153,6 @@ class TutorController < ApplicationController
   def add_location
     location = current_user.build_location(name: params[:location][:location])
     if location.save
-      #add the location to the messenger and open it
       respond_to do |format|
         format.js {render 'incoming_requests'}
       end
