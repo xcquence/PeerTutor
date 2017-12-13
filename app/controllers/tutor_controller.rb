@@ -43,14 +43,16 @@ class TutorController < ApplicationController
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
       tutor_response: ApplicationController.render(
-        partial: 'tutor/location',
-        locals: {location: "3rd Floor by the Window", item2: "" }
+        partial: 'tutor/temp',
+        locals: {location: "", item2: "" }
       )
     )
 
+    #save location in a message
+
 
     respond_to do |format|
-      format.js {render 'incoming_requests'}
+      format.js {render 'chat/index'}
     end
   end
 
