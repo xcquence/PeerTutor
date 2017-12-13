@@ -1,0 +1,10 @@
+<div id="frame">
+  <div class="container container_box">
+    <div id="waiting_for_tutor">
+        <h2>Waiting for Tutor <%= @tutor.first_name %></h2>
+        <br>
+        <%= image_tag "Loading.gif" %>
+        <%= link_to "Cancel", tutee_list_of_tutors_path, class: "btn btn-warning btn-lg cancel", remote: true %>
+    </div>
+  </div>
+</div>

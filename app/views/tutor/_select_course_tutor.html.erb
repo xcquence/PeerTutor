@@ -1,0 +1,15 @@
+<div class="text-center">
+	<% if Course.exists?(subject_id: subject_id) %>
+	  <h3><%= label :tutor_courses, :courses, class:"font_styling" %></h3>
+	  <h5 class="font_styling">Select the class you want to tutor others in.</h5>
+		</br>
+		<div class="course_selection_container font_styling">
+		  <%= collection_check_boxes(:course, :id, Course.where(subject_id: subject_id), :id, :name) do |b| %>
+		  	<span class="course_selection col-lg-12 col-xs-12">
+			  	<span class="course_check_box"> <%= b.check_box %> </span>
+			  	<span class="course_label"> <%= b.label %> </span>
+		  	</span>
+		  <% end %>
+		</div>
+	<% end %>
+</div>

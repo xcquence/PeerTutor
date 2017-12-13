@@ -1,30 +1,34 @@
-<%= render 'layouts/navigation_bar' %>
+<div class="container-fluid">
 
-<!--============= Tutee Dashbaord ============-->
+  <div class="row">
 
-<div class="dashboard">
-	<div id="nav_container" class="col-lg-4 col-sm-12 hidden-xs">
-		<nav>
-			<ul>
-				<a href="find_tutor" target="tutee_view_frame" onclick="enable_selected('tutee_option_1', 4)">
-					<li id="tutee_option_1" class="option_selected"> Find Tutor</li>
-				</a>
-				<a href="schedule" target="tutee_view_frame" onclick="enable_selected('tutee_option_2', 4)">
-					<li id="tutee_option_2">Schedule</li>
-				</a>
-				<a href="/chat/index" target="tutee_view_frame" onclick="enable_selected('tutee_option_3', 4)">
-					<li id="tutee_option_3">Messenger</li>
-				</a>
-				<a href="tips_management" target="tutee_view_frame" onclick="enable_selected('tutee_option_4', 4)">
-					<li id="tutee_option_4">Tip Management</li>
-				</a>
-				<%= link_to home_authentication_path do %>
-					<li>>Switch role<</li>
-				<% end %>
-			</ul>
-		</nav>
-	</div>
-	<div id="frame_container" class="col-lg-4 col-sm-12">
-		<iframe src="find_tutor" name="tutee_view_frame" class="board"></iframe>
-	</div>
+    <div class="col-md-3 col-sm-0 col-xs-0">
+      <!--Sidebar content-->
+			<%= render 'tutee/side_navigation_bar' %>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12">
+      <%= render 'layouts/navigation_bar_leaf' %>
+      <!--Body content-->
+			<main style="overflow: auto;">
+					<div id="outer_frame">
+						<!-- This frame is being replaced with another page from the dashboard -->
+            <% if @command == "find_tutor" %>
+              <%= render partial: "find_tutor", object: @subject %>
+            <% elsif @command == "list_of_tutors"%>
+              <%= render partial: "tutee/list_of_tutors", object: @available_tutors %>
+            <% elsif @command == "being_tutored" %>
+              <%= render partial: "tutee/being_tutored", object: @tutor %>
+            <% else %>
+              <%= render partial: "tutee/pick_tutor", object: @tutor %>
+            <% end %>
+
+					</div>
+				<!-- <%= image_tag "cloud.png", class: "cloud" %> -->
+			</main>
+    </div>
+
+  </div>
+
 </div>
+
+<%= javascript_include_tag('tutee.js') %>

@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.font_styling {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+}
 body.tutor-index {
-	background-image: url(asset-path('dashboard-bg.png'));
+	background-image: url(asset-path('background/diagmonds.jpg'));
 	background-size: 100%;
 }
 .dashboard {
@@ -11,18 +16,16 @@ body.tutor-index {
 	width: 100%;
 	height: 650px;
 	text-align: center;
-	margin: 20px;
+	margin: 10px;
 }
-
 #nav_container {
 	position: relative;
 	width: 20%;
 	height: auto;
 	float:left;
 	margin: 20px;
-	margin-right: 35px;
+	margin-right: 20px;
 }
-
 #nav_container ul {
 	margin: 0 auto;
 	padding: 0;
@@ -32,25 +35,23 @@ body.tutor-index {
     border-radius: 5px;
     background-color: white;
 }
-
 #nav_container ul li {
 	list-style: none;
-	padding: 25px 10px;
-	border-bottom: 3px solid #190455;
+	/*padding: 25px 10px;*/
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
 	font-size: 1.5rem;
 	color: #190455;
 }
-
+.underline {
+	border-bottom: 3px solid #190455;
+}
 #nav_container ul li:hover{
 	background-color: #F4EDFE !important;
 }
-
 .dashboard nav ul a {
 	text-decoration: none;
 }
-
 #frame_container {
 	position: relative;
 	width: 70%;
@@ -68,27 +69,74 @@ body.tutor-index {
 	background-repeat: no-repeat;
     background-position: center;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 #tutor_view_frame {
 	background-color: white;
 	height: 100%;
 }
-
 .board {
 	border-style: none;
 	width: 100%;
 	height: 620px;
 }
-
 .option_selected {
 	background-color: #F4EDFE;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 #live_btn {
 	margin: 0 auto;
 	width: 15%;
 }
+<<<<<<< HEAD
 
+=======
+/* First time tutor form */
+body.tutor-first_time_tutor {
+	background-image: url(asset-path('loginbg.png'));
+	background-size: 100%;
+}
+.course_selection  {
+	padding: 10px;
+}
+.course_container {
+	margin: 0 auto !important;
+}
+.course_selection_container {
+	height: 400px;
+	overflow-y: scroll;
+	border: solid 4px #190455;
+	border-radius: 5px;
+	margin: 0 20%;
+	text-align: left;
+	background-color: #fdfcff;
+}
+.first_time_tutor_reg_btn {
+	margin: 0;
+    background-color: transparent;
+    text-align: center;
+    padding: 10px 0px 30px 0px;
+}
+.first_time_tutor_reg_btn .btn {
+	border: solid 3px #190455;
+	background-color: #fdfcff;
+	box-shadow: 0px 5px 0px #e8c6e7; /*#80E3FD*/
+}
+.first_time_tutor_reg_btn .btn:hover {
+	margin-top: 5px;
+	box-shadow: none;
+}
+input[type='checkbox'] {
+   width: 20px;
+   height: 20px;
+}
+/* For different screen sizes */
+>>>>>>> master
 @media only screen and (max-width: 730px){
 	.dashboard {
 		margin: 0px;
@@ -98,4 +146,85 @@ body.tutor-index {
 		box-shadow: -5px 5px 0px #190455;
 		margin: 0 auto;
 	}
+	.course_selection_container {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+	.first_time_tutor_reg_btn {
+		padding: 40px 0px;
+	}
 }
+
+.menu .avatar #live_btn {
+	height: 100%;
+}
+
+.is_live_box {
+	margin: auto;
+	padding: 5px;
+	border: 1.7px solid yellow;
+	border-radius: 10px;
+	height: 47px;
+	width: 150px;
+}
+
+.offline_alert_box {
+	width: 85%;
+	margin: auto;
+}
+
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+    width: 40%;
+    border-radius: 7px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card .btn {
+	width: inherit !important;
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+<<<<<<< HEAD
+=======
+
+#incoming_requests h3 {
+	color: #777;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1.7em;
+	font-weight: 100;
+}
+
+.card h3 {
+	color: #777;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1.7em;
+}
+
+.card label {
+	color: #777;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 1em;
+	font-weight: 100;
+}
+
+.card {
+	padding: 35px;
+}
+
+.card hr {
+	margin-top: 0;
+}
+>>>>>>> master

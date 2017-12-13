@@ -1,0 +1,53 @@
+<div id="frame" class="animated bounceInUp">
+  <div class="container container_box">
+    <% tutor ||= @tutor %>
+    <% session ||= @tutoring_session %>
+
+    <h2> Currently In Session </h2>
+
+    <div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
+      <div class="card_top text-center">
+      <%= image_tag "avatar.png", size: "60x60" %>
+      <h3><%= tutor.first_name %> <%= tutor.last_name %></h3>
+    </div>
+      <div class="container">
+
+        <label>Subject</label>
+        <p><%= session.course.subject.abbrev %></p>
+        <hr>
+        <label>Course</label>
+        <p><%= session.course.number %></p>
+        <hr>
+        <label>Question</label>
+        <p><%= session.question %></p>
+        <hr>
+        <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: session.tutor_id), id: "complete", class: "btn btn-warning", remote: true %>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <% tutor ||= @tutor %>
+  <% tutoring_session ||= @tutoring_session %>
+  <h1 class="text-center">You're being tutored by <%= tutor.first_name %> .</h1>
+
+  <div class="container">
+    <table class="table table-striped">
+      <tr>
+        <th>Tutee</th>
+        <th>Subject</th>
+        <th>Course</th>
+        <th>Question</th>
+        <th></th>
+      </tr>
+
+        <tr>
+          <td><%= tutoring_session.user.first_name %> <%= tutoring_session.user.last_name %></td>
+          <td><%= tutoring_session.course.subject.abbrev %></td>
+          <td><%= tutoring_session.course.number %></td>
+          <td><%= tutoring_session.question %></td>
+          <td><%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: tutor.id), class: "btn btn-primary", remote: true %></td>
+        </tr>
+    </table>
+  </div> -->
+</div>
