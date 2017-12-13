@@ -137,6 +137,7 @@ class TutorController < ApplicationController
   def toggle_is_live
     if current_user.is_live
       current_user.update_attributes(is_live: false)
+      current_user.location.destroy
       respond_to do |format|
         format.js { render 'offline'}
       end
