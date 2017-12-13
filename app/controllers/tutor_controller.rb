@@ -149,6 +149,17 @@ class TutorController < ApplicationController
     end
   end
 
+  def add_location
+    location = current_user.build_location(name: params[:location][:location])
+    if location.save
+      #add the location to the messenger
+    else
+      respond_to do |format|
+        format.js {render 'offline'}
+      end
+    end
+  end
+
   private
 
   def tutor_course_params
