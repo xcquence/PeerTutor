@@ -38,6 +38,7 @@ class TutorController < ApplicationController
     @tutee = User.find(tutoring_session.user_id)
 
     conversations = Conversation.where(recipient_id: tutors[0], sender_id: @tutee.id)
+
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
@@ -49,6 +50,7 @@ class TutorController < ApplicationController
     )
 
     #save location in a message
+
 
 
     respond_to do |format|

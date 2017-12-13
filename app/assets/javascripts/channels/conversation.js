@@ -47,9 +47,14 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
-      var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
-      var table = document.querySelector('#table');
-      if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
+      var value = data['tutee_id'];
+      var a = $('*[data-tutee_id=' + value + "]")[0];
+      a.parentNode.removeChild(a);
+
+
+      //var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
+      //var table = document.querySelector('#table');
+      //if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
       // ??Refresh incoming_requests??
 

@@ -1,5 +1,5 @@
 <% tutoring_sessions.each do |session| %>
-<div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
+<div class="col-sm-4 col-sm-offset-1 card" id="card" data-tutee_id=<%= session.user_id %>>
   <div class="card_top text-center">
   <%= image_tag "avatar.png", size: "60x60" %>
   <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
