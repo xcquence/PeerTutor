@@ -33,6 +33,7 @@ class TutorController < ApplicationController
     TutoringSession.find(params[:session_id]).update(accepted: true)
 
     tutoring_session = TutoringSession.find(params[:session_id])
+    tutee_id = tutoring_session.user_id
     tutors = []
     tutors << User.find(tutoring_session.tutor_id)
     @tutee = User.find(tutoring_session.user_id)
@@ -50,7 +51,9 @@ class TutorController < ApplicationController
     )
 
     #save location in a message
-
+    location = Location.where(user_id: current_user.id)
+    conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
+    message = Message.create(body: location.name, user_id: current_user.id, conversation_id: conversation.id)
 
 
     respond_to do |format|
