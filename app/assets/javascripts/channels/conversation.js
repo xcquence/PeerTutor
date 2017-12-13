@@ -6,24 +6,6 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
   received: function(data) {
     if (data['command'] == 'tutor_picked')
     {
-<<<<<<< HEAD
-      var a = document.querySelectorAll('#nav_container ul li')[0]; //notification when new request comes in
-      a.firstChild.className = "btn btn-success";
-
-
-      if (document.querySelector('#incoming_requests table'))
-      {
-        var tb = document.querySelector('#incoming_requests table').children[0]
-        tb.insertAdjacentHTML('afterend', data['tutoring_session']);
-      }
-    }
-    else if (data['command'] == 'tutor_accepted') {
-      var outer_frame = document.querySelector('#outer_frame');
-      var frame = document.querySelector('#frame');
-      //body.innerHTML = data['being_tutored'];
-      frame.remove();
-      outer_frame.innerHTML = data['being_tutored'];
-=======
       if (document.querySelector('#incoming_requests'))
       {
         var da = document.querySelector("#incoming_requests .alert");
@@ -62,7 +44,6 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
         a.classList.add('notify');
       }
 
->>>>>>> master
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
@@ -70,14 +51,11 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       var table = document.querySelector('#table');
       if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
 
-<<<<<<< HEAD
-=======
       // ??Refresh incoming_requests??
 
     }
     else if (data['command'] == 'session_completed') {
       alert("Session is completed.");
->>>>>>> master
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");

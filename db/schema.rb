@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171017000733) do
-=======
 ActiveRecord::Schema.define(version: 20171106000631) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,43 +50,9 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "schedules", force: :cascade do |t|
-    t.date "startdate"
-    t.date "enddate"
-    t.time "starttime"
-    t.time "endtime"
-  end
-
-  create_table "stripe_accounts", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "account_type"
-    t.integer "dob_month"
-    t.integer "dob_day"
-    t.integer "dob_year"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "address_city"
-    t.string "address_state"
-    t.string "address_line1"
-    t.string "address_postal"
-    t.string "ssn_last_4"
-    t.string "business_name"
-    t.string "business_tax_id"
-    t.string "personal_id_number"
-    t.string "verification_document"
-    t.string "acct_id"
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string "abbrev"
-    t.string "name"
-=======
   create_table "tutor_courses", force: :cascade do |t|
     t.bigint "tutor_id"
     t.bigint "course_id"
->>>>>>> master
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_tutor_courses_on_course_id"
@@ -114,12 +76,9 @@ ActiveRecord::Schema.define(version: 20171106000631) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "accepted", default: false
-<<<<<<< HEAD
-=======
     t.index ["course_id"], name: "index_tutoring_sessions_on_course_id"
     t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id", unique: true
     t.index ["user_id"], name: "index_tutoring_sessions_on_user_id", unique: true
->>>>>>> master
   end
 
   create_table "tutors", force: :cascade do |t|

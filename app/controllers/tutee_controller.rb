@@ -2,8 +2,6 @@ class TuteeController < ApplicationController
 
   before_action :authenticate_user!   ## User has to be logged in
 
-<<<<<<< HEAD
-=======
   def index
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
@@ -23,29 +21,21 @@ class TuteeController < ApplicationController
 
   end
 
->>>>>>> master
   #new
   def find_tutor
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
 
-<<<<<<< HEAD
-    if @tutoring_session.nil? || @tutoring_session.tutor_id.nil?
-=======
     if @tutoring_session.nil?
->>>>>>> master
       @subject = Subject.new
       respond_to do |format|
         format.js {render "find_tutor" }
       end
       #@courses = Course.all
-<<<<<<< HEAD
-=======
     elsif @tutoring_session.tutor_id.nil? ## if the session created but tutee hasn't picked tutors yet
       available_tutors(@tutoring_session.course_id)
       respond_to do |format|
         format.js {render 'list_of_tutors'}
       end
->>>>>>> master
     elsif @tutoring_session.accepted
       @tutor = User.find(@tutoring_session.tutor_id)
       #render 'being_tutored', locals: { tutoring_session: @tutoring_session, tutor: @tutor}
@@ -74,37 +64,14 @@ class TuteeController < ApplicationController
     # @tutoring_session.user = User.find(current_user.id)
     # @tutoring_session.save()
 
-<<<<<<< HEAD
-
-    #  tutors = User.where(is_tutor: true).id
-    #  tutors.each do
-    @tutors = User.all
-=======
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
     available_tutors(@tutoring_session.course_id)
->>>>>>> master
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
   end
 
   def cancel_tutoring_session
-<<<<<<< HEAD
-    @tutor = User.find(params[:tutor_id])
-    TutoringSession.where(user_id: current_user.id).last.destroy!
-    ActionCable.server.broadcast(
-      "conversations-#{@tutor.id}",
-      command: "session_canceled",
-      tutee_id: current_user.id
-    )
-    respond_to do |format|
-      format.js {render 'find_tutor'}
-    end
-  end
-
-  def list_of_tutors
-
-=======
     if !params[:tutor_id].present?
       TutoringSession.where(user_id: current_user.id).last.destroy!
       render 'find_tutor'
@@ -137,7 +104,6 @@ class TuteeController < ApplicationController
     respond_to do |format|
       format.js {render 'list_of_tutors'}
     end
->>>>>>> master
   end
 
   def pick_tutor
@@ -154,15 +120,9 @@ class TuteeController < ApplicationController
 
 
   def tips_management
-<<<<<<< HEAD
-    # respond_to do |format|
-    #   format.js
-    # end
-=======
     respond_to do |format|
       format.js
     end
->>>>>>> master
   end
 
   def schedule
@@ -175,8 +135,6 @@ class TuteeController < ApplicationController
     @tutoring_sessions = TutoringSession.all
   end
 
-<<<<<<< HEAD
-=======
   def profile
     @tutee = User.find(current_user.id)
     respond_to do |format|
@@ -184,7 +142,6 @@ class TuteeController < ApplicationController
     end
   end
 
->>>>>>> master
   private
   #Strong Parameter
   def tutoring_session_params
@@ -194,8 +151,6 @@ class TuteeController < ApplicationController
     )
   end
 
-<<<<<<< HEAD
-=======
   def available_tutors(course_id)
     @tutors = User.where(is_tutor: true, is_live: true).where.not(id: current_user.id).all  # @tutors.ids returns the array of live_tutor's ids
 
@@ -212,5 +167,4 @@ class TuteeController < ApplicationController
 
   end
 
->>>>>>> master
 end
