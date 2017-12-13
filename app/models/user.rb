@@ -18,6 +18,8 @@ class User < ApplicationRecord
       stripe_customer = Stripe::Customer.create(email: email)
       update(stripe_id: stripe_customer.id)
       stripe_customer
+    end
   end
-end
+
+  has_one :location
 end
