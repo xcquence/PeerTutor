@@ -1,28 +1,4 @@
-<h1>Buy Tip Points to Tip your favorite Tutor!</h1>
 
-
-
-<%= form_tag currency_path do %>
-
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-
-
-
-
-<article>
-   <%= label_tag(:amount, 'Amount: $') %>
-   <%= text_field_tag(:amount) %>
-  <%= hidden_field_tag 'method', 'update'%>
- </article>
- <article>
-   <%= hidden_field_tag(:stripeToken) %>
- </article>
- <button id='PayButton'>Pay with Credit Card </button>
-<% end %>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 

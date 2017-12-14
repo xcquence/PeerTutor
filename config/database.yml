@@ -7,10 +7,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: peer_tutor_development
   pool: 5
-  username: postgres ##Username belongs here
-  password: 123 ##Password belongs here
+  username:  ##Username belongs here
+  password:  ##Password belongs here
 
 #test:
 #  adapter: sqlite3
@@ -21,7 +21,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: postgres
+  database: peer_tutor_development
   pool: 5 #default
-  username: postgres ##Same username in line 12
-  password: 123 ##Same password in line 13
+  username:  ##Same username in line 12
+  password:  ##Same password in line 13
