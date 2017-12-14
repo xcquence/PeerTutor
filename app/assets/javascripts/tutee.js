@@ -23,16 +23,7 @@ window.onload = function () {
   }
 }
 
-$(document).ready(
-  function () {
-  $(document).on('click', '#PayButton',
-    function()
-        {
-          alert("You clicked the new button")
-        }
-      )
-    }
-  )
+
 
 
 
