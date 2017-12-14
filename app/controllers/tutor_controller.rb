@@ -40,6 +40,15 @@ class TutorController < ApplicationController
 
     conversations = Conversation.where(recipient_id: tutors[0], sender_id: @tutee.id)
 
+    #save location in a message
+    tutee_name = User.find(tutee_id).first_name
+    prompt1 = "Hey #{tutee_name}!\n"
+    location = Location.where(user_id: current_user.id).last.name
+    prompt2 = "My location: #{location}"
+    conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
+    message = Message.create(body: prompt1, user_id: current_user.id, conversation_id: conversation.id)
+    message = Message.create(body: prompt2, user_id: current_user.id, conversation_id: conversation.id)
+
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
@@ -49,15 +58,6 @@ class TutorController < ApplicationController
         locals: {location: "", item2: "" }
       )
     )
-
-    #save location in a message
-    tutee_name = User.find(tutee_id).first_name
-    prompt1 = "Hey #{tutee_name}!\n"
-    location = Location.where(user_id: current_user.id).last.name
-    prompt2 = "My location: #{location}"
-    conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
-    message = Message.create(body: prompt1, user_id: current_user.id, conversation_id: conversation.id)
-    message = Message.create(body: prompt2, user_id: current_user.id, conversation_id: conversation.id)
 
 
     respond_to do |format|
