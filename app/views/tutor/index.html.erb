@@ -17,7 +17,11 @@
 					<% if @not_live %>
 								<%= render 'offline' %>
 					<% else %>
+								<% if current_user.location %>
 								<%= render 'incoming_requests' %>
+								<% else %>
+								<%= render 'location' %>
+								<% end %>
 					<% end %>
 		</div>
 	</div>

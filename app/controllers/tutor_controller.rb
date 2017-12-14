@@ -33,24 +33,35 @@ class TutorController < ApplicationController
     TutoringSession.find(params[:session_id]).update(accepted: true)
 
     tutoring_session = TutoringSession.find(params[:session_id])
+    tutee_id = tutoring_session.user_id
     tutors = []
     tutors << User.find(tutoring_session.tutor_id)
     @tutee = User.find(tutoring_session.user_id)
 
     conversations = Conversation.where(recipient_id: tutors[0], sender_id: @tutee.id)
+
+    #save location in a message
+    tutee_name = User.find(tutee_id).first_name
+    prompt1 = "Hey #{tutee_name}!\n"
+    location = Location.where(user_id: current_user.id).last.name
+    prompt2 = "My location: #{location}"
+    conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
+    message = Message.create(body: prompt1, user_id: current_user.id, conversation_id: conversation.id)
+    message = Message.create(body: prompt2, user_id: current_user.id, conversation_id: conversation.id)
+
     #Broadcast to tutee
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "tutor_accepted",
       tutor_response: ApplicationController.render(
-        partial: 'tutor/location',
-        locals: {location: "3rd Floor by the Window", item2: "" }
+        partial: 'tutor/temp',
+        locals: {location: "", item2: "" }
       )
     )
 
 
     respond_to do |format|
-      format.js {render 'incoming_requests'}
+      format.js {render 'chat/index'}
     end
   end
 
@@ -137,6 +148,7 @@ class TutorController < ApplicationController
   def toggle_is_live
     if current_user.is_live
       current_user.update_attributes(is_live: false)
+      current_user.location.destroy
       respond_to do |format|
         format.js { render 'offline'}
       end
@@ -144,7 +156,20 @@ class TutorController < ApplicationController
       current_user.update_attributes(is_live: true)
       @tutoring_sessions = TutoringSession.where(tutor_id: current_user.id, accepted: false)
       respond_to do |format|
-        format.js { render 'incoming_requests'}
+        format.js { render 'location'}
+      end
+    end
+  end
+
+  def add_location
+    location = current_user.build_location(name: params[:location][:location])
+    if location.save
+      respond_to do |format|
+        format.js {render 'incoming_requests'}
+      end
+    else
+      respond_to do |format|
+        format.js {render 'offline'}
       end
     end
   end
