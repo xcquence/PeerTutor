@@ -51,9 +51,13 @@ class TutorController < ApplicationController
     )
 
     #save location in a message
-    location = Location.where(user_id: current_user.id)
+    tutee_name = User.find(tutee_id).first_name
+    prompt1 = "Hey #{tutee_name}!\n"
+    location = Location.where(user_id: current_user.id).last.name
+    prompt2 = "My location: #{location}"
     conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
-    message = Message.create(body: location.name, user_id: current_user.id, conversation_id: conversation.id)
+    message = Message.create(body: prompt1, user_id: current_user.id, conversation_id: conversation.id)
+    message = Message.create(body: prompt2, user_id: current_user.id, conversation_id: conversation.id)
 
 
     respond_to do |format|
