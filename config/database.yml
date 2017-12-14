@@ -9,8 +9,8 @@ development:
   encoding: unicode
   database: peer_tutor_development
   pool: 5
-  username: ##Username belongs here
-  password: ##Password belongs here
+  username:  ##Username belongs here
+  password:  ##Password belongs here
 
 #test:
 #  adapter: sqlite3
@@ -23,5 +23,5 @@ test:
   encoding: unicode
   database: peer_tutor_development
   pool: 5 #default
-  username: ##Same username in line 12
-  password: ##Same password in line 13
+  username:  ##Same username in line 12
+  password:  ##Same password in line 13

@@ -54,6 +54,14 @@ Rails.application.routes.draw do
   get 'tutor/first_time_tutor'
   post 'tutor/first_time_tutor' => 'tutor#create'
 
+  post 'tutor/update'
+
+  get 'thanks' , to: 'currencies#thanks', as: 'thanks'
+
+  get 'stripe_accounts/full', to: 'stripe_accounts#full'
+
+  post 'currency/update'
+  
   get 'tutee/get_courses'
 
   get 'tutee/update'
@@ -82,7 +90,8 @@ Rails.application.routes.draw do
   end
   resources :tutors
   resource :currency
-
+  resources :stripe_accounts
+  resources :bank_accounts
 
   resources :tutor, only: [:first_time_tutor] do
     collection do
